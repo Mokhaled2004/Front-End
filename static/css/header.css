@@ -1,0 +1,190 @@
+/* General Reset */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+
+
+.menu .active {
+    color: #ee0c0c;
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Space out logo, menu, and login */
+    align-items: center; /* Center items vertically */
+    padding: 35px;
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto; /* Centering container horizontally */
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: -90px;
+    margin-right: -80px;
+}
+
+/* Logo Styling */
+.logo {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ee0c0c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Ga Maamli', sans-serif;
+    text-align: left;
+    position: relative;
+}
+
+.logo .logo-market {
+    display: block;
+    font-family: 'Ga Maamli', sans-serif;
+}
+
+.logo .logo-mate {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 1.2em;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Ga Maamli', sans-serif;
+    color: #ee0c0c;
+    transform: translateX(-50%); /* Center "Mate" relative to "Market" */
+}
+
+/* Navigation Container */
+.navigation {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Menu Styling */
+.menu {
+    display: inline-flex; /* Use inline-flex to size the menu to its content */
+    align-items: center;
+    padding: 0; /* Remove padding from the menu */
+    margin: 0;
+    
+}
+.menu li {
+    display: inline-block;
+    margin: 0; /* Remove margin between list items */
+}
+
+.menu li a {
+    display: inline-block;
+    padding: 10px 20px; /* Add padding to the links */
+    margin-right: 10px; /* Space between menu items */
+    color: #161515;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    
+}
+
+.menu li a:hover {
+    color: #ff0000;
+}
+
+.menu li:last-child a {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
+/* Login Button Container */
+.login-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Push the login button to the right */
+    height: 50px; /* Set a fixed height for alignment */
+}
+
+/* Login Button Styling */
+.login {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #ff0000; /* Background color */
+    color: #ffffff; /* Text color */
+    height: 50px; /* Fixed height */
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 70px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* Remove underline if it's a link */
+}
+
+
+/* Login Button Hover Effect */
+.login:hover {
+    background-color: #cc0000; /* Darker background on hover */
+    color: #ffffff; /* Text color on hover */
+}
+
+/* Search Button Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Adjust if needed */
+    margin-right: 10px; /* Adjust to align with login-container */
+    height: 50px; /* Set a fixed height for alignment */
+}
+
+/* Search Button Styling */
+.search {
+    display: flex; /* Use flexbox to center the image */
+    align-items: center;
+    justify-content: center; /* Center the image inside */
+    width: 50px; /* Fixed width for the button */
+    height: 50px; /* Fixed height for the button */
+    background-color: #ff0000; /* Background color */
+    border-radius: 50%; /* Make the button circular */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* Remove underline */
+    overflow: hidden; /* Ensure the image fits within the button */
+}
+
+/* Search Button Hover Effect */
+.search:hover {
+    background-color: #cc0000; /* Darker background on hover */
+}
+
+/* Search Icon Styling */
+.search img {
+    width: 70%; /* Adjust image size as needed */
+    height: 70%; /* Adjust image size as needed */
+    object-fit: contain; /* Scale the image to fit within the container */
+}
+
+

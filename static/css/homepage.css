@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Prevent horizontal scroll caused by fixed image */
+}
+
+/* Background Image Container */
+.background-container {
+    position: fixed;
+    top: 0;
+    right: 0; /* Position to the right side */
+    width: 100%; /* Adjust width as needed, e.g., 50% of the viewport */
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensure the image is behind other content */
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    position: absolute;
+    top: 0;
+    right: 0; /* Align image to the right side */
+}
+
+/* Larger Container */
+.larger-container {
+    display: flex;
+    justify-content: space-between; /* Space out the content containers */
+    align-items: flex-start; /* Align items at the top */
+    width: 1000px; /* Full width of the parent */
+    height: 1000px;
+    padding: 20px; /* Padding around the larger container */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Content Container */
+.content-container {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    height: 900px; /* Height for each container */
+    width: 470px; /* Width for each container */
+    padding: 20px 10px; /* Padding inside the container */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+}
+
+/* Content Styling */
+.content {
+    max-width: 100%; /* Full width of the content area */
+    padding: 20px; /* Padding inside the content area */
+}
+
+/* Title Styling */
+.content-title {
+    font-size: 36px; /* Font size for the title */
+    font-family: "IM Fell French Canon SC", serif;
+    font-weight: 400;
+    color: #333333; /* Dark text color */
+    margin: 0; /* Remove default margins */
+    line-height: 1.2; /* Line height for readability */
+}
+
+/* Description Styling */
+.content-description {
+    font-size: 22px; /* Font size for the description */
+    color: #555555; /* Lighter text color */
+    margin-top: 10px; /* Space above the description */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Container for the circle arrangement */
+.circle-container {
+    position: absolute; /* Absolute positioning */
+    width: 1000px; /* Width of the container */
+    height: 1000px; /* Height of the container */
+    overflow: hidden;
+    background-color: #ffffff00; /* Temporary background to see the container */
+    border-radius: 50%; /* Make the container circular */
+    top: 50%; /* Center vertically */
+    left: 71%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the container */
+}
+
+/* Circle Styling */
+.circle {
+    position: absolute;
+    width: 100px; /* Set circle width */
+    height: 100px; /* Set circle height */
+    border-radius: 50%; /* Make it circular */
+    background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    overflow: hidden; /* Ensure the image doesn't spill out of the circle */
+    
+}
+
+/* Make images fit and cover the circle */
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire circle */
+    display: block; /* Remove any gaps below the image */
+}
+
+/* Position circles around the center */
+.circle:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-420px) rotate(0deg);
+}
+
+.circle:nth-child(2) {
+    top: 50%;
+    left: 50%;
+    background-color: #fffbfb00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    border-style: none;
+    transform: translate(-50%, -50%) rotate(40deg) translateY(-420px) rotate(-40deg);
+}
+
+.circle:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    background-color: #fffbfb00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    border-style: none;
+    transform: translate(-50%, -50%) rotate(80deg) translateY(-420px) rotate(-80deg);
+}
+
+.circle:nth-child(4) {
+    top: 50%;
+    left: 50%;
+    background-color: #fffbfb00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    border-style: none;
+    transform: translate(-50%, -50%) rotate(120deg) translateY(-420px) rotate(-120deg);
+}
+
+.circle:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    background-color: #fffbfb00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    border-style: none;
+    transform: translate(-50%, -50%) rotate(160deg) translateY(-420px) rotate(-160deg);
+}
+
+.circle:nth-child(6) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(200deg) translateY(-420px) rotate(-200deg);
+}
+
+.circle:nth-child(7) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(240deg) translateY(-420px) rotate(-240deg);
+}
+
+.circle:nth-child(8) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(280deg) translateY(-420px) rotate(-280deg);
+}
+
+.circle:nth-child(9) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(320deg) translateY(-420px) rotate(-320deg);
+}

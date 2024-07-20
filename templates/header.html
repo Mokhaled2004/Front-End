@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/header.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Playwrite+BE+VLG:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="header-container">
+        <div class="logo-container">
+            <a class="logo">
+                <span class="logo-market">Market</span>
+                <span class="logo-mate">Mate</span>
+            </a>
+        </div>
+        <nav class="navigation">
+            <ul class="menu">
+                <li><a class="active">Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Contact</a></li>
+                <li><a>Services</a></li>
+            </ul>
+        </nav>
+        <div class="login-container">
+            <a class="login">Login</a>
+        </div>
+        <div class="search-container">
+            <a class="search">
+                <img src="{{ url_for('static', filename='/images/search.png') }}" alt="Search">
+            </a>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

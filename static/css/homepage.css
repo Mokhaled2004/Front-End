@@ -29,12 +29,15 @@ body {
 /* Larger Container */
 .larger-container {
     display: flex;
-    justify-content: space-between; /* Space out the content containers */
-    align-items: flex-start; /* Align items at the top */
-    width: 1000px; /* Full width of the parent */
-    height: 1000px;
-    padding: 20px; /* Padding around the larger container */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 1000px; /* Width of the parent */
+    height: 1000px; /* Height of the parent */
+    margin-top: -26px;
+    margin-left: -180px;
+    padding: 20px 20px; /* Padding inside the container */
     box-sizing: border-box; /* Include padding in the width calculation */
+    position: relative; /* Position relative for absolute positioning of slideshow images */
 }
 
 /* Content Container */
@@ -43,11 +46,37 @@ body {
     flex-direction: column; /* Stack content vertically */
     height: 900px; /* Height for each container */
     width: 470px; /* Width for each container */
-    padding: 20px 10px; /* Padding inside the container */
+    margin-left: 130px;
+    
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 30px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    overflow: hidden; /* Hide overflow for animation */
+    position: relative; /* Ensure images are positioned relative to this container */
 }
+
+/* Slideshow */
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide images that are out of view */
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Fade in and out effect */
+}
+
+/* Show the first slide */
+.slide.active {
+    opacity: 1;
+}
+
 
 /* Content Styling */
 .content {
@@ -91,6 +120,7 @@ body {
     position: absolute;
     width: 100px; /* Set circle width */
     height: 100px; /* Set circle height */
+    border: #333333 solid 2px; /* Border for the circle */
     border-radius: 50%; /* Make it circular */
     background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */

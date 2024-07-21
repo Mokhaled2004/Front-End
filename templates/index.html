@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="background-container">
-        <img src="{{ url_for('static', filename='/images/homeplate.png') }}" alt="" class="background-image">
+        <img src="{{ url_for('static', filename='/images/homeplate1.png') }}" alt="" class="background-image">
 
     </div>
     <header>
@@ -21,17 +21,50 @@
     </header>
 
     <div class="larger-container">
-
         <div class="content-container">
+            <div class="slideshow">
+                <img src="{{ url_for('static', filename='/images/deal1.png') }}" alt="Image 1" class="slide">
+                <img src="{{ url_for('static', filename='/images/deal2.png') }}" class="slide">
+                <img src="{{ url_for('static', filename='/images/homeplate1.png') }}" alt="Image 3" class="slide">
+            </div>
             <div class="content">
                 <h1 class="content-title">The best</h1>
                 <h1 class="content-title">Products</h1>
                 <p class="content-description">that meets your needs</p>
             </div>
+            
         </div>
-    
-        
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Initial slide
+    showSlide(currentSlide);
+
+    // Auto change slide every 3 seconds
+    setInterval(nextSlide, 5000);
+});
+
+
+    </script>
+    
     
     <div class="circle-container">
         <div class="circle"><img src = "{{ url_for('static', filename='/images/alraya.png') }}" alt="" class="background-image"></div>
@@ -41,7 +74,7 @@
         <div class="circle"></div>
         <div class="circle"><img src = "{{ url_for('static', filename='/images/kherzaman.jpg') }}" alt="" class="background-image"></div>
         <div class="circle"><img src = "{{ url_for('static', filename='/images/seoudi.jpeg') }}" alt="" class="background-image"></div>
-        <div class="circle"><img src = "{{ url_for('static', filename='/images/walmart.jpg') }}" alt="" class="background-image"></div>
+        <div class="circle"><img src = "{{ url_for('static', filename='/images/walmart.png') }}" alt="" class="background-image"></div>
         <div class="circle"><img src = "{{ url_for('static', filename='/images/Bim.png') }}" alt="" class="background-image"></div>
     </div>
     

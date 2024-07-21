@@ -12,6 +12,66 @@
 <body>
     
     <div class="header-container">
+        <div class="menue-container">
+            <a class="menue">
+                <img src="{{ url_for('static', filename='/images/list.png') }}" alt="Menu">
+            </a>
+            <div class="dropdown-content">
+                <div class="dropdown-item">
+                    <img src="{{ url_for('static', filename='/images/store.png') }}" alt="Item 1">
+                    <span>Stores</span>
+                </div>
+                <div class="dropdown-item">
+                    <img src="{{ url_for('static', filename='/images/category1.png') }}" alt="Item 2">
+                    <span>Categories</span>
+                </div>
+                <div class="dropdown-item">
+                    <img src="{{ url_for('static', filename='/images/offer.png') }}" alt="Item 2">
+                    <span>Offers</span>
+                </div>
+                <div class="dropdown-item">
+                    <img src="{{ url_for('static', filename='/images/track.png') }}" alt="Item 2">
+                    <span>Track Your Order</span>
+                </div>
+                <div class="dropdown-item">
+                    <img src="{{ url_for('static', filename='/images/stats.png') }}" alt="Item 2">
+                    <span>Compare Stores</span>
+                </div>
+                <div class="dropdown-item">
+                    <img src="{{ url_for('static', filename='/images/history.png') }}" alt="Item 3">
+                    <span>History</span>
+                </div>
+                <div class="dropdown-item">
+                    <img src="{{ url_for('static', filename='/images/add.png') }}" alt="Item 3">
+                    <span>Add Your Store</span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const menuButton = document.querySelector('.menue');
+                const dropdownContent = document.querySelector('.dropdown-content');
+                
+                menuButton.addEventListener('click', () => {
+                    // Toggle the visibility of the dropdown menu
+                    if (dropdownContent.classList.contains('show-dropdown')) {
+                        dropdownContent.classList.remove('show-dropdown');
+                    } else {
+                        dropdownContent.classList.add('show-dropdown');
+                    }
+                });
+
+                // Optionally, close the dropdown when clicking outside of it
+                document.addEventListener('click', (event) => {
+                    if (!menuButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+                        dropdownContent.classList.remove('show-dropdown');
+                    }
+                });
+            });
+        </script>
+        
+
         <div class="logo-container">
             <a class="logo">
                 <span class="logo-market">Market</span>
@@ -21,8 +81,8 @@
         <nav class="navigation">
             <ul class="menu">
                 <li><a class="active">Home</a></li>
-                <li><a>About</a></li>
-                <li><a>Contact</a></li>
+                <li><a>About-Us</a></li>
+                <li><a>Contact-Us</a></li>
                 <li><a>Services</a></li>
             </ul>
         </nav>
@@ -32,6 +92,18 @@
         <div class="search-container">
             <a class="search">
                 <img src="{{ url_for('static', filename='/images/search.png') }}" alt="Search">
+            </a>
+        </div>
+
+        <div class="cart-container">
+            <a class="cart">
+                <img src="{{ url_for('static', filename='/images/cart.png') }}" alt="Search">
+            </a>
+        </div>
+
+        <div class="profile-container">
+            <a class="profile">
+                <img src="{{ url_for('static', filename='/images/profile.png') }}" alt="Search">
             </a>
         </div>
         

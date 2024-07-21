@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Playwrite+BE+VLG:wght@100..400&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/header.js') }}"></script>
+
 </head>
 <body>
     
@@ -48,29 +50,6 @@
             </div>
         </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const menuButton = document.querySelector('.menue');
-                const dropdownContent = document.querySelector('.dropdown-content');
-                
-                menuButton.addEventListener('click', () => {
-                    // Toggle the visibility of the dropdown menu
-                    if (dropdownContent.classList.contains('show-dropdown')) {
-                        dropdownContent.classList.remove('show-dropdown');
-                    } else {
-                        dropdownContent.classList.add('show-dropdown');
-                    }
-                });
-
-                // Optionally, close the dropdown when clicking outside of it
-                document.addEventListener('click', (event) => {
-                    if (!menuButton.contains(event.target) && !dropdownContent.contains(event.target)) {
-                        dropdownContent.classList.remove('show-dropdown');
-                    }
-                });
-            });
-        </script>
-        
 
         <div class="logo-container">
             <a class="logo">
@@ -80,14 +59,14 @@
         </div>
         <nav class="navigation">
             <ul class="menu">
-                <li><a class="active">Home</a></li>
-                <li><a>About-Us</a></li>
-                <li><a>Contact-Us</a></li>
-                <li><a>Services</a></li>
+                <li><a class="active" href="{{ url_for('home') }}"><b>Home</b></a></li>
+                <li><a><b>About-Us</b></a></li>
+                <li><a><b>Contact-Us</b></a></li>
+                <li><a><b>Services</b></a></li>
             </ul>
         </nav>
         <div class="login-container">
-            <a class="login">Login</a>
+            <a class="login" href="{{ url_for('login') }}">Login</a>
         </div>
         <div class="search-container">
             <a class="search">

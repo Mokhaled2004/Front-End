@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=IM+Fell+Great+Primer+SC&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
 </head>
 <body>
     <div class="background-container">
@@ -31,39 +32,15 @@
                 <h1 class="content-title">The best</h1>
                 <h1 class="content-title">Products</h1>
                 <p class="content-description">that meets your needs</p>
+                <div class="button-container">
+                    <div class="start-shopping-button">Start Shopping</div>
+                </div>
             </div>
             
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) {
-                slide.classList.add('active');
-            }
-        });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    // Initial slide
-    showSlide(currentSlide);
-
-    // Auto change slide every 3 seconds
-    setInterval(nextSlide, 2000);
-});
-
-
-    </script>
+   
     
     
     <div class="circle-container">
@@ -81,7 +58,24 @@
 
     
 
-    
+    <footer>
+        <div class="footer-section">
+            <h2>About Us</h2>
+            <p>Learn more about our company and what we stand for.</p>
+        </div>
+        <div class="footer-section">
+            <h2>Contact</h2>
+            <p>Get in touch with us for any inquiries.</p>
+        </div>
+        <div class="footer-section">
+            <h2>Rating</h2>
+            <p></p>
+        </div>
+        <div class="footer-section">
+            <h2>Follow Us</h2>
+            <p>Stay updated by following us on social media.</p>
+        </div>
+    </footer>
     
      
     

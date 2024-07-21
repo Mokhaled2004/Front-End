@@ -30,8 +30,8 @@ body {
     display: flex;
     justify-content: space-between; /* Space out logo, menu, and login */
     align-items: center; /* Center items vertically */
-    padding: 2rem; /* 35px */
-    max-width: 100rem; /* 1600px */
+    padding: 35px; /* 2rem */
+    max-width: 1600px; /* 100rem */
     width: 100%;
     margin: 0 auto; /* Centering container horizontally */
 }
@@ -40,19 +40,19 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
-    margin-left: 3.75rem; /* 60px */
-    margin-top: -1.25rem; /* -20px */
-    margin-right: -5rem; /* -80px */
+    margin-left: 60px; /* 3.75rem */
+    margin-top: -20px; /* -1.25rem */
+    margin-right: -80px; /* -5rem */
 }
 
 /* Logo Styling */
 .logo {
     display: inline-block;
-    font-size: 1.5rem; /* 24px */
+    font-size: 24px; /* 1.5rem */
     font-weight: 700;
     color: #ee0c0c;
     text-transform: uppercase;
-    letter-spacing: 0.0625rem; /* 1px */
+    letter-spacing: 1px; /* 0.0625rem */
     font-family: 'Ga Maamli', sans-serif;
     text-align: left;
     position: relative;
@@ -67,8 +67,8 @@ body {
     display: block;
     position: absolute;
     left: 50%;
-    top: 1.2em;
-    font-size: 1.375rem; /* 22px */
+    top: 29px; /* 1.2em */
+    font-size: 22px; /* 1.375rem */
     font-weight: 700;
     font-family: 'Ga Maamli', sans-serif;
     color: #ee0c0c;
@@ -98,12 +98,12 @@ body {
 
 .menu li a {
     display: inline-block;
-    padding: 0.625rem 1.25rem; /* 10px 20px */
-    margin-right: 0.625rem; /* 10px */
+    padding: 10px 20px; /* 0.625rem 1.25rem */
+    margin-right: 10px; /* 0.625rem */
     color: #161515;
-    font-size: 1.125rem; /* 18px */
+    font-size: 18px; /* 1.125rem */
     font-weight: 500;
-    letter-spacing: 0.03125rem; /* 0.5px */
+    letter-spacing: 0.5px; /* 0.03125rem */
     transition: all 0.3s ease;
 }
 
@@ -119,8 +119,8 @@ body {
 .login-container {
     display: flex;
     align-items: center;
-    margin-right: 0.625rem; /* 10px */
-    height: 3.125rem; /* 50px */
+    margin-right: 10px; /* 0.625rem */
+    height: 50px; /* 3.125rem */
 }
 
 /* Login Button Styling */
@@ -128,14 +128,14 @@ body {
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Center text vertically */
     justify-content: center; /* Center text horizontally */
-    padding: 0.625rem 1.25rem; /* 10px 20px */
+    padding: 10px 20px; /* 0.625rem 1.25rem */
     background-color: #ff0000; /* Background color */
     color: #ffffff; /* Text color */
-    height: 3.125rem; /* Fixed height */
-    font-size: 1.125rem; /* 18px */
+    height: 50px; /* 3.125rem */
+    font-size: 18px; /* 1.125rem */
     font-weight: 500;
-    letter-spacing: 0.03125rem; /* 0.5px */
-    border-radius: 4.375rem; /* 70px */
+    letter-spacing: 0.5px; /* 0.03125rem */
+    border-radius: 70px; /* 4.375rem */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
     cursor: pointer; /* Pointer cursor on hover */
     text-decoration: none; /* Remove underline if it's a link */
@@ -152,8 +152,8 @@ body {
     display: flex;
     align-items: center;
     margin-left: auto; /* Adjust if needed */
-    margin-right: 0.0625rem; /* 1px */
-    height: 3.125rem; /* Set a fixed height for alignment */
+    margin-right: 1px; /* 0.0625rem */
+    height: 50px; /* Set a fixed height for alignment */
 }
 
 /* Search and Cart Button Styling */
@@ -161,8 +161,8 @@ body {
     display: flex; /* Use flexbox to center the image */
     align-items: center;
     justify-content: center; /* Center the image inside */
-    width: 3.125rem; /* 50px */
-    height: 3.125rem; /* 50px */
+    width: 50px; /* 3.125rem */
+    height: 50px; /* 3.125rem */
     background-color: #ff0000; /* Background color */
     border-radius: 50%; /* Make the button circular */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
@@ -187,9 +187,9 @@ body {
 .cart-container {
     display: flex;
     align-items: center;
-    margin-left: 0.625rem; /* 10px */
-    margin-right: 0.625rem; /* 10px */
-    height: 3.125rem; /* Set a fixed height for alignment */
+    margin-left: 10px; /* 0.625rem */
+    margin-right: 10px; /* 0.625rem */
+    height: 50px; /* Set a fixed height for alignment */
 }
 
 /* Cart Icon Styling */
@@ -209,8 +209,8 @@ body {
     display: flex;
     align-items: center;
     margin-left: auto; /* Push the profile container to the far right */
-    margin-right: -8.75rem; /* -140px */
-    height: 3.125rem; /* Set a fixed height for alignment */
+    margin-right: -350px; /* -8.75rem */
+    height: 50px; /* Set a fixed height for alignment */
 }
 
 /* Profile Icon Styling */
@@ -229,9 +229,9 @@ body {
 .menue-container {
     display: flex;
     align-items: center;
-    margin-left: -9.375rem; /* -150px */
+    margin-left: -340px; /* -9.375rem */
     margin-right: auto;
-    height: 3.125rem; /* Set a fixed height for alignment */
+    height: 50px; /* 3.125rem */
 }
 
 /* Menu Icon Styling */
@@ -250,17 +250,17 @@ body {
 .dropdown-content {
     position: absolute;
     background-color: #ff0000;
-    width: 8.75rem; /* 140px */
-    max-height: 56.25rem; /* 900px */
+    width: 140px; /* 8.75rem */
+    max-height: 900px; /* 56.25rem */
     overflow-y: auto; /* Add a scrollbar if the content exceeds the max height */
-    box-shadow: 0px 0.5rem 1rem 0 rgba(0,0,0,0.2); /* 8px 16px */
+    box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.2); /* 0.5rem 1rem */
     z-index: 1;
-    border-radius: 1.875rem; /* 30px */
-    margin-top: 62.5rem; /* 1000px */
-    margin-left: -2.5rem; /* -40px */
+    border-radius: 30px; /* 1.875rem */
+    margin-top: 1000px; /* 62.5rem */
+    margin-left: -40px; /* -2.5rem */
     opacity: 0; /* Start with invisible */
     visibility: hidden; /* Hidden by default */
-    transform: translateY(-1.25rem); /* Start slightly above */
+    transform: translateY(-20px); /* Start slightly above */
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Smooth transition for fade and slide */
 }
 
@@ -272,26 +272,25 @@ body {
 }
 
 /* Dropdown Item Styling */
-/* Dropdown Item Styling */
 .dropdown-content .dropdown-item {
     color: black;
-    padding: 1.25rem 1rem; /* 20px 16px */
+    padding: 20px 16px; /* 1.25rem 1rem */
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 0.625rem; /* 10px */
+    border-radius: 10px; /* 0.625rem */
 }
 
 .dropdown-content .dropdown-item img {
     width: 50%; /* Adjust image size as needed */
     height: auto; /* Maintain aspect ratio */
-    margin-bottom: 0.5rem; /* Space between image and text */
+    margin-bottom: 8px; /* 0.5rem */
 }
 
 .dropdown-content .dropdown-item span {
     color: #ffffff;
-    font-size: 0.875rem; /* 14px */
+    font-size: 14px; /* 0.875rem */
     text-align: center;
 }
 
@@ -300,4 +299,16 @@ body {
 }
 
 
+/* Default zoom for desktop screens */
+@media only screen and (min-width: 1024px) {
+    html {
+        zoom: 67%; /* Adjust zoom level to 67% for screens with a width of 1024px or more */
+    }
+}
 
+/* Default zoom for larger screens */
+@media only screen and (min-width: 1440px) {
+    html {
+        zoom: 100%; /* Ensure normal zoom level for larger screens */
+    }
+}

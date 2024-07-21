@@ -47,8 +47,7 @@ body {
     height: 900px; /* Height for each container */
     width: 470px; /* Width for each container */
     margin-left: 130px;
-    
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    background-color: rgb(255, 255, 255); /* Semi-transparent background */
     border-radius: 30px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
     overflow: hidden; /* Hide overflow for animation */
@@ -57,12 +56,13 @@ body {
 
 /* Slideshow */
 .slideshow {
-    position: absolute;
+    position: relative; /* Relative positioning to contain absolute positioned slides */
     width: 100%;
-    height: 100%;
+    height: 900px;
     overflow: hidden; /* Hide images that are out of view */
 }
 
+/* Individual Slides */
 .slide {
     position: absolute;
     width: 100%;
@@ -72,9 +72,18 @@ body {
     transition: opacity 1s ease-in-out; /* Fade in and out effect */
 }
 
-/* Show the first slide */
+/* Active Slide */
 .slide.active {
     opacity: 1;
+}
+
+/* Slideshow Images */
+.content-container .slideshow img {
+    width: 100%; /* Ensure the image covers the full width */
+    height: 100%; /* Ensure the image covers the full height */
+    object-fit: contain; /* Cover the container */
+    border-radius: 30px; /* Match the container's rounded corners */
+    margin-top: -40px;
 }
 
 

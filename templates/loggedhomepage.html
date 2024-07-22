@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel = "stylesheet" href="{{ url_for('static', filename='../static/css/homepage.css')}}"> 
+    <link rel = "stylesheet" href="{{ url_for('static', filename='../static/css/header.css')}}"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=IM+Fell+Great+Primer+SC&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+</head>
+<body>
+    <div class = "main">
+    <div class="background-container">
+        <img src="{{ url_for('static', filename='/images/homeplate1.png') }}" alt="" class="background-image">
+
+    </div>
+    <header>
+        {% include 'loggedheader.html' %} 
+    </header>
+
+    <div class="larger-container">
+        <div class="content-container">
+            <div class="slideshow">
+                <img src="{{ url_for('static', filename='/images/deal3.jpg') }}" alt="Image 1" class="slide">
+                <img src="{{ url_for('static', filename='/images/deal4.png') }}" class="slide">
+                <img src="{{ url_for('static', filename='/images/deal5.png') }}" alt="Image 3" class="slide">
+            </div>
+            <div class="content">
+                <h1 class="content-title">The best</h1>
+                <h1 class="content-title">Products</h1>
+                <p class="content-description">that meets your needs</p>
+                <div class="button-container">
+                    <div class="start-shopping-button">Start Shopping</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+   
+    
+    
+    <div class="circle-container">
+        <div class="circle"><img src = "{{ url_for('static', filename='/images/alraya.png') }}" alt="" class="background-image"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"><img src = "{{ url_for('static', filename='/images/kherzaman.jpg') }}" alt="" class="background-image"></div>
+        <div class="circle"><img src = "{{ url_for('static', filename='/images/seoudi.jpeg') }}" alt="" class="background-image"></div>
+        <div class="circle"><img src = "{{ url_for('static', filename='/images/walmart.png') }}" alt="" class="background-image"></div>
+        <div class="circle"><img src = "{{ url_for('static', filename='/images/Bim.png') }}" alt="" class="background-image"></div>
+    </div>
+    
+
+    
+</div>
+    
+    
+     
+    
+    
+</body>
+</html>

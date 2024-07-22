@@ -134,8 +134,8 @@ body {
     padding: 8px 16px; /* Decreased padding */
     background-color: #ff0000; /* Background color */
     color: #ffffff; /* Text color */
-    height: 40px; /* Decreased height */
-    font-size: 16px; /* Decreased font size */
+    height:40px; /* Decreased height */
+    font-size: 16%px; /* Decreased font size */
     font-weight: 500;
     letter-spacing: 0.5px; /* Kept the same */
     border-radius: 50px; /* Decreased border-radius */
@@ -440,7 +440,7 @@ body {
         padding: 8px 16px; /* Decreased padding */
         background-color: #ff0000; /* Background color */
         color: #ffffff; /* Text color */
-        height: 40px; /* Decreased height */
+        height: 50px; /* Decreased height */
         font-size: 16px; /* Decreased font size */
         font-weight: 500;
         letter-spacing: 0.5px; /* Kept the same */

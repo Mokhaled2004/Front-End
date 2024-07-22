@@ -148,6 +148,17 @@
         z-index: 1; /* Ensure the eye icon is above the input field */
     }
 
+    /* Flash Message Styling */
+    .flash-message {
+        background-color: #ffcccc;
+        color: #cc0000;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+
 }
 
 @media screen and (min-width: 1600px) {
@@ -299,6 +310,16 @@
         font-size: 20px;
         color: #555;
         z-index: 1; /* Ensure the eye icon is above the input field */
+    }
+
+    /* Flash Message Styling */
+    .flash-message {
+        background-color: #ffcccc;
+        color: #cc0000;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 10px;
     }
 
 }

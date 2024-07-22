@@ -1,4 +1,6 @@
 /* General Reset */
+
+@media screen and (min-width: 1200px) {
 * {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -30,8 +32,8 @@ body {
     display: flex;
     justify-content: space-between; /* Space out logo, menu, and login */
     align-items: center; /* Center items vertically */
-    padding: 35px; /* 2rem */
-    max-width: 1600px; /* 100rem */
+    padding: 20px; /* Decreased padding */
+    max-width: 1200px; /* Decreased max width */
     width: 100%;
     margin: 0 auto; /* Centering container horizontally */
 }
@@ -40,19 +42,19 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
-    margin-left: 60px; /* 3.75rem */
-    margin-top: -20px; /* -1.25rem */
-    margin-right: -80px; /* -5rem */
+    margin-left: 40px; /* Decreased margin */
+    margin-top: -10px; /* Decreased margin */
+    margin-right: -40px; /* Decreased margin */
 }
 
 /* Logo Styling */
 .logo {
     display: inline-block;
-    font-size: 24px; /* 1.5rem */
+    font-size: 18px; /* Decreased font size */
     font-weight: 700;
     color: #ee0c0c;
     text-transform: uppercase;
-    letter-spacing: 1px; /* 0.0625rem */
+    letter-spacing: 1px; /* Kept the same */
     font-family: 'Ga Maamli', sans-serif;
     text-align: left;
     position: relative;
@@ -67,8 +69,8 @@ body {
     display: block;
     position: absolute;
     left: 50%;
-    top: 29px; /* 1.2em */
-    font-size: 22px; /* 1.375rem */
+    top: 20px; /* Decreased top position */
+    font-size: 18px; /* Decreased font size */
     font-weight: 700;
     font-family: 'Ga Maamli', sans-serif;
     color: #ee0c0c;
@@ -98,12 +100,12 @@ body {
 
 .menu li a {
     display: inline-block;
-    padding: 10px 20px; /* 0.625rem 1.25rem */
-    margin-right: 10px; /* 0.625rem */
+    padding: 8px 16px; /* Decreased padding */
+    margin-right: 8px; /* Decreased margin */
     color: #161515;
-    font-size: 18px; /* 1.125rem */
+    font-size: 16px; /* Decreased font size */
     font-weight: 500;
-    letter-spacing: 0.5px; /* 0.03125rem */
+    letter-spacing: 0.5px; /* Kept the same */
     transition: all 0.3s ease;
 }
 
@@ -119,8 +121,8 @@ body {
 .login-container {
     display: flex;
     align-items: center;
-    margin-right: 10px; /* 0.625rem */
-    height: 50px; /* 3.125rem */
+    margin-right: 8px; /* Decreased margin */
+    height: 40px; /* Decreased height */
 }
 
 /* Login Button Styling */
@@ -128,14 +130,14 @@ body {
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Center text vertically */
     justify-content: center; /* Center text horizontally */
-    padding: 10px 20px; /* 0.625rem 1.25rem */
+    padding: 8px 16px; /* Decreased padding */
     background-color: #ff0000; /* Background color */
     color: #ffffff; /* Text color */
-    height: 50px; /* 3.125rem */
-    font-size: 18px; /* 1.125rem */
+    height: 40px; /* Decreased height */
+    font-size: 16px; /* Decreased font size */
     font-weight: 500;
-    letter-spacing: 0.5px; /* 0.03125rem */
-    border-radius: 70px; /* 4.375rem */
+    letter-spacing: 0.5px; /* Kept the same */
+    border-radius: 50px; /* Decreased border-radius */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
     cursor: pointer; /* Pointer cursor on hover */
     text-decoration: none; /* Remove underline if it's a link */
@@ -152,8 +154,8 @@ body {
     display: flex;
     align-items: center;
     margin-left: auto; /* Adjust if needed */
-    margin-right: 1px; /* 0.0625rem */
-    height: 50px; /* Set a fixed height for alignment */
+    margin-right: 0; /* Decreased margin */
+    height: 40px; /* Decreased height */
 }
 
 /* Search and Cart Button Styling */
@@ -161,8 +163,8 @@ body {
     display: flex; /* Use flexbox to center the image */
     align-items: center;
     justify-content: center; /* Center the image inside */
-    width: 50px; /* 3.125rem */
-    height: 50px; /* 3.125rem */
+    width: 40px; /* Decreased width */
+    height: 40px; /* Decreased height */
     background-color: #ff0000; /* Background color */
     border-radius: 50%; /* Make the button circular */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
@@ -178,8 +180,8 @@ body {
 
 /* Search Icon Styling */
 .search img {
-    width: 70%; /* Adjust image size as needed */
-    height: 70%; /* Adjust image size as needed */
+    width: 60%; /* Adjust image size as needed */
+    height: 60%; /* Adjust image size as needed */
     object-fit: contain; /* Scale the image to fit within the container */
 }
 
@@ -187,15 +189,15 @@ body {
 .cart-container {
     display: flex;
     align-items: center;
-    margin-left: 10px; /* 0.625rem */
-    margin-right: 10px; /* 0.625rem */
-    height: 50px; /* Set a fixed height for alignment */
+    margin-left: 8px; /* Decreased margin */
+    margin-right: 8px; /* Decreased margin */
+    height: 40px; /* Decreased height */
 }
 
 /* Cart Icon Styling */
 .cart img {
-    width: 60%; /* Adjust image size as needed */
-    height: 60%; /* Adjust image size as needed */
+    width: 50%; /* Adjust image size as needed */
+    height: 50%; /* Adjust image size as needed */
     object-fit: contain; /* Scale the image to fit within the container */
 }
 
@@ -209,14 +211,14 @@ body {
     display: flex;
     align-items: center;
     margin-left: auto; /* Push the profile container to the far right */
-    margin-right: -350px; /* -8.75rem */
-    height: 50px; /* Set a fixed height for alignment */
+    margin-right: -160px; /* Decreased margin */
+    height: 40px; /* Decreased height */
 }
 
 /* Profile Icon Styling */
 .profile img {
-    width: 80%; /* Adjust image size as needed */
-    height: 80%; /* Adjust image size as needed */
+    width: 70%; /* Adjust image size as needed */
+    height: 70%; /* Adjust image size as needed */
     object-fit: contain; /* Scale the image to fit within the container */
 }
 
@@ -229,15 +231,15 @@ body {
 .menue-container {
     display: flex;
     align-items: center;
-    margin-left: -340px; /* -9.375rem */
+    margin-left: -160px; /* Decreased margin */
     margin-right: auto;
-    height: 50px; /* 3.125rem */
+    height: 40px; /* Decreased height */
 }
 
 /* Menu Icon Styling */
 .menue img {
-    width: 60%; /* Adjust image size as needed */
-    height: 60%; /* Adjust image size as needed */
+    width: 50%; /* Adjust image size as needed */
+    height: 50%; /* Adjust image size as needed */
     object-fit: contain; /* Scale the image to fit within the container */
 }
 
@@ -250,14 +252,14 @@ body {
 .dropdown-content {
     position: absolute;
     background-color: #ff0000;
-    width: 140px; /* 8.75rem */
-    max-height: 900px; /* 56.25rem */
+    width: 90px; /* Decreased width */
+    max-height: 600px; /* Decreased max height */
     overflow-y: auto; /* Add a scrollbar if the content exceeds the max height */
-    box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.2); /* 0.5rem 1rem */
+    box-shadow: 0px 6px 12px 0 rgba(0,0,0,0.2); /* Decreased shadow */
     z-index: 1;
-    border-radius: 30px; /* 1.875rem */
-    margin-top: 1000px; /* 62.5rem */
-    margin-left: -40px; /* -2.5rem */
+    border-radius: 20px; /* Decreased border-radius */
+    margin-top: 630px; /* Decreased margin */
+    margin-left: -15px; /* Decreased margin */
     opacity: 0; /* Start with invisible */
     visibility: hidden; /* Hidden by default */
     transform: translateY(-20px); /* Start slightly above */
@@ -274,23 +276,23 @@ body {
 /* Dropdown Item Styling */
 .dropdown-content .dropdown-item {
     color: black;
-    padding: 20px 16px; /* 1.25rem 1rem */
+    padding: 12px 12px; /* Decreased padding */
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px; /* 0.625rem */
+    border-radius: 8px; /* Decreased border-radius */
 }
 
 .dropdown-content .dropdown-item img {
-    width: 50%; /* Adjust image size as needed */
+    width: 40%; /* Adjust image size as needed */
     height: auto; /* Maintain aspect ratio */
-    margin-bottom: 8px; /* 0.5rem */
+    margin-bottom: 6px; /* Decreased margin */
 }
 
 .dropdown-content .dropdown-item span {
     color: #ffffff;
-    font-size: 14px; /* 0.875rem */
+    font-size: 12px; /* Decreased font size */
     text-align: center;
 }
 
@@ -298,17 +300,311 @@ body {
     background-color: #cc0000; /* Darker background on hover */
 }
 
-
-/* Default zoom for desktop screens */
-@media only screen and (min-width: 1024px) {
-    html {
-        zoom: 67%; /* Adjust zoom level to 67% for screens with a width of 1024px or more */
-    }
 }
 
-/* Default zoom for larger screens */
-@media only screen and (min-width: 1440px) {
-    html {
-        zoom: 100%; /* Ensure normal zoom level for larger screens */
+/*----------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 1600px) {
+
+    * {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
     }
+    
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .menu .active {
+        color: #ee0c0c;
+    }
+    
+    /* Header Container */
+    .header-container {
+        display: flex;
+        justify-content: space-between; /* Space out logo, menu, and login */
+        align-items: center; /* Center items vertically */
+        padding: 20px; /* Decreased padding */
+        max-width: 1200px; /* Decreased max width */
+        width: 100%;
+        margin: 0 auto; /* Centering container horizontally */
+    }
+    
+    /* Logo Container */
+    .logo-container {
+        display: flex;
+        align-items: center;
+        margin-left: 40px; /* Decreased margin */
+        margin-top: -10px; /* Decreased margin */
+        margin-right: -40px; /* Decreased margin */
+    }
+    
+    /* Logo Styling */
+    .logo {
+        display: inline-block;
+        font-size: 22px; /* Decreased font size */
+        font-weight: 700;
+        color: #ee0c0c;
+        text-transform: uppercase;
+        letter-spacing: 1px; /* Kept the same */
+        font-family: 'Ga Maamli', sans-serif;
+        text-align: left;
+        position: relative;
+    }
+    
+    .logo .logo-market {
+        display: block;
+        font-family: 'Ga Maamli', sans-serif;
+    }
+    
+    .logo .logo-mate {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 20px; /* Decreased top position */
+        font-size: 22px; /* Decreased font size */
+        font-weight: 700;
+        font-family: 'Ga Maamli', sans-serif;
+        color: #ee0c0c;
+        transform: translateX(-50%); /* Center "Mate" relative to "Market" */
+    }
+    
+    /* Navigation Container */
+    .navigation {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+    }
+    
+    /* Menu Styling */
+    .menu {
+        display: inline-flex; /* Use inline-flex to size the menu to its content */
+        align-items: center;
+        padding: 0; /* Remove padding from the menu */
+        margin: 0;
+    }
+    
+    .menu li {
+        display: inline-block;
+        margin: 0; /* Remove margin between list items */
+    }
+    
+    .menu li a {
+        display: inline-block;
+        padding: 8px 16px; /* Decreased padding */
+        margin-right: 8px; /* Decreased margin */
+        color: #161515;
+        font-size: 16px; /* Decreased font size */
+        font-weight: 500;
+        letter-spacing: 0.5px; /* Kept the same */
+        transition: all 0.3s ease;
+    }
+    
+    .menu li a:hover {
+        color: #ff0000;
+    }
+    
+    .menu li:last-child a {
+        margin-right: 0; /* Remove margin from the last item */
+    }
+    
+    /* Login Button Container */
+    .login-container {
+        display: flex;
+        align-items: center;
+        margin-right: 8px; /* Decreased margin */
+        height: 40px; /* Decreased height */
+    }
+    
+    /* Login Button Styling */
+    .login {
+        display: flex; /* Use flexbox for alignment */
+        align-items: center; /* Center text vertically */
+        justify-content: center; /* Center text horizontally */
+        padding: 8px 16px; /* Decreased padding */
+        background-color: #ff0000; /* Background color */
+        color: #ffffff; /* Text color */
+        height: 40px; /* Decreased height */
+        font-size: 16px; /* Decreased font size */
+        font-weight: 500;
+        letter-spacing: 0.5px; /* Kept the same */
+        border-radius: 50px; /* Decreased border-radius */
+        transition: all 0.3s ease; /* Smooth transition for hover effect */
+        cursor: pointer; /* Pointer cursor on hover */
+        text-decoration: none; /* Remove underline if it's a link */
+    }
+    
+    /* Login Button Hover Effect */
+    .login:hover {
+        background-color: #cc0000; /* Darker background on hover */
+        color: #ffffff; /* Text color on hover */
+    }
+    
+    /* Search Button Container */
+    .search-container {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* Adjust if needed */
+        margin-right: 0; /* Decreased margin */
+        height: 40px; /* Decreased height */
+    }
+    
+    /* Search and Cart Button Styling */
+    .search, .cart, .profile, .menue {
+        display: flex; /* Use flexbox to center the image */
+        align-items: center;
+        justify-content: center; /* Center the image inside */
+        width: 50px; /* Decreased width */
+        height: 50px; /* Decreased height */
+        background-color: #ff0000; /* Background color */
+        border-radius: 50%; /* Make the button circular */
+        transition: all 0.3s ease; /* Smooth transition for hover effect */
+        cursor: pointer; /* Pointer cursor on hover */
+        text-decoration: none; /* Remove underline */
+        overflow: hidden; /* Ensure the image fits within the button */
+    }
+    
+    /* Search Button Hover Effect */
+    .search:hover {
+        background-color: #cc0000; /* Darker background on hover */
+    }
+    
+    /* Search Icon Styling */
+    .search img {
+        width: 60%; /* Adjust image size as needed */
+        height: 60%; /* Adjust image size as needed */
+        object-fit: contain; /* Scale the image to fit within the container */
+    }
+    
+    /* Cart Button Container */
+    .cart-container {
+        display: flex;
+        align-items: center;
+        margin-left: 8px; /* Decreased margin */
+        margin-right: 8px; /* Decreased margin */
+        height: 40px; /* Decreased height */
+    }
+    
+    /* Cart Icon Styling */
+    .cart img {
+        width: 50%; /* Adjust image size as needed */
+        height: 50%; /* Adjust image size as needed */
+        object-fit: contain; /* Scale the image to fit within the container */
+    }
+    
+    /* Cart Button Hover Effect */
+    .cart:hover {
+        background-color: #cc0000; /* Darker background on hover */
+    }
+    
+    /* Profile Button Container */
+    .profile-container {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* Push the profile container to the far right */
+        margin-right: -358px; /* Decreased margin */
+        height: 40px; /* Decreased height */
+    }
+    
+    /* Profile Icon Styling */
+    .profile img {
+        width: 70%; /* Adjust image size as needed */
+        height: 70%; /* Adjust image size as needed */
+        object-fit: contain; /* Scale the image to fit within the container */
+    }
+    
+    /* Profile Button Hover Effect */
+    .profile:hover {
+        background-color: #cc0000; /* Darker background on hover */
+    }
+    
+    /* Menu Button Container */
+    .menue-container {
+        display: flex;
+        align-items: center;
+        margin-left: -358px; /* Decreased margin */
+        margin-right: auto;
+        height: 40px; /* Decreased height */
+    }
+    
+    /* Menu Icon Styling */
+    .menue img {
+        width: 50%; /* Adjust image size as needed */
+        height: 50%; /* Adjust image size as needed */
+        object-fit: contain; /* Scale the image to fit within the container */
+    }
+    
+    /* Menu Button Hover Effect */
+    .menue:hover {
+        background-color: #cc0000; /* Darker background on hover */
+    }
+    
+    /* Dropdown Menu Styling */
+    .dropdown-content {
+        position: absolute;
+        background-color: #ff0000;
+        width: 90px; /* Decreased width */
+        max-height: 600px; /* Decreased max height */
+        overflow-y: auto; /* Add a scrollbar if the content exceeds the max height */
+        box-shadow: 0px 6px 12px 0 rgba(0,0,0,0.2); /* Decreased shadow */
+        z-index: 1;
+        border-radius: 20px; /* Decreased border-radius */
+        margin-top: 650px; /* Decreased margin */
+        margin-left: -15px; /* Decreased margin */
+        opacity: 0; /* Start with invisible */
+        visibility: hidden; /* Hidden by default */
+        transform: translateY(-20px); /* Start slightly above */
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Smooth transition for fade and slide */
+    }
+    
+    /* Show Dropdown with Animation */
+    .show-dropdown {
+        opacity: 1; /* Fully visible */
+        visibility: visible; /* Make visible */
+        transform: translateY(0); /* Move to its original position */
+    }
+    
+    /* Dropdown Item Styling */
+    .dropdown-content .dropdown-item {
+        color: black;
+        padding: 12px 12px; /* Decreased padding */
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px; /* Decreased border-radius */
+    }
+    
+    .dropdown-content .dropdown-item img {
+        width: 40%; /* Adjust image size as needed */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 6px; /* Decreased margin */
+    }
+    
+    .dropdown-content .dropdown-item span {
+        color: #ffffff;
+        font-size: 12px; /* Decreased font size */
+        text-align: center;
+    }
+    
+    .dropdown-content .dropdown-item:hover {
+        background-color: #cc0000; /* Darker background on hover */
+    }
+
+
+
 }

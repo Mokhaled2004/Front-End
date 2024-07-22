@@ -1,3 +1,5 @@
+@media screen and (min-width: 1200px) {
+
 html, body {
     height: 100%; /* Ensure HTML and BODY take full height */
 }
@@ -7,7 +9,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100vh;
-    overflow-y: auto;  /* Prevent horizontal scroll caused by fixed image */
+    overflow-y: auto; /* Prevent horizontal scroll caused by fixed image */
 }
 
 /* Background Image Container */
@@ -35,11 +37,11 @@ body {
     display: flex;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-    width: 1000px; /* Width of the parent */
-    height: 1000px; /* Height of the parent */
-    margin-top: -26px;
-    margin-left: -180px;
-    padding: 20px 20px; /* Padding inside the container */
+    width: 670px; /* 1000px * 0.67 */
+    height: 670px; /* 1000px * 0.67 */
+    margin-top: -17px; /* -26px * 0.67 */
+    margin-left: -120px; /* -180px * 0.67 */
+    padding: 13.4px 13.4px; /* 20px * 0.67 */
     box-sizing: border-box; /* Include padding in the width calculation */
     position: relative; /* Position relative for absolute positioning of slideshow images */
 }
@@ -48,12 +50,12 @@ body {
 .content-container {
     display: flex;
     flex-direction: column; /* Stack content vertically */
-    height: 900px; /* Height for each container */
-    width: 470px; /* Width for each container */
-    margin-left: 130px;
+    height: 603px; /* 900px * 0.67 */
+    width: 315px; /* 470px * 0.67 */
+    margin-left: 87px; /* 130px * 0.67 */
     background-color: rgb(255, 255, 255); /* Semi-transparent background */
-    border-radius: 30px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    border-radius: 20px; /* 30px * 0.67 */
+    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0.2); /* 0 4px 8px * 0.67 */
     overflow: hidden; /* Hide overflow for animation */
     position: relative; /* Ensure images are positioned relative to this container */
 }
@@ -62,7 +64,7 @@ body {
 .slideshow {
     position: relative; /* Relative positioning to contain absolute positioned slides */
     width: 100%;
-    height: 700px;
+    height: 469px; /* 700px * 0.67 */
     overflow: hidden; /* Hide images that are out of view */
 }
 
@@ -86,42 +88,40 @@ body {
     width: 100%; /* Ensure the image covers the full width */
     height: 100%; /* Ensure the image covers the full height */
     object-fit: contain; /* Cover the container */
-    border-radius: 30px; /* Match the container's rounded corners */
-    margin-top: -40px;
+    border-radius: 20px; /* 30px * 0.67 */
+    margin-top: -27px; /* -40px * 0.67 */
 }
-
 
 /* Content Styling */
 .content {
     max-width: 100%; /* Full width of the content area */
-    padding: 20px; /* Padding inside the content area */
+    padding: 13.4px; /* 20px * 0.67 */
     position: relative; /* Position relative for absolute positioning of the button */
 }
 
 /* Title Styling */
 .content-title {
-    font-size: 36px; /* Font size for the title */
+    font-size: 24px; /* 36px * 0.67 */
     font-family: "IM Fell French Canon SC", serif;
     font-weight: 400;
     color: #333333; /* Dark text color */
     margin: 0; /* Remove default margins */
-    
     line-height: 1.2; /* Line height for readability */
 }
 
 /* Description Styling */
 .content-description {
-    font-size: 22px; /* Font size for the description */
+    font-size: 14px; /* 22px * 0.67 */
     color: #555555; /* Lighter text color */
-    margin-top: 10px; /* Space above the description */
+    margin-top: 7px; /* 10px * 0.67 */
     line-height: 1.6; /* Line height for readability */
 }
 
 /* Container for the circle arrangement */
 .circle-container {
     position: absolute; /* Absolute positioning */
-    width: 1000px; /* Width of the container */
-    height: 1000px; /* Height of the container */
+    width: 670px; /* 1000px * 0.67 */
+    height: 670px; /* 1000px * 0.67 */
     overflow: hidden;
     background-color: #ffffff00; /* Temporary background to see the container */
     border-radius: 50%; /* Make the container circular */
@@ -133,14 +133,13 @@ body {
 /* Circle Styling */
 .circle {
     position: absolute;
-    width: 100px; /* Set circle width */
-    height: 100px; /* Set circle height */
-    border: #333333 solid 2px; /* Border for the circle */
+    width: 67px; /* 100px * 0.67 */
+    height: 67px; /* 100px * 0.67 */
+    border: #333333 solid 1px; /* 2px * 0.67 */
     border-radius: 50%; /* Make it circular */
     background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0.2); /* 0 4px 8px * 0.67 */
     overflow: hidden; /* Ensure the image doesn't spill out of the circle */
-    
 }
 
 /* Make images fit and cover the circle */
@@ -155,67 +154,67 @@ body {
 .circle:nth-child(1) {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg) translateY(-420px) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-281px) rotate(0deg); /* -420px * 0.67 */
 }
 
 .circle:nth-child(2) {
     top: 50%;
     left: 50%;
     background-color: #fffbfb00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0); /* 0 4px 8px * 0.67 */
     border-style: none;
-    transform: translate(-50%, -50%) rotate(40deg) translateY(-420px) rotate(-40deg);
+    transform: translate(-50%, -50%) rotate(40deg) translateY(-281px) rotate(-40deg); /* -420px * 0.67 */
 }
 
 .circle:nth-child(3) {
     top: 50%;
     left: 50%;
     background-color: #fffbfb00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0); /* 0 4px 8px * 0.67 */
     border-style: none;
-    transform: translate(-50%, -50%) rotate(80deg) translateY(-420px) rotate(-80deg);
+    transform: translate(-50%, -50%) rotate(80deg) translateY(-281px) rotate(-80deg); /* -420px * 0.67 */
 }
 
 .circle:nth-child(4) {
     top: 50%;
     left: 50%;
     background-color: #fffbfb00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0); /* 0 4px 8px * 0.67 */
     border-style: none;
-    transform: translate(-50%, -50%) rotate(120deg) translateY(-420px) rotate(-120deg);
+    transform: translate(-50%, -50%) rotate(120deg) translateY(-281px) rotate(-120deg); /* -420px * 0.67 */
 }
 
 .circle:nth-child(5) {
     top: 50%;
     left: 50%;
     background-color: #fffbfb00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0); /* 0 4px 8px * 0.67 */
     border-style: none;
-    transform: translate(-50%, -50%) rotate(160deg) translateY(-420px) rotate(-160deg);
+    transform: translate(-50%, -50%) rotate(160deg) translateY(-281px) rotate(-160deg); /* -420px * 0.67 */
 }
 
 .circle:nth-child(6) {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(200deg) translateY(-420px) rotate(-200deg);
+    transform: translate(-50%, -50%) rotate(200deg) translateY(-281px) rotate(-200deg); /* -420px * 0.67 */
 }
 
 .circle:nth-child(7) {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(240deg) translateY(-420px) rotate(-240deg);
+    transform: translate(-50%, -50%) rotate(240deg) translateY(-281px) rotate(-240deg); /* -420px * 0.67 */
 }
 
 .circle:nth-child(8) {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(280deg) translateY(-420px) rotate(-280deg);
+    transform: translate(-50%, -50%) rotate(280deg) translateY(-281px) rotate(-280deg); /* -420px * 0.67 */
 }
 
 .circle:nth-child(9) {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(320deg) translateY(-420px) rotate(-320deg);
+    transform: translate(-50%, -50%) rotate(320deg) translateY(-281px) rotate(-320deg); /* -420px * 0.67 */
 }
 
 /* Button Container */
@@ -226,22 +225,24 @@ body {
     right: 0; /* Stretch to the right side */
     text-align: center; /* Center the button inside the container */
     border-radius: 50%;
-    padding-bottom: 80px; /* Space below the button */
-    padding-left: 175px;
+    padding-bottom: 54px; /* 80px * 0.67 */
+    padding-left: 117px; /* 175px * 0.67 */
 }
 
 /* Start Shopping Button */
 .start-shopping-button {
     display: inline-block;
-    padding: 15px 30px; /* Padding inside the button */
+    padding: 10px 20px; /* 15px 30px * 0.67 */
     background-color: #ff0000; /* Button background color */
     color: #ffffff; /* Button text color */
-    font-size: 18px; /* Font size */
+    font-size: 12px; /* 18px * 0.67 */
     font-weight: 600; /* Font weight */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 50px; /* 8px * 0.67 */
     cursor: pointer; /* Pointer cursor on hover */
+    align-content: center;
+
     text-align: center; /* Center text */
-    height: 50px;
+    height: 34px; /* 50px * 0.67 */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
@@ -255,16 +256,16 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px; /* 20px * 1 */
     background-color: #333;
     color: #fff;
-    margin-top: 20px; /* Space above footer */
+    margin-top: 20px; /* 20px * 1 */
     border-top: 1px solid #444;
 }
 
 .footer-section {
     flex: 1;
-    margin: 0 10px; /* Space between sections */
+    margin: 0 10px; /* 10px * 1 */
 }
 
 .footer-section h2 {
@@ -273,4 +274,274 @@ footer {
 
 .footer-section p {
     margin: 0; /* Remove margins */
+}
+
+}
+
+ /* ------------------------------------------------------------------------------------------------ */
+
+
+@media screen and (min-width: 1600px) {
+    .main {
+        flex: 1;
+    }
+    
+    html, body {
+        height: 100%; /* Ensure HTML and BODY take full height */
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto; /* Prevent horizontal scroll caused by fixed image */
+    }
+    
+    /* Background Image Container */
+    .background-container {
+        position: fixed;
+        top: 0;
+        right: 0; /* Position to the right side */
+        width: 100%; /* Adjust width as needed, e.g., 50% of the viewport */
+        height: 100%;
+        overflow: hidden;
+        z-index: -1; /* Ensure the image is behind other content */
+    }
+    
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover the container */
+        position: absolute;
+        top: 0;
+        right: 0; /* Align image to the right side */
+    }
+    
+    /* Larger Container */
+    .larger-container {
+        display: flex;
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        width: 670px; /* 1000px * 0.67 */
+        height: 670px; /* 1000px * 0.67 */
+        margin-top: -17px; /* -26px * 0.67 */
+        margin-left: -120px; /* -180px * 0.67 */
+        padding: 13.4px 13.4px; /* 20px * 0.67 */
+        box-sizing: border-box; /* Include padding in the width calculation */
+        position: relative; /* Position relative for absolute positioning of slideshow images */
+    }
+    
+    .content-container {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        height: 760px; /* Adjust as needed */
+        width: 475px;
+        margin-left: 87px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative;
+        margin-top: 180px;
+        margin-left: 210px;
+        padding-bottom: 80px; /* Add padding to ensure space for the title and button */
+        box-sizing: border-box; /* Include padding in the height calculation */
+    }
+    
+    .slideshow {
+        position: relative;
+        width: 100%;
+        height: 600px; /* Increase height as needed */
+        overflow: hidden;
+    }
+    
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    
+    .slide.active {
+        opacity: 1;
+    }
+    
+    .content-container .slideshow img {
+        width: 100%;
+        height: 100%; /* Ensure the image covers the full height */
+        object-fit: cover;
+        border-radius: 20px;
+        margin-top: 0;
+    }
+    
+    .content {
+        max-width: 100%;
+        padding: 0 20px; /* Add horizontal padding */
+        position: absolute;
+        bottom: 80px; /* Adjust to fit the space available */
+        width: calc(100% - 40px); /* Adjust to account for horizontal padding */
+    }
+    
+    .content-title {
+        font-size: 28px;
+        font-family: "IM Fell French Canon SC", serif;
+        font-weight: 500;
+        color: #333333;
+        padding-top: 0;
+        margin-left:6px ; /* Reset margins */
+        line-height: 1.2;
+    }
+    
+    .content-description {
+        font-size: 14px;
+        color: #555555;
+        margin-top: 9px;
+        margin-bottom: -40px;
+        line-height: 1.6;
+    }
+    
+    
+  /* Container for the circle arrangement */
+.circle-container {
+    position: absolute; /* Absolute positioning */
+    width: 800px; /* Reduced width of the container */
+    height: 800px; /* Reduced height of the container */
+    overflow: hidden;
+    background-color: #ffffff00; /* Temporary background to see the container */
+    border-radius: 50%; /* Make the container circular */
+    top: 50%; /* Center vertically */
+    left: 71%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the container */
+}
+
+/* Circle Styling */
+.circle {
+    position: absolute;
+    width: 80px; /* Reduced width for circles */
+    height: 80px; /* Reduced height for circles */
+    border: #333333 solid 2px; /* Border for the circle */
+    border-radius: 50%; /* Make it circular */
+    background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    overflow: hidden; /* Ensure the image doesn't spill out of the circle */
+}
+
+/* Make images fit and cover the circle */
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire circle */
+    display: block; /* Remove any gaps below the image */
+}
+
+/* Position circles around the center */
+.circle:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-350px) rotate(0deg); /* Adjusted translateY */
+}
+
+.circle:nth-child(2) {
+    top: 50%;
+    left: 50%;
+    background-color: #fffbfb00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    border-style: none;
+    transform: translate(-50%, -50%) rotate(40deg) translateY(-350px) rotate(-40deg); /* Adjusted translateY */
+}
+
+.circle:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    background-color: #fffbfb00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    border-style: none;
+    transform: translate(-50%, -50%) rotate(80deg) translateY(-350px) rotate(-80deg); /* Adjusted translateY */
+}
+
+.circle:nth-child(4) {
+    top: 50%;
+    left: 50%;
+    background-color: #fffbfb00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    border-style: none;
+    transform: translate(-50%, -50%) rotate(120deg) translateY(-350px) rotate(-120deg); /* Adjusted translateY */
+}
+
+.circle:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    background-color: #fffbfb00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
+    border-style: none;
+    transform: translate(-50%, -50%) rotate(160deg) translateY(-350px) rotate(-160deg); /* Adjusted translateY */
+}
+
+.circle:nth-child(6) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(200deg) translateY(-350px) rotate(-200deg); /* Adjusted translateY */
+}
+
+.circle:nth-child(7) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(240deg) translateY(-350px) rotate(-240deg); /* Adjusted translateY */
+}
+
+.circle:nth-child(8) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(280deg) translateY(-350px) rotate(-280deg); /* Adjusted translateY */
+}
+
+.circle:nth-child(9) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(320deg) translateY(-350px) rotate(-320deg); /* Adjusted translateY */
+}
+
+
+    
+    /* Button Container */
+    .button-container {
+        position: absolute; /* Absolute positioning for precise control */
+        bottom: 0; /* Align at the bottom of the content container */
+        left: 0; /* Align to the left side */
+        right: 0; /* Stretch to the right side */
+        text-align: center; /* Center the button inside the container */
+        border-radius: 50%;
+        padding-left: 117px; /* 175px * 0.67 */
+        margin-bottom: -50px;
+        width: 100%; /* Full width of the parent container */
+        max-width: 550px; /* Adjust to match the width of the content container */
+    }
+    
+    /* Start Shopping Button */
+    .start-shopping-button {
+        display: inline-block;
+        padding: 10px 20px; /* 15px 30px * 0.67 */
+        background-color: #ff0000; /* Button background color */
+        color: #ffffff; /* Button text color */
+        font-size: 16px; /* 18px * 0.67 */
+        font-weight: 600; /* Font weight */
+        border-radius: 50px; /* 8px * 0.67 */
+        cursor: pointer; /* Pointer cursor on hover */
+        align-content: center;
+        text-align: center; /* Center text */
+        height: 44px; /* 50px * 0.67 */
+        width: 70%; /* Full width of the button */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+    }
+    
+    .start-shopping-button:hover {
+        background-color: #cc0000; /* Darker background on hover */
+        transform: scale(1.05); /* Slightly enlarge button on hover */
+    }
+    
+    
+    
 }

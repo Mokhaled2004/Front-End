@@ -52,7 +52,7 @@ body {
     display: inline-block;
     font-size: 18px; /* Decreased font size */
     font-weight: 700;
-    color: #ee0c0c;
+    color: #161515;
     text-transform: uppercase;
     letter-spacing: 1px; /* Kept the same */
     font-family: 'Ga Maamli', sans-serif;
@@ -63,6 +63,7 @@ body {
 .logo .logo-market {
     display: block;
     font-family: 'Ga Maamli', sans-serif;
+    color: #161515;
 }
 
 .logo .logo-mate {
@@ -73,7 +74,7 @@ body {
     font-size: 18px; /* Decreased font size */
     font-weight: 700;
     font-family: 'Ga Maamli', sans-serif;
-    color: #ee0c0c;
+    color: #161515;
     transform: translateX(-50%); /* Center "Mate" relative to "Market" */
 }
 
@@ -357,7 +358,7 @@ body {
         display: inline-block;
         font-size: 22px; /* Decreased font size */
         font-weight: 700;
-        color: #ee0c0c;
+        color: 8#161515;
         text-transform: uppercase;
         letter-spacing: 1px; /* Kept the same */
         font-family: 'Ga Maamli', sans-serif;
@@ -368,6 +369,7 @@ body {
     .logo .logo-market {
         display: block;
         font-family: 'Ga Maamli', sans-serif;
+        color: #161515;
     }
     
     .logo .logo-mate {
@@ -378,7 +380,7 @@ body {
         font-size: 22px; /* Decreased font size */
         font-weight: 700;
         font-family: 'Ga Maamli', sans-serif;
-        color: #ee0c0c;
+        color: #161515;
         transform: translateX(-50%); /* Center "Mate" relative to "Market" */
     }
     
@@ -605,6 +607,5 @@ body {
         background-color: #cc0000; /* Darker background on hover */
     }
 
-
-
 }
+

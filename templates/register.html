@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/register.css') }}">
     <script src='main.js'></script>
     <!-- Include FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -21,9 +21,17 @@
 
     <div class="center-container">
         <form class="login-form">
-            <h2 class="form-title">Welcome Back</h2>
+            <h2 class="form-title">Welcome To MarketMate</h2>
+
+            <input type="text" id="name" name="firstname" placeholder="First Name" class="input-field" required>
+            <input type="text" id="name" name="lastname" placeholder="Last Name" class="input-field" required>
+
             
-            <input type="email" id="email" name="email" placeholder="Email" class="input-field" required>
+            <input type="email" id="name" name="email" placeholder="Email" class="input-field" required>
+            <input type="text" id="role" name="role" placeholder="Role" class="input-field" required>
+            <input type="text" id="address" name="address" placeholder="Address" class="input-field" required>
+            <input type="number" id="phone" name="phone" placeholder="Phone" class="input-field" required>
+
             
             <div class="password-container">
                 <input type="password" id="password" name="password" placeholder="Password" class="input-field" required>
@@ -33,7 +41,7 @@
             </div>
             
             <button type="submit" class="login-button">Login</button>
-            <a  href="{{ url_for('register') }}" class="create-account">Create Account!</a>
+            <a href="{{ url_for('login') }}" class="create-account">Already Have Account!</a>
 
         </form>
     </div>

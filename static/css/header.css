@@ -526,7 +526,7 @@ body {
         display: flex;
         align-items: center;
         margin-left: auto; /* Push the profile container to the far right */
-        margin-right: -358px; /* Decreased margin */
+        margin-right: -340px; /* Decreased margin */
         height: 40px; /* Decreased height */
     }
     
@@ -546,7 +546,7 @@ body {
     .menue-container {
         display: flex;
         align-items: center;
-        margin-left: -358px; /* Decreased margin */
+        margin-left: -340px; /* Decreased margin */
         margin-right: auto;
         height: 40px; /* Decreased height */
     }
@@ -567,14 +567,15 @@ body {
     .dropdown-content {
         position: absolute;
         background-color: #ff0000;
-        width: 90px; /* Decreased width */
+        width: 120px; /* Decreased width */
         max-height: 600px; /* Decreased max height */
         overflow-y: auto; /* Add a scrollbar if the content exceeds the max height */
         box-shadow: 0px 6px 12px 0 rgba(0,0,0,0.2); /* Decreased shadow */
         z-index: 1;
         border-radius: 20px; /* Decreased border-radius */
-        margin-top: 650px; /* Decreased margin */
-        margin-left: -15px; /* Decreased margin */
+        margin-top: 720px; /* Decreased margin */
+        margin-left: -27px; /* Decreased margin */
+        
         opacity: 0; /* Start with invisible */
         visibility: hidden; /* Hidden by default */
         transform: translateY(-20px); /* Start slightly above */

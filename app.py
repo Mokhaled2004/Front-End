@@ -1,8 +1,10 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
 import hashlib
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -11,6 +13,8 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'marketmate2'
+app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'logos')
+
 
 mysql = MySQL(app)
 
@@ -31,6 +35,82 @@ def logged():
 @app.route('/header')
 def header():
     return render_template('header.html')
+
+@app.route('/store')
+def store():
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM stores')
+    stores = cursor.fetchall()  # Fetch all store records
+
+    return render_template('store.html', stores=stores)  # Pass stores data to the template
+
+
+
+@app.route('/addstore', methods=['GET', 'POST'])
+def addstore():
+    if 'loggedin' in session:  # Ensure the user is logged in
+        if request.method == 'POST':
+            # Get form data
+            storename = request.form.get('storename')
+            address = request.form.get('address')
+            category = request.form.get('category')
+            fees = request.form.get('fees')
+            logo = request.files.get('logo')  # Get uploaded image file
+            user_id = session.get('id')  # Get logged-in user ID
+
+            
+
+            # Check if a file is uploaded
+            if logo and logo.filename:
+                # Sanitize the filename
+                logo_filename = secure_filename(logo.filename)
+                # Create the full path where the file will be saved
+                logo_path = os.path.join(app.config['UPLOAD_FOLDER'], logo_filename)
+                print(f"Saving file to: {logo_path}")
+
+                try:
+                    # Save the file to the static/logos directory
+                    logo.save(logo_path)
+                    # Store only the filename in the database
+                    logo_filename_only = logo_filename
+                except Exception as e:
+                    print(f"Error saving file: {e}")
+                    flash('Failed to save the logo. Please try again.')
+                    return redirect(url_for('addstore'))
+            else:
+                logo_filename_only = ''  # Default to empty if no file is provided
+
+            # Validation checks
+            if not storename or not address or not category or not logo_filename_only:
+                flash('Please fill out all fields!')
+            elif not re.match(r'^[A-Za-z0-9\s]+$', storename):
+                flash('Store name must contain only letters, numbers, and spaces!')
+            
+            
+            elif float(fees) < 0:
+                flash('Delivery fees must be a non-negative number!')
+            else:
+                try:
+                    # Insert store into database
+                    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+                    cursor.execute(
+                        '''
+                        INSERT INTO stores (name, address, deliveryfees,  category, logo, user_id)
+                        VALUES (%s, %s, %s, %s, %s, %s)
+                        ''',
+                        (storename, address, fees, category, logo_filename_only, user_id)
+                    )
+                    mysql.connection.commit()
+                    flash('Store created successfully!')
+                    return redirect(url_for('store'))  # Redirect to the store list page
+                except MySQLdb.Error as e:
+                    flash('Failed to create store. Please try again.')
+                    print(f"Database error: {e}")
+        return render_template('addstore.html')
+    else:
+        flash('Please log in to create a store!')
+        return redirect(url_for('login'))
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

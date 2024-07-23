@@ -1,0 +1,296 @@
+@media screen and (min-width: 1200px) {
+
+    html, body {
+        height: 100%; /* Ensure HTML and BODY take full height */
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto; /* Prevent horizontal scroll caused by fixed image */
+    }
+    
+    /* Background Image Container */
+    .background-container {
+        position: fixed;
+        top: 0;
+        right: 0; /* Position to the right side */
+        width: 100%; /* Adjust width as needed, e.g., 50% of the viewport */
+        height: 100%;
+        overflow: hidden;
+        z-index: -1; /* Ensure the image is behind other content */
+    }
+    
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover the container */
+        position: absolute;
+        top: 0;
+        right: 0; /* Align image to the right side */
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Space between small containers */
+    }
+    
+    .small-container {
+        flex: 0 0 300px; /* Fixed width of 300px */
+        box-sizing: border-box;
+        border: 2px solid #ccc; /* Optional border */
+        border-radius: 50px; /* Optional rounded corners */
+        overflow: hidden;
+        display: flex;
+        margin-left: 100px;
+        margin-right: -100px;
+        background-color: #ffffff;
+        flex-direction: column;
+        border: #cc0000 2px solid;
+        height: 450px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
+        transition: transform 0.3s ease; /* Smooth transition for scaling */
+        
+        justify-content: space-between; /* Space content evenly */
+        padding: 20px 0;
+    }
+
+    .small-container:hover {
+        transform: scale(1.05); /* Scale up the container slightly on hover */
+    }
+
+    /* New styles for circular image container */
+    .image-container {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f9; /* Background color for the container */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Box shadow for the image container */
+        margin-bottom: 10px;
+        margin-left: 70px;
+    }
+
+    .store-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+    }
+    
+    .small-container .text {
+        padding: 3px;
+        margin-top: 1px;
+        margin-left: 10px;
+        
+    }
+
+    .small-container .text .title {
+        text-align: center;
+    }
+
+    .link-container {
+        display: flex;
+        justify-content: center; /* Center align the button */
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .visit-link {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #ff0000; /* Background color */
+        color: #ffffff; /* Text color */
+        text-align: center;
+        text-decoration: none; /* Remove underline */
+        border-radius: 50px; /* Rounded corners */
+        font-weight: 500;
+        margin: 10px 0;
+        width: 100px;
+        margin-left: 15px;
+        margin-bottom: -4px;
+        text-align: center;
+        align-content: center;
+        font-size: 12px;
+        transition: background-color 0.3s ease; /* Smooth transition on hover */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
+
+    }
+
+    .visit-link:hover {
+        background-color: #cc0000; /* Darker shade on hover */
+    }
+
+    .pagetitle {
+        font-size: 25px;
+        font-weight: 700;
+        font-family: 'Ga Maamli', sans-serif;
+        text-align: center;
+    }
+
+}
+        
+
+
+
+
+
+
+
+@media screen and (min-width: 1600px) {
+    .main {
+        flex: 1;
+    }
+    
+    html, body {
+        height: 100%; /* Ensure HTML and BODY take full height */
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto; /* Prevent horizontal scroll caused by fixed image */
+    }
+    
+    /* Background Image Container */
+    .background-container {
+        position: fixed;
+        top: 0;
+        right: 0; /* Position to the right side */
+        width: 100%; /* Adjust width as needed, e.g., 50% of the viewport */
+        height: 100%;
+        overflow: hidden;
+        z-index: -1; /* Ensure the image is behind other content */
+    }
+    
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover the container */
+        position: absolute;
+        top: 0;
+        right: 0; /* Align image to the right side */
+    }
+
+    .container {
+        width: 100%;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+    
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Space between small containers */
+    }
+    
+    .small-container {
+        flex: 0 0 300px; /* Fixed width of 300px */
+        box-sizing: border-box;
+        border: 2px solid #ccc; /* Optional border */
+        border-radius: 50px; /* Optional rounded corners */
+        overflow: hidden;
+        display: flex;
+        margin-left: 170px;
+        margin-right: -100px;
+        background-color: #ffffff;
+        flex-direction: column;
+        border: #cc0000 2px solid;
+        height: 450px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
+        transition: transform 0.3s ease; /* Smooth transition for scaling */
+        
+        justify-content: space-between; /* Space content evenly */
+        padding: 20px 0;
+    }
+
+    .small-container:hover {
+        transform: scale(1.05); /* Scale up the container slightly on hover */
+    }
+
+    /* New styles for circular image container */
+    .image-container {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f9; /* Background color for the container */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Box shadow for the image container */
+        margin-bottom: 10px;
+        margin-left: 70px;
+    }
+
+    .store-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+    }
+    
+    .small-container .text {
+        padding: 3px;
+        margin-top: 1px;
+        margin-left: 10px;
+        
+    }
+
+    .small-container .text .title {
+        text-align: center;
+    }
+
+    .link-container {
+        display: flex;
+        justify-content: center; /* Center align the button */
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .visit-link {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #ff0000; /* Background color */
+        color: #ffffff; /* Text color */
+        text-align: center;
+        text-decoration: none; /* Remove underline */
+        border-radius: 50px; /* Rounded corners */
+        font-weight: 500;
+        margin: 10px 0;
+        width: 130px;
+        height: 50px;
+        margin-left: 15px;
+        margin-bottom: -4px;
+        text-align: center;
+        align-content: center;
+        font-size: 18px;
+        transition: background-color 0.3s ease; /* Smooth transition on hover */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
+
+    }
+
+    .visit-link:hover {
+        background-color: #cc0000; /* Darker shade on hover */
+    }
+
+    .pagetitle {
+        font-size: 30px;
+        font-weight: 700;
+        font-family: 'Ga Maamli', sans-serif;
+        text-align: center;
+    }
+
+}

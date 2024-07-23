@@ -344,7 +344,7 @@ footer {
         overflow: hidden;
         position: relative;
         margin-top: 180px;
-        margin-left: 210px;
+        margin-left: 260px;
         padding-bottom: 80px; /* Add padding to ensure space for the title and button */
         box-sizing: border-box; /* Include padding in the height calculation */
     }
@@ -514,8 +514,8 @@ footer {
         right: 0; /* Stretch to the right side */
         text-align: center; /* Center the button inside the container */
         border-radius: 50%;
-        padding-left: 117px; /* 175px * 0.67 */
-        margin-bottom: -50px;
+        padding-left: 150px; /* 175px * 0.67 */
+        margin-bottom: -60px;
         width: 100%; /* Full width of the parent container */
         max-width: 550px; /* Adjust to match the width of the content container */
     }
@@ -526,14 +526,14 @@ footer {
         padding: 10px 20px; /* 15px 30px * 0.67 */
         background-color: #ff0000; /* Button background color */
         color: #ffffff; /* Button text color */
-        font-size: 16px; /* 18px * 0.67 */
+        font-size: 14px; /* 18px * 0.67 */
         font-weight: 600; /* Font weight */
         border-radius: 50px; /* 8px * 0.67 */
         cursor: pointer; /* Pointer cursor on hover */
         align-content: center;
         text-align: center; /* Center text */
         height: 44px; /* 50px * 0.67 */
-        width: 70%; /* Full width of the button */
+        width: 90%; /* Full width of the button */
         transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
     }
     

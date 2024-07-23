@@ -19,35 +19,36 @@
                 <img src="{{ url_for('static', filename='/images/list.png') }}" alt="Menu">
             </a>
             <div class="dropdown-content">
-                <div class="dropdown-item">
-                    <img src="{{ url_for('static', filename='/images/store.png') }}" alt="Item 1">
+                <a class="dropdown-item" href="{{ url_for('store') }}">
+                    <img src="{{ url_for('static', filename='/images/store.png') }}" alt="Stores">
                     <span>Stores</span>
-                </div>
-                <div class="dropdown-item">
-                    <img src="{{ url_for('static', filename='/images/category1.png') }}" alt="Item 2">
+                </a>
+                <a class="dropdown-item" >
+                    <img src="{{ url_for('static', filename='/images/category1.png') }}" alt="Categories">
                     <span>Categories</span>
-                </div>
-                <div class="dropdown-item">
-                    <img src="{{ url_for('static', filename='/images/offer.png') }}" alt="Item 2">
+                </a>
+                <a class="dropdown-item" >
+                    <img src="{{ url_for('static', filename='/images/offer.png') }}" alt="Offers">
                     <span>Offers</span>
-                </div>
-                <div class="dropdown-item">
-                    <img src="{{ url_for('static', filename='/images/track.png') }}" alt="Item 2">
+                </a>
+                <a class="dropdown-item" >
+                    <img src="{{ url_for('static', filename='/images/track.png') }}" alt="Track Your Order">
                     <span>Track Your Order</span>
-                </div>
-                <div class="dropdown-item">
-                    <img src="{{ url_for('static', filename='/images/stats.png') }}" alt="Item 2">
+                </a>
+                <a class="dropdown-item" >
+                    <img src="{{ url_for('static', filename='/images/stats.png') }}" alt="Compare Stores">
                     <span>Compare Stores</span>
-                </div>
-                <div class="dropdown-item">
-                    <img src="{{ url_for('static', filename='/images/history.png') }}" alt="Item 3">
+                </a>
+                <a class="dropdown-item" >
+                    <img src="{{ url_for('static', filename='/images/history.png') }}" alt="History">
                     <span>History</span>
-                </div>
-                <div class="dropdown-item">
-                    <img src="{{ url_for('static', filename='/images/add.png') }}" alt="Item 3">
+                </a>
+                <a class="dropdown-item" href="{{ url_for('addstore') }}" >
+                    <img src="{{ url_for('static', filename='/images/add.png') }}" alt="Add Your Store">
                     <span>Add Your Store</span>
-                </div>
+                </a>
             </div>
+            
         </div>
 
 

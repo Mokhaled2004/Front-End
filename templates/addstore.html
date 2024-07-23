@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Create Store</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/addstore.css') }}"> 
+    <script src="{{ url_for('static', filename='js/addstore.js') }}"></script>
+</head>
+<body>
+
+    <div class="background-container">
+        <img src="{{ url_for('static', filename='images/homeplate1.png') }}" alt="" class="background-image">
+    </div>
+
+    <header>
+        {% include 'loggedheader.html' %}
+    </header>
+
+    <div class="center-container">
+        <form method="post" action="{{ url_for('addstore') }}" enctype="multipart/form-data">
+            <h2 class="form-title">Create your own store</h2>
+        
+            <input type="text" id="storename" name="storename" placeholder="Store Name" class="input-field" required>
+            <input type="text" id="address" name="address" placeholder="Store Address" class="input-field" required>
+            <input type="text" id="category" name="category" placeholder="Store Category" class="input-field" required>
+            <input type="number" id="fees" name="fees" placeholder="Delivery Fees" class="input-field" min="0" required>
+            <input type="file" id="logo" name="logo" placeholder="150 X 150 LOGO"class="input-field" required>
+        
+            <button type="submit" class="login-button">Create Store</button>
+        </form>
+        
+    </div>
+
+</body>
+</html>

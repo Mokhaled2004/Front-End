@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Store List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="{{ url_for('static', filename='js/store.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/store.css') }}">
+</head>
+
+<body>
+    <div class="background-container">
+        <img src="{{ url_for('static', filename='images/homeplate1.png') }}" alt="" class="background-image">
+    </div>
+
+    <header>
+        {% include 'loggedheader.html' %}
+    </header>
+
+    <div>
+        <h2 class="pagetitle">Stores</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for store in stores %}
+            <div class="small-container">
+                <div class="image-container">
+                    <!-- Assuming logo is a URL or path to the image -->
+                    <img src="{{ url_for('static', filename='logos/' + store['logo']) }}" alt="{{ store['name'] }}" class="store-logo">
+                </div>
+                <div class="text">
+                    <p class="title"> <b>{{ store['name'] }}</b></p>
+                </div>
+                <div class="text">
+                    <p><b>Address:</b> {{ store['address'] }}</p>
+                </div>
+                <div class="text">
+                    <p><b>Delivery Fees:</b> ${{ store['deliveryfees'] }}</p>
+                </div>
+                <div class="text">
+                    <p><b>Rating:</b> {{ store['rating'] }}</p>
+                </div>
+                <div class="text">
+                    <p><b>Category:</b> {{ store['category'] }}</p>
+                </div>
+                <div class="link-container">
+                    <a href="#" class="visit-link">Visit</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

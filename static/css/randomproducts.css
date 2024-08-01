@@ -1,0 +1,431 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container3 {
+    padding: 1rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.header-section3 {
+    display: flex;
+    justify-content: space-between; /* Space out the intro text and link */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 1rem;
+}
+
+.intro-text3 {
+    font-size: 1.7rem;
+    color: #333;
+}
+
+.intro-link3 {
+    font-size: 1rem;
+    color: #fff;
+    background-color: #418fde; /* Button color */
+    padding: 0.5rem 1rem; /* Button padding */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 -2px 5px rgba(255, 255, 255, 0.3); /* Shiny effect */
+    background-color: #418fde; /* Button background color */
+    position: relative; 
+}
+
+.intro-link3::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0), 30%,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100%;
+    animation: shine3 3s infinite linear;    
+}
+
+@keyframes shine3 {
+    0% {
+        left: -100%;
+    }
+    20% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.intro-link3:hover {
+    text-decoration: none;
+    transform: scale(1.05); /* Scale up the button slightly */
+}
+
+.large-container23 {
+    display: flex;
+    flex-direction: column; /* Stack divs vertically */
+    gap: 1rem; /* Space between the divs */
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    background-color: #bfe1f854;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.top-div3 {
+    background-color: #fdfdfdab;
+    border: #0e9cf494 1px solid;
+    border-radius:  8px;
+    padding: 0.5rem;
+    align-content: center;
+}
+
+.link-section3 {
+    display: flex;
+    justify-content: flex-start; /* Align links to the left by default */
+    gap: 1rem; /* Space between the links */
+    margin-bottom: 1rem; /* Space between the links and the rest of the content */
+}
+
+.top-link3 {
+    font-size: 1rem;
+    color: #418fde;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border: #418fde 2px solid;
+    padding: 0.5rem 1rem;
+    margin-bottom: -0.7rem;
+    border-radius: 2rem;
+}
+
+.top-link3:hover {
+    color: #ffffff; /* Change color on hover */
+    border: #ffffff 2px solid;
+    background-color: #418fde;
+    text-decoration: none;
+}
+
+/* Arrow Styles */
+.arrow-container3 {
+    background-color: #ffffff8a;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners */
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem; /* Width */
+    height: 27rem; /* Height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arrow3 {
+    font-size: 1.5rem;
+    color: #418fde;
+}
+
+.arrow-container3:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+/* Carousel Styles */
+.carousel-container3 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.carousel-wrapper3 {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to slides */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    width: 100%; /* Full width */
+}
+
+.carousel-content3 {
+    display: flex;
+    transition: transform 0.3s ease;
+    width: max-content; /* Width based on content */
+    scroll-snap-align: start; /* Align slides to the start */
+}
+
+.slide3 {
+    background-color: #ffffff;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 0.2rem; /* Space between slides */
+    width: 17rem; /* Width of each slide */
+    height: 25rem; /* Height of each slide */
+    text-align: center;
+    line-height: 5rem; /* Center text vertically */
+    flex-shrink: 0; /* Prevent shrinking of slides */
+    border: #084999 0.1rem solid;
+}
+
+.image-container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    overflow: hidden; /* Ensure container doesn't grow */
+}
+
+.image-container3 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Use cover or contain to keep aspect ratio */
+}
+
+/* Ensure all text in the text-container is left-aligned */
+.text-container3 {
+    margin-top: 1rem; /* Space between image and text */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 1.3rem;   
+}
+
+/* Title style */
+.item-name3 {
+    font-size: 1.5rem; /* Larger font size for the title */
+    font-weight: bold; /* Make name bold */
+    margin-bottom: -3rem; /* Adjust space below the name */
+}
+
+/* Other text elements */
+.item-quantity3, .item-price3, .item-rating3 {
+    font-size: 1rem; /* Adjust font size for quantity and price */
+    margin-bottom: -3.5rem; /* Space below each item */
+}
+
+/* Add to Cart Link Style */
+.add-to-cart-link3 {
+    font-size: 1rem;
+    color: #fff;
+    background-color: #084999; /* Button color */
+    padding: 0.5rem 1rem; /* Button padding */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-link3:hover {
+    text-decoration: none;
+    background-color: #418fde; /* Change color on hover */
+    transform: scale(1.05); /* Scale up the button slightly */
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    .item-name3 {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+
+    .item-quantity3, .item-price3 {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .item-name3 {
+        font-size: 1rem; /* Further adjust font size for small screens */
+    }
+
+    .item-quantity3, .item-price3 {
+        font-size: 0.8rem; /* Further adjust font size for small screens */
+    }
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .header-section3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .intro-text3 {
+        font-size: 1rem;
+    }
+
+    .intro-link3 {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .large-container23 {
+        padding: 0.5rem;
+    }
+
+    .top-div3, .bottom-div3 {
+        padding: 0.5rem;
+    }
+
+    .link-section3 {
+        justify-content: center; /* Center links on medium screens */
+    }
+
+    .slide3 {
+        width: 8rem; /* Decrease slide width on medium screens */
+        height: 4rem; /* Decrease slide height on medium screens */
+    }
+}
+
+.image-container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    overflow: hidden; /* Ensure container doesn't grow */
+}
+
+.image-container3 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Use cover or contain to keep aspect ratio */
+}
+
+@media (max-width: 480px) {
+    .main-container3 {
+        max-width: 100vw; /* Full screen width */
+        padding: 1rem; /* Adjust padding as needed */
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
+    }
+
+    .header-section3 {
+        margin-bottom: 0.2rem;
+        flex-direction: row; /* Keep items in a row */
+        align-items: center; /* Center items vertically */
+    }
+
+    .intro-text3 {
+        font-size: 1.3rem;
+        margin-right: 1rem; /* Space between text and link */
+        margin-left: 1rem;
+    }
+
+    .intro-link3 {
+        font-size: 0.8rem; /* Decrease font size */
+        padding: 0.3rem 0.5rem; /* Decrease padding */
+        margin-right: 1rem;
+    }
+
+    .large-container23 {
+        padding: 0.2rem;
+        border-radius: 0; /* Remove border-radius on small screens */
+        margin-top: 0.5rem;
+    }
+
+    .top-div3, .bottom-div3 {
+        padding: 0.2rem;
+        border-radius: 0; /* Remove border-radius on small screens */
+    }
+
+    .link-section3 {
+        justify-content: center; /* Center links on small screens */
+    }
+
+    .top-link3 {
+        font-size: 1rem; /* Decrease font size */
+        padding: 0.2rem 0.4rem; /* Decrease padding */
+    }
+
+    .slide3 {
+        width: 10rem; /* Further decrease slide width on small screens */
+        height: 14rem; /* Further decrease slide height on small screens */
+        margin-right: -0.5rem;
+    }
+
+    /* Hide arrow controls on small screens */
+    .arrow-container3 {
+        display: none;
+    }
+
+    .carousel-wrapper3 {
+        overflow-x: auto; /* Allow horizontal scrolling */
+        padding: 0 1rem; /* Add padding for scrolling */
+        -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+    }
+
+    .image-container3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        overflow: hidden; /* Ensure container doesn't grow */
+    }
+    
+    .image-container3 img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover; /* Use cover or contain to keep aspect ratio */
+    }
+    
+    /* Ensure all text in the text-container is left-aligned */
+    .text-container3 {
+        margin-top: 1rem; /* Space between image and text */
+        text-align: left; /* Align text to the left */
+        margin-bottom: 0.5rem;  
+        margin-top: -0.5rem;; 
+    }
+    
+    /* Title style */
+    .item-name3 {
+        font-size: .9rem; /* Larger font size for the title */
+        font-weight: bold; /* Make name bold */
+        margin-bottom: -3.5rem; /* Adjust space below the name */
+    }
+    
+    /* Other text elements */
+    .item-quantity3, .item-price3, .item-rating3  {
+        font-size: 1rem; /* Adjust font size for quantity and price */
+        margin-bottom: -3.5rem; /* Space below each item */
+    }
+    
+    /* Add to Cart Link Style */
+    
+    .add-to-cart-link3 {
+        
+        font-size: .7rem;
+        color: #fff;
+        background-color: #084999; /* Button color */
+        padding: 0.5rem 1rem; /* Button padding */
+        border: none;
+        border-radius: 50px; /* Rounded corners */
+        text-decoration: none;
+        transition: all 0.3s ease;
+        
+    }
+    
+    .add-to-cart-link3:hover {
+        text-decoration: none;
+        background-color: #418fde; /* Change color on hover */
+        transform: scale(1.05); /* Scale up the button slightly */
+    }
+}
+
+/* Hide scrollbar on large screens */
+@media (min-width: 769px) {
+    .carousel-wrapper3 {
+        overflow-x: hidden; /* Hide horizontal scrolling on large screens */
+    }
+}

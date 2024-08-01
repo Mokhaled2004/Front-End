@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/randomproducts3.css') }}">
+</head>
+<body>
+    <div class="main-container5">
+        <div class="header-section5">
+            <p class="intro-text5"><b>Explore Your Fav Reciepe</b></p>
+            <a href="#" class="intro-link5">Shop All</a>
+        </div>
+        <div class="large-container25">
+            
+            <div class="carousel-container5">
+                <div class="arrow-container left-arrow5">
+                    <span class="arrow5"><</span>
+                </div>
+                <div class="carousel-wrapper5">
+                    <div class="carousel-content5">
+                        <!-- Add your sliding divs here -->
+                        <div class="slide5">
+                            <div class="image-container5">
+                                <img id="dynamic-image5" src="{{ url_for('static', filename='images/apple.png') }}" alt="Default Image">
+                            </div>
+                            <div class="text-container5">
+                                <p class="item-name5">Apple</p>
+                                <p class="item-quantity5">1 kg</p>
+                                <p class="item-price5">$1.00</p>
+                                <p class="item-rating5">&#9733;</p>
+                            </div>
+                            <a href="#" class="add-to-cart-link5">Add to Cart</a>
+                        </div>
+                        <div class="slide5">2</div>
+                        <div class="slide5">3</div>
+                        <div class="slide5">4</div>
+                        <div class="slide5">5</div>
+                        <div class="slide5">6</div>
+                        <div class="slide5">8</div>
+                        <div class="slide5">9</div>
+                        <div class="slide5">10</div>
+                        <div class="slide5">11</div>
+                        <!-- Add more slides as needed -->
+                    </div>
+                </div>
+                <div class="arrow-container right-arrow5">
+                    <span class="arrow5">></span>
+                </div>
+                <div class="image-placeholder5">
+                    <img class="dealin" src="{{ url_for('static', filename='images/deal13.png') }}" alt="Default Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

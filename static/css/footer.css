@@ -1,0 +1,125 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%; /* Full height for body and html */
+    margin: 0;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure the page takes full viewport height */
+}
+
+.main-content {
+    height: 2rem;
+    flex: 1; /* Allows the main content to expand and push the footer down */
+}
+
+/* Footer Styles */
+.footer-container {
+    background-color: #084999; /* Same color as the header */
+    color: #fff;
+    padding: 1rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #f9f1f1;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: #084999;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-link:hover {
+    background-color: #418fde;
+    color: #ffffff;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon img {
+    width: 2rem; /* Adjust size of social icons */
+    height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-social {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 0.5rem;
+        align-items: center;
+    }
+
+    .footer-logo {
+        font-size: 1rem;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-link {
+        font-size: 0.8rem; /* Smaller font size for very small screens */
+        padding: 0.3rem 0.6rem; /* Smaller padding */
+    }
+
+    .footer-social {
+        gap: 0.5rem;
+    }
+
+    .social-icon img {
+        width: 1.5rem; /* Smaller image size */
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/deals.css') }}">
+    <script src='main.js' defer></script>
+</head>
+<body>
+
+    <div class = "dealsheader">
+        The Week's' Top Deals
+    </div>
+
+    <div class="flex-container3">
+        <div class="box-container3">
+            <div class="box-content3">
+                <img class="img3"src="{{ url_for('static', filename='images/deal2.jpg') }}" alt="Image 1">
+                <p class="box-title3">Container 1</p>
+                <p class="box-description3">Description for Container 1.</p>
+                <a class="shoplink">Shop Now  &#10140;</a>
+            </div>
+        </div>
+        <div class="box-container3">
+            <div class="box-content3">
+                <img class="img3"src="{{ url_for('static', filename='images/deal9.png') }}" alt="Image 1">
+                <p class="box-title3">Container 1</p>
+                <p class="box-description3">Description for Container 1.</p>
+                <a class="shoplink">Shop Now  &#10140;</a>
+            </div>
+        </div>
+        <div class="box-container3">
+            <div class="box-content3">
+                <img class="img3"src="{{ url_for('static', filename='images/deal1.png') }}" alt="Image 1">
+                <p class="box-title3">Container 1</p>
+                <p class="box-description3">Description for Container 1.</p>
+                <a class="shoplink">Shop Now  &#10140;</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

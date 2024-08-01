@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/delivery.css') }}">
+    <script src='main.js' defer></script>
+</head>
+<body>
+
+    <div class = "dealsheader">
+        Explore Ways to Shop
+    </div>
+    <p class ="headerdisc">Plus, save $20 on your first pickup or delivery order with your digital coupon. <a class="coupon"> Clip Coupon  &#10140;</a></p>
+    
+    <div class="flex-container3">
+        <div class="box-container3">
+            <div class="box-content3">
+                <img class="img3"src="{{ url_for('static', filename='images/delivery.png') }}" alt="Image 1">
+                <p class="box-title3">Marketo Delivery</p>
+                <a class="shoplink">Try Now  &#10140;</a>
+            </div>
+        </div>
+        <div class="box-container3">
+            <div class="box-content3">
+                <img class="img3"src="{{ url_for('static', filename='images/pickup.png') }}" alt="Image 1">
+                <p class="box-title3">Pickup</p>
+                <a class="shoplink">Try Now  &#10140;</a>
+            </div>
+        </div>
+        <div class="box-container3">
+            <div class="box-content3">
+                <img class="img3"src="{{ url_for('static', filename='images/ship.png') }}" alt="Image 1">
+                <p class="box-title3">Ship</p>
+                <a class="shoplink">Try Now  &#10140;</a>
+            </div>
+        </div>
+
+        
+        
+    </div>
+</body>
+</html>

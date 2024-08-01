@@ -1,620 +1,363 @@
-/* General Reset */
-
-@media screen and (min-width: 1200px) {
+/* General Styles */
 * {
-    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
+    font-family: sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
-.menu .active {
-    color: #ee0c0c;
-}
-
-/* Header Container */
-.header-container {
+.navigation-container {
     display: flex;
-    justify-content: space-between; /* Space out logo, menu, and login */
-    align-items: center; /* Center items vertically */
-    padding: 20px; /* Decreased padding */
-    max-width: 1200px; /* Decreased max width */
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    margin: 0 auto; /* Centering container horizontally */
+    padding: 1rem;
+    background-color: #084999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo Container */
 .logo-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 1rem;
+    font-family: 'Playwrite BE VLG', sans-serif;
+}
+
+.nav-links-container {
     display: flex;
-    align-items: center;
-    margin-left: 40px; /* Decreased margin */
-    margin-top: -10px; /* Decreased margin */
-    margin-right: -40px; /* Decreased margin */
+    gap: 1rem;
 }
 
-/* Logo Styling */
-.logo {
-    display: inline-block;
-    font-size: 18px; /* Decreased font size */
-    font-weight: 700;
-    color: #161515;
-    text-transform: uppercase;
-    letter-spacing: 1px; /* Kept the same */
-    font-family: 'Ga Maamli', sans-serif;
-    text-align: left;
-    position: relative;
-}
-
-.logo .logo-market {
-    display: block;
-    font-family: 'Ga Maamli', sans-serif;
-    color: #161515;
-}
-
-.logo .logo-mate {
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 20px; /* Decreased top position */
-    font-size: 18px; /* Decreased font size */
-    font-weight: 700;
-    font-family: 'Ga Maamli', sans-serif;
-    color: #161515;
-    transform: translateX(-50%); /* Center "Mate" relative to "Market" */
-}
-
-/* Navigation Container */
-.navigation {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-
-/* Menu Styling */
-.menu {
-    display: inline-flex; /* Use inline-flex to size the menu to its content */
-    align-items: center;
-    padding: 0; /* Remove padding from the menu */
-    margin: 0;
-}
-
-.menu li {
-    display: inline-block;
-    margin: 0; /* Remove margin between list items */
-}
-
-.menu li a {
-    display: inline-block;
-    padding: 8px 16px; /* Decreased padding */
-    margin-right: 8px; /* Decreased margin */
-    color: #161515;
-    font-size: 16px; /* Decreased font size */
-    font-weight: 500;
-    letter-spacing: 0.5px; /* Kept the same */
-    transition: all 0.3s ease;
-}
-
-.menu li a:hover {
-    color: #ff0000;
-}
-
-.menu li:last-child a {
-    margin-right: 0; /* Remove margin from the last item */
-}
-
-/* Login Button Container */
-.login-container {
-    display: flex;
-    align-items: center;
-    margin-right: 8px; /* Decreased margin */
-    height: 40px; /* Decreased height */
-}
-
-/* Login Button Styling */
-.login {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
-    padding: 8px 16px; /* Decreased padding */
-    background-color: #ff0000; /* Background color */
-    color: #ffffff; /* Text color */
-    height:40px; /* Decreased height */
-    font-size: 16%px; /* Decreased font size */
-    font-weight: 500;
-    letter-spacing: 0.5px; /* Kept the same */
-    border-radius: 50px; /* Decreased border-radius */
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
-    cursor: pointer; /* Pointer cursor on hover */
-    text-decoration: none; /* Remove underline if it's a link */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
-
-}
-
-/* Login Button Hover Effect */
-.login:hover {
-    background-color: #cc0000; /* Darker background on hover */
-    color: #ffffff; /* Text color on hover */
-}
-
-/* Search Button Container */
-.search-container {
-    display: flex;
-    align-items: center;
-    margin-left: auto; /* Adjust if needed */
-    margin-right: 0; /* Decreased margin */
-    height: 40px; /* Decreased height */
-}
-
-/* Search and Cart Button Styling */
-.search, .cart, .profile, .menue {
-    display: flex; /* Use flexbox to center the image */
-    align-items: center;
-    justify-content: center; /* Center the image inside */
-    width: 40px; /* Decreased width */
-    height: 40px; /* Decreased height */
-    background-color: #ff0000; /* Background color */
-    border-radius: 50%; /* Make the button circular */
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
-    cursor: pointer; /* Pointer cursor on hover */
-    text-decoration: none; /* Remove underline */
-    overflow: hidden; /* Ensure the image fits within the button */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
-
-}
-
-/* Search Button Hover Effect */
-.search:hover {
-    background-color: #cc0000; /* Darker background on hover */
-}
-
-/* Search Icon Styling */
-.search img {
-    width: 60%; /* Adjust image size as needed */
-    height: 60%; /* Adjust image size as needed */
-    object-fit: contain; /* Scale the image to fit within the container */
-}
-
-/* Cart Button Container */
-.cart-container {
-    display: flex;
-    align-items: center;
-    margin-left: 8px; /* Decreased margin */
-    margin-right: 8px; /* Decreased margin */
-    height: 40px; /* Decreased height */
-}
-
-/* Cart Icon Styling */
-.cart img {
-    width: 50%; /* Adjust image size as needed */
-    height: 50%; /* Adjust image size as needed */
-    object-fit: contain; /* Scale the image to fit within the container */
-}
-
-/* Cart Button Hover Effect */
-.cart:hover {
-    background-color: #cc0000; /* Darker background on hover */
-}
-
-/* Profile Button Container */
-.profile-container {
-    display: flex;
-    align-items: center;
-    margin-left: auto; /* Push the profile container to the far right */
-    margin-right: -160px; /* Decreased margin */
-    height: 40px; /* Decreased height */
-}
-
-/* Profile Icon Styling */
-.profile img {
-    width: 70%; /* Adjust image size as needed */
-    height: 70%; /* Adjust image size as needed */
-    object-fit: contain; /* Scale the image to fit within the container */
-}
-
-/* Profile Button Hover Effect */
-.profile:hover {
-    background-color: #cc0000; /* Darker background on hover */
-}
-
-/* Menu Button Container */
-.menue-container {
-    display: flex;
-    align-items: center;
-    margin-left: -160px; /* Decreased margin */
-    margin-right: auto;
-    height: 40px; /* Decreased height */
-}
-
-/* Menu Icon Styling */
-.menue img {
-    width: 50%; /* Adjust image size as needed */
-    height: 50%; /* Adjust image size as needed */
-    object-fit: contain; /* Scale the image to fit within the container */
-}
-
-/* Menu Button Hover Effect */
-.menue:hover {
-    background-color: #cc0000; /* Darker background on hover */
-}
-
-/* Dropdown Menu Styling */
-.dropdown-content {
-    position: absolute;
-    background-color: #ff0000;
-    width: 90px; /* Decreased width */
-    max-height: 600px; /* Decreased max height */
-    overflow-y: auto; /* Add a scrollbar if the content exceeds the max height */
-    box-shadow: 0px 6px 12px 0 rgba(0,0,0,0.2); /* Decreased shadow */
-    z-index: 1;
-    border-radius: 20px; /* Decreased border-radius */
-    margin-top: 630px; /* Decreased margin */
-    margin-left: -15px; /* Decreased margin */
-    opacity: 0; /* Start with invisible */
-    visibility: hidden; /* Hidden by default */
-    transform: translateY(-20px); /* Start slightly above */
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Smooth transition for fade and slide */
-}
-
-/* Show Dropdown with Animation */
-.show-dropdown {
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Make visible */
-    transform: translateY(0); /* Move to its original position */
-}
-
-/* Dropdown Item Styling */
-.dropdown-content .dropdown-item {
-    color: black;
-    padding: 12px 12px; /* Decreased padding */
+.nav-link {
     text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 8px; /* Decreased border-radius */
+    color: #f9f1f1;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: #084999;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
 
-.dropdown-content .dropdown-item img {
-    width: 40%; /* Adjust image size as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 6px; /* Decreased margin */
-}
-
-.dropdown-content .dropdown-item span {
+.nav-link:hover {
+    background-color: #418fde;
     color: #ffffff;
-    font-size: 12px; /* Decreased font size */
-    text-align: center;
 }
 
-.dropdown-content .dropdown-item:hover {
-    background-color: #cc0000; /* Darker background on hover */
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
+.search-input {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-/*----------------------------------------------------------------------------------------------------------------*/
+.search-input:focus {
+    border-color: #084999;
+}
 
-@media screen and (min-width: 1600px) {
+.login-container,
+.cart-container {
+    background-color: #084999;
+    border-radius: 1rem;
+    color: #fff;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 3rem;
+    gap: 0.5rem;
+}
 
-    * {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        scroll-behavior: smooth;
-    }
-    
-    ul {
-        list-style: none;
-    }
-    
-    a {
-        text-decoration: none;
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-    
-    .menu .active {
-        color: #ee0c0c;
-    }
-    
-    /* Header Container */
-    .header-container {
-        display: flex;
-        justify-content: space-between; /* Space out logo, menu, and login */
-        align-items: center; /* Center items vertically */
-        padding: 20px; /* Decreased padding */
-        max-width: 1200px; /* Decreased max width */
-        width: 100%;
-        margin: 0 auto; /* Centering container horizontally */
-    }
-    
-    /* Logo Container */
-    .logo-container {
-        display: flex;
-        align-items: center;
-        margin-left: 40px; /* Decreased margin */
-        margin-top: -10px; /* Decreased margin */
-        margin-right: -40px; /* Decreased margin */
-    }
-    
-    /* Logo Styling */
-    .logo {
-        display: inline-block;
-        font-size: 22px; /* Decreased font size */
-        font-weight: 700;
-        color: 8#161515;
-        text-transform: uppercase;
-        letter-spacing: 1px; /* Kept the same */
-        font-family: 'Ga Maamli', sans-serif;
-        text-align: left;
-        position: relative;
-    }
-    
-    .logo .logo-market {
-        display: block;
-        font-family: 'Ga Maamli', sans-serif;
-        color: #161515;
-    }
-    
-    .logo .logo-mate {
-        display: block;
-        position: absolute;
-        left: 50%;
-        top: 20px; /* Decreased top position */
-        font-size: 22px; /* Decreased font size */
-        font-weight: 700;
-        font-family: 'Ga Maamli', sans-serif;
-        color: #161515;
-        transform: translateX(-50%); /* Center "Mate" relative to "Market" */
-    }
-    
-    /* Navigation Container */
-    .navigation {
-        display: flex;
-        flex-grow: 1;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-    }
-    
-    /* Menu Styling */
-    .menu {
-        display: inline-flex; /* Use inline-flex to size the menu to its content */
-        align-items: center;
-        padding: 0; /* Remove padding from the menu */
-        margin: 0;
-    }
-    
-    .menu li {
-        display: inline-block;
-        margin: 0; /* Remove margin between list items */
-    }
-    
-    .menu li a {
-        display: inline-block;
-        padding: 8px 16px; /* Decreased padding */
-        margin-right: 8px; /* Decreased margin */
-        color: #161515;
-        font-size: 16px; /* Decreased font size */
-        font-weight: 500;
-        letter-spacing: 0.5px; /* Kept the same */
-        transition: all 0.3s ease;
-    }
-    
-    .menu li a:hover {
-        color: #ff0000;
-    }
-    
-    .menu li:last-child a {
-        margin-right: 0; /* Remove margin from the last item */
-    }
-    
-    /* Login Button Container */
-    .login-container {
-        display: flex;
-        align-items: center;
-        margin-right: 8px; /* Decreased margin */
-        height: 40px; /* Decreased height */
-    }
-    
-    /* Login Button Styling */
-    .login {
-        display: flex; /* Use flexbox for alignment */
-        align-items: center; /* Center text vertically */
-        justify-content: center; /* Center text horizontally */
-        padding: 8px 16px; /* Decreased padding */
-        background-color: #ff0000; /* Background color */
-        color: #ffffff; /* Text color */
-        height: 50px; /* Decreased height */
-        font-size: 16px; /* Decreased font size */
-        font-weight: 500;
-        letter-spacing: 0.5px; /* Kept the same */
-        border-radius: 50px; /* Decreased border-radius */
-        transition: all 0.3s ease; /* Smooth transition for hover effect */
-        cursor: pointer; /* Pointer cursor on hover */
-        text-decoration: none; /* Remove underline if it's a link */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
+.menu-container {
+    background-color: #084999;
+    border-radius: 0.5rem;
+    color: #fff;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 3rem;
+    gap: 0.5rem;
+}
 
-    }
-    
-    /* Login Button Hover Effect */
-    .login:hover {
-        background-color: #cc0000; /* Darker background on hover */
-        color: #ffffff; /* Text color on hover */
-    }
-    
-    /* Search Button Container */
-    .search-container {
-        display: flex;
-        align-items: center;
-        margin-left: auto; /* Adjust if needed */
-        margin-right: 0; /* Decreased margin */
-        height: 40px; /* Decreased height */
-    }
-    
-    /* Search and Cart Button Styling */
-    .search, .cart, .profile, .menue {
-        display: flex; /* Use flexbox to center the image */
-        align-items: center;
-        justify-content: center; /* Center the image inside */
-        width: 50px; /* Decreased width */
-        height: 50px; /* Decreased height */
-        background-color: #ff0000; /* Background color */
-        border-radius: 50%; /* Make the button circular */
-        transition: all 0.3s ease; /* Smooth transition for hover effect */
-        cursor: pointer; /* Pointer cursor on hover */
-        text-decoration: none; /* Remove underline */
-        overflow: hidden; /* Ensure the image fits within the button */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
+.icon-image {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
 
-    }
-    
-    /* Search Button Hover Effect */
-    .search:hover {
-        background-color: #cc0000; /* Darker background on hover */
-    }
-    
-    /* Search Icon Styling */
-    .search img {
-        width: 60%; /* Adjust image size as needed */
-        height: 60%; /* Adjust image size as needed */
-        object-fit: contain; /* Scale the image to fit within the container */
-    }
-    
-    /* Cart Button Container */
-    .cart-container {
-        display: flex;
-        align-items: center;
-        margin-left: 8px; /* Decreased margin */
-        margin-right: 8px; /* Decreased margin */
-        height: 40px; /* Decreased height */
-    }
-    
-    /* Cart Icon Styling */
-    .cart img {
-        width: 50%; /* Adjust image size as needed */
-        height: 50%; /* Adjust image size as needed */
-        object-fit: contain; /* Scale the image to fit within the container */
-    }
-    
-    /* Cart Button Hover Effect */
-    .cart:hover {
-        background-color: #cc0000; /* Darker background on hover */
-    }
-    
-    /* Profile Button Container */
-    .profile-container {
-        display: flex;
-        align-items: center;
-        margin-left: auto; /* Push the profile container to the far right */
-        margin-right: -340px; /* Decreased margin */
-        height: 40px; /* Decreased height */
-    }
-    
-    /* Profile Icon Styling */
-    .profile img {
-        width: 70%; /* Adjust image size as needed */
-        height: 70%; /* Adjust image size as needed */
-        object-fit: contain; /* Scale the image to fit within the container */
-    }
-    
-    /* Profile Button Hover Effect */
-    .profile:hover {
-        background-color: #cc0000; /* Darker background on hover */
-    }
-    
-    /* Menu Button Container */
-    .menue-container {
-        display: flex;
-        align-items: center;
-        margin-left: -340px; /* Decreased margin */
-        margin-right: auto;
-        height: 40px; /* Decreased height */
-    }
-    
-    /* Menu Icon Styling */
-    .menue img {
-        width: 50%; /* Adjust image size as needed */
-        height: 50%; /* Adjust image size as needed */
-        object-fit: contain; /* Scale the image to fit within the container */
-    }
-    
-    /* Menu Button Hover Effect */
-    .menue:hover {
-        background-color: #cc0000; /* Darker background on hover */
-    }
-    
-    /* Dropdown Menu Styling */
-    .dropdown-content {
-        position: absolute;
-        background-color: #ff0000;
-        width: 120px; /* Decreased width */
-        max-height: 600px; /* Decreased max height */
-        overflow-y: auto; /* Add a scrollbar if the content exceeds the max height */
-        box-shadow: 0px 6px 12px 0 rgba(0,0,0,0.2); /* Decreased shadow */
-        z-index: 1;
-        border-radius: 20px; /* Decreased border-radius */
-        margin-top: 720px; /* Decreased margin */
-        margin-left: -27px; /* Decreased margin */
-        
-        opacity: 0; /* Start with invisible */
-        visibility: hidden; /* Hidden by default */
-        transform: translateY(-20px); /* Start slightly above */
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; /* Smooth transition for fade and slide */
-    }
-    
-    /* Show Dropdown with Animation */
-    .show-dropdown {
-        opacity: 1; /* Fully visible */
-        visibility: visible; /* Make visible */
-        transform: translateY(0); /* Move to its original position */
-    }
-    
-    /* Dropdown Item Styling */
-    .dropdown-content .dropdown-item {
-        color: black;
-        padding: 12px 12px; /* Decreased padding */
-        text-decoration: none;
-        display: flex;
+.menu-image {
+    max-width: 80%;
+    max-height: 80%;
+    height: auto;
+}
+
+.login-text {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.arrow {
+    color: #fff;
+    font-size: 1rem;
+    margin-left: 0.25rem;
+}
+
+.login-container:hover,
+.cart-container:hover {
+    background-color: #418fde;
+}
+
+.secondary-navigation {
+    display: flex;
+    align-items: center;
+    background-color: #418fde;
+    padding: 0.1rem 0.3rem; /* Further reduce padding for a thinner look */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    border-bottom: 10px solid #f6ce07;
+}
+
+.secondary-menu-container {
+    flex: 0 0 auto; /* Keep the menu container on the left */
+    margin-right: 0.5rem; /* Reduce space between menu and links */
+    display: flex;
+    background-color: #418fde;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem; /* Adjusted height */
+    width: 2.5rem; /* Adjusted width */
+}
+
+.secondary-links-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Reduce gap between links */
+    margin-left: auto; /* Push links to the right */
+}
+
+.secondary-nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400; /* Slightly lighter font weight */
+    font-size: 0.9rem; /* Smaller font size */
+    padding: 0.2rem 0.4rem; /* Smaller padding */
+    border-radius: 0.5rem; /* Smaller border radius */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.secondary-nav-link:hover {
+    background-color: #084999;
+    color: #fcfcfc;
+}
+
+.secondary-menu-container:hover {
+    background-color: #084999;
+}
+
+.secondary-cart-container img {
+    width: 1rem; /* Smaller image size */
+    height: 1rem; /* Smaller image size */
+}
+
+.delivery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #418fde;
+    border-radius: 0.5rem;
+    padding: 0.2rem; /* Adjust padding */
+    margin-left: 0.5rem;
+}
+
+.delivery-container:hover {
+    background-color: #084999;
+}
+
+.delivery-text {
+    color: #fff;
+    margin-left: 0.5rem; /* Space between the image and the text */
+    font-size: 0.9rem; /* Match font size to secondary navigation links */
+}
+
+.delivery-icon {
+    width: 1.5rem; /* Smaller size for delivery icon */
+    height: 1.5rem; /* Keep height equal to width */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the circle */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .navigation-container {
         flex-direction: column;
-        align-items: center;
-        border-radius: 8px; /* Decreased border-radius */
-    }
-    
-    .dropdown-content .dropdown-item img {
-        width: 40%; /* Adjust image size as needed */
-        height: auto; /* Maintain aspect ratio */
-        margin-bottom: 6px; /* Decreased margin */
-    }
-    
-    .dropdown-content .dropdown-item span {
-        color: #ffffff;
-        font-size: 12px; /* Decreased font size */
-        text-align: center;
-    }
-    
-    .dropdown-content .dropdown-item:hover {
-        background-color: #cc0000; /* Darker background on hover */
     }
 
+    .logo-container {
+        font-size: 1.2rem;
+    }
+
+    .nav-links-container {
+        display: none; /* Hide nav links on smaller screens */
+    }
+
+    .search-container {
+        flex: 2;
+    }
+
+    .login-container,
+    .cart-container {
+        margin-left: 0.5rem;
+        padding: 0.5rem;
+        gap: 0.3rem;
+        height: 3.5rem; /* Increase height for small screens */
+    }
+
+    .icon-image {
+        max-width: 30px; /* Increase image size for small screens */
+        max-height: 30px; /* Increase image size for small screens */
+    }
+
+    .menu-image {
+        max-width: 15px; /* Increase image size for small screens */
+        max-height: 15px; /* Increase image size for small screens */
+    }
+
+    .secondary-navigation {
+        flex-direction: row; /* Display items in a row on small screens */
+        align-items: center;
+        padding: 0.1rem 0.2rem; /* Further reduce padding for smaller screens */
+        height: 1.5rem; /* Reduced height for smaller screens */
+        border-bottom: 0px solid #f6ce07;
+    }
+
+    .secondary-nav-link{
+        font-size: 0.7rem;
+    }
+
+    .secondary-menu-container {
+        height: 2rem; /* Reduced height for small screens */
+        width: 2rem; /* Reduced width for small screens */
+    }
+
+    .secondary-links-container {
+        flex-direction: row; /* Align links in a row */
+        width: auto; /* Allow links to occupy necessary space */
+        gap: 0.3rem;
+    }
+
+    /* Ensure only 3 links are visible */
+    .secondary-links-container .secondary-nav-link:nth-child(n+5) {
+        display: none; /* Hide additional links */
+    }
+
+    .delivery-text {
+        font-size: 0.7rem; /* Match font size to secondary navigation links */
+    }
+
+    .delivery-icon {
+        display: none; /* Hide delivery icon on small screens */
+    }
 }
 
+@media (max-width: 480px) {
+    .navigation-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 0.5rem;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .logo-container {
+        font-size: 1rem;
+    }
+
+    .search-container {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    .search-input {
+        width: 80%;
+    }
+
+    .login-container,
+    .cart-container {
+        flex: 0 0 auto;
+        text-align: center;
+        margin: 0;
+        padding: 0.5rem;
+        width: auto;
+        height: 2.5rem; /* Increased height for very small screens */
+        gap: 0.5rem;
+    }
+
+    .icon-image {
+        max-width: 25px; /* Smaller image size for very small screens */
+        max-height: 25px; /* Smaller image size for very small screens */
+    }
+
+    .menu-image {
+        max-width: 15px; /* Increase image size for small screens */
+        max-height: 15px; /* Increase image size for small screens */
+    }
+
+    .secondary-navigation {
+        flex-direction: row;
+        align-items: center;
+        padding: 0.3rem;
+        height: 1.2rem; /* Further reduced height for very small screens */
+    }
+
+
+      /* Ensure only 3 links are visible */
+      .secondary-links-container .secondary-nav-link:nth-child(n+4) {
+        display: none; /* Hide additional links */
+    }
+
+
+    .secondary-menu-container {
+        height: 1.5rem; /* Further reduced height */
+        width: 1.5rem; /* Further reduced width */
+    }
+
+    .secondary-links-container {
+        flex-direction: row;
+        gap: 0.2rem;
+    }
+
+    .delivery-text {
+        font-size: 0.7rem; /* Match font size to secondary navigation links */
+    }
+
+    .delivery-icon {
+        display: none; /* Hide delivery icon on very small screens */
+    }
+}

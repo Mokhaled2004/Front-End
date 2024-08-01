@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/randomproducts.css') }}">
+</head>
+<body>
+    <div class="main-container3">
+        <div class="header-section3">
+            <p class="intro-text3"><b>Guaranteed Fresh Products</b></p>
+            <a href="#" class="intro-link3">Shop All</a>
+        </div>
+        <div class="large-container23">
+            
+            <div class="carousel-container3">
+                <div class="arrow-container left-arrow3">
+                    <span class="arrow3"><</span>
+                </div>
+                <div class="carousel-wrapper3">
+                    <div class="carousel-content3">
+                        <!-- Add your sliding divs here -->
+                        <div class="slide3">
+                            <div class="image-container3">
+                                <img id="dynamic-image3" src="{{ url_for('static', filename='images/apple.png') }}" alt="Default Image">
+                            </div>
+                            <div class="text-container3">
+                                <p class="item-name3">Apple</p>
+                                <p class="item-quantity3">1 kg</p>
+                                <p class="item-price3">$1.00</p>
+                                <p class="item-rating3">&#9733;</p>
+                            </div>
+                            <a href="#" class="add-to-cart-link3">Add to Cart</a>
+                        </div>
+                        <div class="slide3">2</div>
+                        <div class="slide3">3</div>
+                        <div class="slide3">4</div>
+                        <div class="slide3">5</div>
+                        <div class="slide3">6</div>
+                        <div class="slide3">8</div>
+                        <div class="slide3">9</div>
+                        <div class="slide3">10</div>
+                        <div class="slide3">11</div>
+                        <!-- Add more slides as needed -->
+                    </div>
+                </div>
+                <div class="arrow-container right-arrow3">
+                    <span class="arrow3">></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

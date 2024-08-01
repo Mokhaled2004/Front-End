@@ -1,550 +1,369 @@
-@media screen and (min-width: 1200px) {
-
-html, body {
-    height: 100%; /* Ensure HTML and BODY take full height */
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100vh;
-    overflow-y: auto; /* Prevent horizontal scroll caused by fixed image */
+    
+   
 }
 
-/* Background Image Container */
-.background-container {
-    position: fixed;
-    top: 0;
-    right: 0; /* Position to the right side */
-    width: 100%; /* Adjust width as needed, e.g., 50% of the viewport */
-    height: 100%;
-    overflow: hidden;
-    z-index: -1; /* Ensure the image is behind other content */
+.main-container {
+    padding: 1rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
-.background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the container */
-    position: absolute;
-    top: 0;
-    right: 0; /* Align image to the right side */
-}
-
-/* Larger Container */
-.larger-container {
+.large-container {
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    width: 670px; /* 1000px * 0.67 */
-    height: 670px; /* 1000px * 0.67 */
-    margin-top: -17px; /* -26px * 0.67 */
-    margin-left: -120px; /* -180px * 0.67 */
-    padding: 13.4px 13.4px; /* 20px * 0.67 */
-    box-sizing: border-box; /* Include padding in the width calculation */
-    position: relative; /* Position relative for absolute positioning of slideshow images */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
-/* Content Container */
-.content-container {
+/* Hide scrollbar for Chrome, Safari and Opera */
+.large-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge */
+.large-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Adjust size of small containers */
+.small-container {
+    flex: 0 0 auto;
+    width: min-content;
+    height: 35px;
+    background-color: #f1f1f1;
+    border-radius: 5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.1rem;
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    height: 603px; /* 900px * 0.67 */
-    width: 315px; /* 470px * 0.67 */
-    margin-left: 87px; /* 130px * 0.67 */
-    background-color: rgb(255, 255, 255); /* Semi-transparent background */
-    border-radius: 20px; /* 30px * 0.67 */
-    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0.2); /* 0 4px 8px * 0.67 */
-    overflow: hidden; /* Hide overflow for animation */
-    position: relative; /* Ensure images are positioned relative to this container */
-}
-
-/* Slideshow */
-.slideshow {
-    position: relative; /* Relative positioning to contain absolute positioned slides */
-    width: 100%;
-    height: 469px; /* 700px * 0.67 */
-    overflow: hidden; /* Hide images that are out of view */
-}
-
-/* Individual Slides */
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the container */
-    opacity: 0;
-    transition: opacity 1s ease-in-out; /* Fade in and out effect */
-}
-
-/* Active Slide */
-.slide.active {
-    opacity: 1;
-}
-
-/* Slideshow Images */
-.content-container .slideshow img {
-    width: 100%; /* Ensure the image covers the full width */
-    height: 100%; /* Ensure the image covers the full height */
-    object-fit: contain; /* Cover the container */
-    border-radius: 20px; /* 30px * 0.67 */
-    margin-top: -27px; /* -40px * 0.67 */
-}
-
-/* Content Styling */
-.content {
-    max-width: 100%; /* Full width of the content area */
-    padding: 13.4px; /* 20px * 0.67 */
-    position: relative; /* Position relative for absolute positioning of the button */
-}
-
-/* Title Styling */
-.content-title {
-    font-size: 24px; /* 36px * 0.67 */
-    font-family: "IM Fell French Canon SC", serif;
-    font-weight: 400;
-    color: #333333; /* Dark text color */
-    margin: 0; /* Remove default margins */
-    line-height: 1.2; /* Line height for readability */
-}
-
-/* Description Styling */
-.content-description {
-    font-size: 14px; /* 22px * 0.67 */
-    color: #555555; /* Lighter text color */
-    margin-top: 7px; /* 10px * 0.67 */
-    line-height: 1.6; /* Line height for readability */
-}
-
-/* Container for the circle arrangement */
-.circle-container {
-    position: absolute; /* Absolute positioning */
-    width: 670px; /* 1000px * 0.67 */
-    height: 670px; /* 1000px * 0.67 */
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
     overflow: hidden;
-    background-color: #ffffff00; /* Temporary background to see the container */
-    border-radius: 50%; /* Make the container circular */
-    top: 50%; /* Center vertically */
-    left: 71%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the container */
 }
 
-/* Circle Styling */
-.circle {
-    position: absolute;
-    width: 67px; /* 100px * 0.67 */
-    height: 67px; /* 100px * 0.67 */
-    border: #333333 solid 1px; /* 2px * 0.67 */
-    border-radius: 50%; /* Make it circular */
-    background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
-    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0.2); /* 0 4px 8px * 0.67 */
-    overflow: hidden; /* Ensure the image doesn't spill out of the circle */
+/* Adjust image size */
+.image-placeholder {
+    flex: 0 0 auto;
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.1rem;
 }
 
-/* Make images fit and cover the circle */
-.circle img {
+.image-placeholder img {
+    max-width: 28px;
+    border-radius: 5rem;
+}
+
+.text-placeholder {
+    flex: 1;
+    text-align: left;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 0.5rem;
+}
+
+/* Add hover effect for interaction */
+.small-container:hover {
+    transform: scale(1.05);
+}
+
+/* New Slider Styles */
+.slider {
+    position: relative;
+    display: flex;
+    overflow: hidden;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the entire circle */
-    display: block; /* Remove any gaps below the image */
 }
 
-/* Position circles around the center */
-.circle:nth-child(1) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg) translateY(-281px) rotate(0deg); /* -420px * 0.67 */
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
 }
 
-.circle:nth-child(2) {
-    top: 50%;
-    left: 50%;
-    background-color: #fffbfb00;
-    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0); /* 0 4px 8px * 0.67 */
-    border-style: none;
-    transform: translate(-50%, -50%) rotate(40deg) translateY(-281px) rotate(-40deg); /* -420px * 0.67 */
+.text-image-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
-.circle:nth-child(3) {
-    top: 50%;
-    left: 50%;
-    background-color: #fffbfb00;
-    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0); /* 0 4px 8px * 0.67 */
-    border-style: none;
-    transform: translate(-50%, -50%) rotate(80deg) translateY(-281px) rotate(-80deg); /* -420px * 0.67 */
+.text-image-item {
+    flex: 0 0 100%; /* Each slide takes up full width */
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    box-sizing: border-box;
 }
 
-.circle:nth-child(4) {
-    top: 50%;
-    left: 50%;
-    background-color: #fffbfb00;
-    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0); /* 0 4px 8px * 0.67 */
-    border-style: none;
-    transform: translate(-50%, -50%) rotate(120deg) translateY(-281px) rotate(-120deg); /* -420px * 0.67 */
+
+/* Flex Container Styles */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: #0056b3 2px solid;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
 }
 
-.circle:nth-child(5) {
-    top: 50%;
-    left: 50%;
-    background-color: #fffbfb00;
-    box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0); /* 0 4px 8px * 0.67 */
-    border-style: none;
-    transform: translate(-50%, -50%) rotate(160deg) translateY(-281px) rotate(-160deg); /* -420px * 0.67 */
-}
-
-.circle:nth-child(6) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(200deg) translateY(-281px) rotate(-200deg); /* -420px * 0.67 */
-}
-
-.circle:nth-child(7) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(240deg) translateY(-281px) rotate(-240deg); /* -420px * 0.67 */
-}
-
-.circle:nth-child(8) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(280deg) translateY(-281px) rotate(-280deg); /* -420px * 0.67 */
-}
-
-.circle:nth-child(9) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(320deg) translateY(-281px) rotate(-320deg); /* -420px * 0.67 */
-}
-
-/* Button Container */
-.button-container {
-    position: absolute; /* Absolute positioning for precise control */
-    bottom: 0; /* Align at the bottom of the content container */
-    left: 0; /* Align to the left side */
-    right: 0; /* Stretch to the right side */
-    text-align: center; /* Center the button inside the container */
-    border-radius: 50%;
-    padding-bottom: 54px; /* 80px * 0.67 */
-    padding-left: 117px; /* 175px * 0.67 */
-}
-
-/* Start Shopping Button */
-.start-shopping-button {
-    display: inline-block;
-    padding: 10px 20px; /* 15px 30px * 0.67 */
-    background-color: #ff0000; /* Button background color */
-    color: #ffffff; /* Button text color */
-    font-size: 12px; /* 18px * 0.67 */
-    font-weight: 600; /* Font weight */
-    border-radius: 50px; /* 8px * 0.67 */
-    cursor: pointer; /* Pointer cursor on hover */
-    align-content: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
-    text-align: center; /* Center text */
-    height: 34px; /* 50px * 0.67 */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.start-shopping-button:hover {
-    background-color: #cc0000; /* Darker background on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-/* Footer Styling */
-footer {
+.text-image-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px; /* 20px * 1 */
-    background-color: #333;
-    color: #fff;
-    margin-top: 20px; /* 20px * 1 */
-    border-top: 1px solid #444;
+    align-items: flex-start;
+    width: 100%;
+    gap: 2rem;
+    position: relative; /* Ensures positioning is relative to this container */
 }
 
-.footer-section {
-    flex: 1;
-    margin: 0 10px; /* 10px * 1 */
+.text-section {
+    flex: 0 0 30%;
+    text-align: left;
+    padding-top: 2rem; /* Add padding to the top */
+    padding-left: 2rem; /* Add padding to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between items */
 }
 
-.footer-section h2 {
-    margin-top: 0; /* Remove top margin */
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.footer-section p {
-    margin: 0; /* Remove margins */
+.description {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 7rem;
 }
 
+.link {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block; /* Ensures the link size fits its text */
+    white-space: nowrap; /* Prevents text from wrapping */
 }
 
- /* ------------------------------------------------------------------------------------------------ */
-
-
-@media screen and (min-width: 1600px) {
-    .main {
-        flex: 1;
-    }
-    
-    html, body {
-        height: 100%; /* Ensure HTML and BODY take full height */
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100vh;
-        overflow-y: auto; /* Prevent horizontal scroll caused by fixed image */
-    }
-    
-    /* Background Image Container */
-    .background-container {
-        position: fixed;
-        top: 0;
-        right: 0; /* Position to the right side */
-        width: 100%; /* Adjust width as needed, e.g., 50% of the viewport */
-        height: 100%;
-        overflow: hidden;
-        z-index: -1; /* Ensure the image is behind other content */
-    }
-    
-    .background-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Cover the container */
-        position: absolute;
-        top: 0;
-        right: 0; /* Align image to the right side */
-    }
-    
-    /* Larger Container */
-    .larger-container {
-        display: flex;
-        justify-content: center; /* Center content horizontally */
-        align-items: center; /* Center content vertically */
-        width: 670px; /* 1000px * 0.67 */
-        height: 670px; /* 1000px * 0.67 */
-        margin-top: -17px; /* -26px * 0.67 */
-        margin-left: -120px; /* -180px * 0.67 */
-        padding: 13.4px 13.4px; /* 20px * 0.67 */
-        box-sizing: border-box; /* Include padding in the width calculation */
-        position: relative; /* Position relative for absolute positioning of slideshow images */
-    }
-    
-    .content-container {
-        display: flex;
-        flex-direction: column; /* Stack content vertically */
-        height: 760px; /* Adjust as needed */
-        width: 475px;
-        margin-left: 87px;
-        background-color: rgb(255, 255, 255);
-        border-radius: 20px;
-        box-shadow: 0 2.68px 5.36px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        position: relative;
-        margin-top: 180px;
-        margin-left: 260px;
-        padding-bottom: 80px; /* Add padding to ensure space for the title and button */
-        box-sizing: border-box; /* Include padding in the height calculation */
-    }
-    
-    .slideshow {
-        position: relative;
-        width: 100%;
-        height: 600px; /* Increase height as needed */
-        overflow: hidden;
-    }
-    
-    .slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }
-    
-    .slide.active {
-        opacity: 1;
-    }
-    
-    .content-container .slideshow img {
-        width: 100%;
-        height: 100%; /* Ensure the image covers the full height */
-        object-fit: cover;
-        border-radius: 20px;
-        margin-top: 0;
-    }
-    
-    .content {
-        max-width: 100%;
-        padding: 0 20px; /* Add horizontal padding */
-        position: absolute;
-        bottom: 80px; /* Adjust to fit the space available */
-        width: calc(100% - 40px); /* Adjust to account for horizontal padding */
-    }
-    
-    .content-title {
-        font-size: 28px;
-        font-family: "IM Fell French Canon SC", serif;
-        font-weight: 500;
-        color: #333333;
-        padding-top: 0;
-        margin-left:6px ; /* Reset margins */
-        line-height: 1.2;
-    }
-    
-    .content-description {
-        font-size: 14px;
-        color: #555555;
-        margin-top: 9px;
-        margin-bottom: -40px;
-        line-height: 1.6;
-    }
-    
-    
-  /* Container for the circle arrangement */
-.circle-container {
-    position: absolute; /* Absolute positioning */
-    width: 800px; /* Reduced width of the container */
-    height: 800px; /* Reduced height of the container */
-    overflow: hidden;
-    background-color: #ffffff00; /* Temporary background to see the container */
-    border-radius: 50%; /* Make the container circular */
-    top: 50%; /* Center vertically */
-    left: 71%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the container */
+.link i {
+    margin-left: 0.5rem; /* Add space between text and icon */
+    margin-top: 2rem;
+    font-size: 1rem; /* Adjust size if needed */
 }
 
-/* Circle Styling */
-.circle {
-    position: absolute;
-    width: 80px; /* Reduced width for circles */
-    height: 80px; /* Reduced height for circles */
-    border: #333333 solid 2px; /* Border for the circle */
-    border-radius: 50%; /* Make it circular */
-    background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
-    overflow: hidden; /* Ensure the image doesn't spill out of the circle */
+.link:hover {
+    text-decoration: underline;
 }
 
-/* Make images fit and cover the circle */
-.circle img {
+.image-section {
+    flex: 1; /* Ensure image section takes up the remaining space */
+    position: relative;
+    overflow: hidden; /* Ensure the image does not overflow */
+    height: 300px; /* Set a fixed height for the image section */
+}
+
+.image-section img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire circle */
-    display: block; /* Remove any gaps below the image */
+    object-fit: contain; /* Adjust to 'contain', 'cover', or 'scale-down' based on your needs */
+    object-position: center; /* Center the image within the container */
+    border-radius: 0.5rem;
 }
 
-/* Position circles around the center */
-.circle:nth-child(1) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg) translateY(-350px) rotate(0deg); /* Adjusted translateY */
-}
-
-.circle:nth-child(2) {
-    top: 50%;
-    left: 50%;
-    background-color: #fffbfb00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
-    border-style: none;
-    transform: translate(-50%, -50%) rotate(40deg) translateY(-350px) rotate(-40deg); /* Adjusted translateY */
-}
-
-.circle:nth-child(3) {
-    top: 50%;
-    left: 50%;
-    background-color: #fffbfb00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
-    border-style: none;
-    transform: translate(-50%, -50%) rotate(80deg) translateY(-350px) rotate(-80deg); /* Adjusted translateY */
-}
-
-.circle:nth-child(4) {
-    top: 50%;
-    left: 50%;
-    background-color: #fffbfb00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
-    border-style: none;
-    transform: translate(-50%, -50%) rotate(120deg) translateY(-350px) rotate(-120deg); /* Adjusted translateY */
-}
-
-.circle:nth-child(5) {
-    top: 50%;
-    left: 50%;
-    background-color: #fffbfb00;
-    box-shadow: 0 4px 8px rgba(0, 0, 0,0); /* Box shadow for depth */
-    border-style: none;
-    transform: translate(-50%, -50%) rotate(160deg) translateY(-350px) rotate(-160deg); /* Adjusted translateY */
-}
-
-.circle:nth-child(6) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(200deg) translateY(-350px) rotate(-200deg); /* Adjusted translateY */
-}
-
-.circle:nth-child(7) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(240deg) translateY(-350px) rotate(-240deg); /* Adjusted translateY */
-}
-
-.circle:nth-child(8) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(280deg) translateY(-350px) rotate(-280deg); /* Adjusted translateY */
-}
-
-.circle:nth-child(9) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(320deg) translateY(-350px) rotate(-320deg); /* Adjusted translateY */
-}
-
-
+.content-container{
+    width: 80%;
+    margin-left: 10.7rem;
     
-    /* Button Container */
-    .button-container {
-        position: absolute; /* Absolute positioning for precise control */
-        bottom: 0; /* Align at the bottom of the content container */
-        left: 0; /* Align to the left side */
-        right: 0; /* Stretch to the right side */
-        text-align: center; /* Center the button inside the container */
-        border-radius: 50%;
-        padding-left: 150px; /* 175px * 0.67 */
-        margin-bottom: -60px;
-        width: 100%; /* Full width of the parent container */
-        max-width: 550px; /* Adjust to match the width of the content container */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .main-container {
+        overflow-x: auto;
+        overflow-y: hidden;
     }
-    
-    /* Start Shopping Button */
-    .start-shopping-button {
-        display: inline-block;
-        padding: 10px 20px; /* 15px 30px * 0.67 */
-        background-color: #ff0000; /* Button background color */
-        color: #ffffff; /* Button text color */
-        font-size: 14px; /* 18px * 0.67 */
-        font-weight: 600; /* Font weight */
-        border-radius: 50px; /* 8px * 0.67 */
-        cursor: pointer; /* Pointer cursor on hover */
-        align-content: center;
-        text-align: center; /* Center text */
-        height: 44px; /* 50px * 0.67 */
-        width: 90%; /* Full width of the button */
-        transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+
+    .large-container {
+        overflow-x: auto;
+        overflow-y: hidden;
     }
-    
-    .start-shopping-button:hover {
-        background-color: #cc0000; /* Darker background on hover */
-        transform: scale(1.05); /* Slightly enlarge button on hover */
+
+    .small-container {
+        min-width: 150px;
+        max-width: 200px;
+        height: 30px;
     }
-    
-    
-    
+
+    .image-placeholder img {
+        max-width: 25px;
+    }
+
+    .text-image-container {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start of the flex container */
+    }
+
+    .text-section {
+        width: 100%;
+        text-align: left; /* Align text to the left */
+        padding: 0.5rem 1rem; /* Smaller padding */
+        margin-bottom: 0.5rem; /* Smaller margin */
+    }
+
+    .title {
+        margin-bottom: 0.2rem; /* Reduce space between title and description */
+    }
+
+    .description {
+        margin-bottom: 0.5rem; /* Reduce space between description and link */
+    }
+
+    .link {
+        text-align: left; /* Align link text to the left */
+    }
+
+    .image-section {
+        flex: 1;
+        height: 200px; /* Adjust height for mobile view */
+    }
+
+    .image-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure image covers the entire container */
+    }
+
+    .flex-container{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1rem;
+        width: 95%;
+        max-width: 1200px;
+        margin: 0 auto;
+        border: #0056b3 2px solid;
+        border-radius: 20px;
+    }
+
+    .content-container{
+        width: 100%;
+        margin-left: 0rem; 
+        
+    }
 }
 
+@media (max-width: 480px) {
+    .main-container {
+        padding: 0.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
 
+    .large-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start;
+        padding-left: 0.2rem;
+    }
 
+    .small-container {
+        min-width: 120px;
+        max-width: 160px;
+        height: 25px;
+    }
+
+    .image-placeholder img {
+        max-width: 20px;
+        margin-top: 0.2rem;
+    }
+
+    .text-placeholder {
+        font-size: 0.7rem;
+    }
+
+    .flex-container {
+        padding: 0.5rem;
+    }
+
+    .text-image-container {
+        gap: 0.5rem; /* Smaller gap between text and image section */
+    }
+
+    .text-section {
+        width: 100%;
+        text-align: left; /* Ensure text alignment is consistent */
+        padding: 0.5rem 0.5rem; /* Smaller padding */
+        margin-bottom: 0.5rem; /* Smaller margin */
+    }
+
+    .title {
+        margin-bottom: 0.1rem; /* Reduce space between title and description */
+    }
+
+    .description {
+        margin-bottom: 0.2rem; /* Reduce space between description and link */
+    }
+
+    .link {
+        text-align: left; /* Align link text to the left */
+    }
+
+    .image-section {
+        height: 150px; /* Reduce height for very small screens */
+    }
+
+    .image-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure image covers the entire container on smaller screens */
+    }
+
+    .slider-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .main-container {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .large-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .text-section {
+        padding-left: 2rem; /* Maintain padding on larger screens */
+    }
+}

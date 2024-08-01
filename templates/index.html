@@ -1,68 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel = "stylesheet" href="{{ url_for('static', filename='../static/css/homepage.css')}}"> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+    
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=IM+Fell+Great+Primer+SC&display=swap" rel="stylesheet">
+
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Link to JavaScript file -->
     <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+
+    <!-- Custom Styles for Link Icon -->
+    <style>
+        .link i {
+            margin-left: 0.5rem; /* Add space between text and icon */
+            font-size: 1rem; /* Adjust size if needed */
+        }
+    </style>
 </head>
 <body>
-    <div class = "main">
-    <div class="background-container">
-        <img src="{{ url_for('static', filename='/images/homeplate1.png') }}" alt="" class="background-image">
 
-    </div>
+
     <header>
         {% include 'header.html' %} 
     </header>
-
-    <div class="larger-container">
-        <div class="content-container">
-            <div class="slideshow">
-                <img src="{{ url_for('static', filename='/images/deal3.jpg') }}" alt="Image 1" class="slide">
-                <img src="{{ url_for('static', filename='/images/deal4.png') }}" class="slide">
-                <img src="{{ url_for('static', filename='/images/deal5.png') }}" alt="Image 3" class="slide">
-            </div>
-            <div class="content">
-                <h1 class="content-title">The best</h1>
-                <h1 class="content-title">Products</h1>
-                <p class="content-description">that meets your needs</p>
-                <div class="button-container">
-                    <div class="start-shopping-button">Start Shopping</div>
+    
+    <main class="main-container">
+        <div class="large-container">
+            <div class="small-container">
+                <div class="image-placeholder">
+                    <img src="{{ url_for('static', filename='images/category.jpg') }}" alt="Category Icon" class="icon-image">
+                </div>
+                <div class="text-placeholder">
+                    <p>Order Groceries</p>
                 </div>
             </div>
-            
+            <div class="small-container">
+                <div class="image-placeholder">
+                    <img src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart Icon" class="icon-image">
+                </div>
+                <div class="text-placeholder">
+                    <p>Start Saving</p>
+                </div>
+            </div>
+            <div class="small-container">
+                <div class="image-placeholder">
+                    <img src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart Icon" class="icon-image">
+                </div>
+                <div class="text-placeholder">
+                    <p>Shop Weekly Ad</p>
+                </div>
+            </div>
+            <div class="small-container">
+                <div class="image-placeholder">
+                    <img src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart Icon" class="icon-image">
+                </div>
+                <div class="text-placeholder">
+                    <p>Digital Coupons</p>
+                </div>
+            </div>
+            <div class="small-container">
+                <div class="image-placeholder">
+                    <img src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart Icon" class="icon-image">
+                </div>
+                <div class="text-placeholder">
+                    <p>Boost Membership</p>
+                </div>
+            </div>
         </div>
+    </main>
+
+    <section class="flex-container">
+        <div class="text-image-container">
+            <div class="text-section">
+                <h2 id="dynamic-title" class="title">Default Title</h2>
+                <p id="dynamic-description" class="description">Default description goes here.</p>
+                <a id="dynamic-link" href="#" class="link">Default Link <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="image-section">
+                <img id="dynamic-image" src="{{ url_for('static', filename='images/deal10.png') }}" alt="Default Image">
+            </div>
+        </div>
+    </section>
+
+    <div class="content-container">
+        <main class="main-container">
+            {% include 'body1.html' %}
+        </main>
+
+        <main class="main-container">
+            {% include 'deals.html' %}
+        </main>
+
+        <main class="main-container">
+            {% include 'randomproducts.html' %}
+        </main>
+
+        <main class="main-container">
+            {% include 'deal2.html' %}
+        </main>
+
+        <main class="main-container">
+            {% include 'randomproducts2.html' %}
+        </main>
+
+        <main class="main-container">
+            {% include 'deal3.html' %}
+        </main>
+
+        <main class="main-container">
+            {% include 'randomproducts3.html' %}
+        </main>
+
+        <main class="main-container">
+            {% include 'delivery.html' %}
+        </main>
     </div>
 
-   
-    
-    
-    <div class="circle-container">
-        <div class="circle"><img src = "{{ url_for('static', filename='/images/alraya.png') }}" alt="" class="background-image"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"><img src = "{{ url_for('static', filename='/images/kherzaman.jpg') }}" alt="" class="background-image"></div>
-        <div class="circle"><img src = "{{ url_for('static', filename='/images/seoudi.jpeg') }}" alt="" class="background-image"></div>
-        <div class="circle"><img src = "{{ url_for('static', filename='/images/walmart.png') }}" alt="" class="background-image"></div>
-        <div class="circle"><img src = "{{ url_for('static', filename='/images/Bim.png') }}" alt="" class="background-image"></div>
-    </div>
-    
 
     
-</div>
-    
-    
-     
-    
-    
+
+    <footer>
+        {% include 'footer.html' %} 
+    </footer>
 </body>
 </html>

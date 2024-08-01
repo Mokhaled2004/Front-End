@@ -75,24 +75,25 @@
     
         /* Center Container Styling */
         .center-container {
-            width: 80%; /* Width of the container */
-            max-width: 800px; /* Converted from 50rem */
-            height: 80%; /* Height of the container */
-            max-height: 800px; /* Converted from 50rem */
+            width: 100%; /* Width of the container */
+            max-width: 1300px; /* Converted from 50rem */
+            height: 100%; /* Height of the container */
+            max-height: 600px; /* Converted from 50rem */
             background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
             border-radius: 50px; /* Converted from 3.125rem */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Converted from 0.25rem 0.5rem */
             padding: 20px; /* Converted from 1.25rem */
-            margin-left: auto;
+            margin-left: 110px;
             margin-right: auto;
-            margin-top: 50px; /* Converted from 6.25rem */
+            margin-top: 20px; /* Converted from 6.25rem */
             box-sizing: border-box; /* Include padding in width calculation */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-    
+
+       
         /* Form Container Styling */
         .login-form {
             display: flex;
@@ -217,17 +218,17 @@
     
     /* Center Container Styling */
     .center-container {
-        width: 80%; /* Width of the container */
-        max-width: 1000px; /* Converted from 50rem */
-        height: 80%; /* Height of the container */
-        max-height: 1000px; /* Converted from 50rem */
+        width: 100%; /* Width of the container */
+        max-width: 1650px; /* Converted from 50rem */
+        height: 100%; /* Height of the container */
+        max-height: 800px; /* Converted from 50rem */
         background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
         border-radius: 50px; /* Converted from 3.125rem */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Converted from 0.25rem 0.5rem */
         padding: 20px; /* Converted from 1.25rem */
-        margin-left: auto;
+        margin-left: 140px;
         margin-right: auto;
-        margin-top: 50px; /* Converted from 6.25rem */
+        margin-top: 20px; /* Converted from 6.25rem */
         box-sizing: border-box; /* Include padding in width calculation */
         display: flex;
         flex-direction: column;
@@ -311,7 +312,7 @@
         padding: 10px;
         margin-bottom: 15px;
         border: 1px solid #ccc;
-        margin-left: 240px;
+        margin-left: 50px;
         border-radius: 50px;
         box-sizing: border-box; /* Include padding in the width calculation */
     }

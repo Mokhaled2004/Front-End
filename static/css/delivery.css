@@ -1,0 +1,532 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playwrite BE VLG', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-container3 {
+    padding: 1rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  /* Header Section */
+  .header-section2 {
+    display: flex;
+    justify-content: space-between; /* Space out the intro text and link */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 1rem;
+  }
+
+  .coupon{
+    padding-left: 50rem;
+    color: #418fde  ;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .coupon:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .headerdisc {
+    margin-left: 1rem;
+  }
+  
+  .intro-text2 {
+    font-size: 1.7rem;
+    color: #333;
+    margin-left: 3.5rem;
+  }
+  
+  .intro-link2 {
+    font-size: 1rem;
+    color: #fff;
+    background-color: #418fde; /* Button color */
+    padding: 0.5rem 1rem; /* Button padding */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 -2px 5px rgba(255, 255, 255, 0.3); /* Shiny effect */
+    position: relative;
+    margin-right: 4.5rem;
+  }
+  
+  .intro-link2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0), 30%,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100%;
+    animation: shine 3s infinite linear;    
+  }
+  
+  @keyframes shine {
+    0% {
+        left: -100%;
+    }
+    20% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+  }
+  
+  .intro-link2:hover {
+    text-decoration: none;
+    transform: scale(1.05); /* Scale up the button slightly */
+  }
+  
+  /* Large Container */
+  .large-container3 {
+    display: flex;
+    flex-direction: column; /* Stack divs vertically */
+    gap: 1rem; /* Space between the divs */
+    width: 100%;
+    max-width: 1710px;
+    padding: 1rem;
+    margin-left: 3.5rem;
+    background-color: #bfe1f854;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  
+  .top-div2 {
+    background-color: #fdfdfdab;
+    border: #0e9cf494 1px solid;
+    border-radius: 8px;
+    padding: 0.5rem;
+    align-content: center;
+  }
+  
+  .link-section2 {
+    display: flex;
+    justify-content: flex-start; /* Align links to the left by default */
+    gap: 1rem; /* Space between the links */
+    margin-bottom: 1rem; /* Space between the links and the rest of the content */
+  }
+  
+  .top-link2 {
+    font-size: 1rem;
+    color: #418fde;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border: #418fde 2px solid;
+    padding: 0.5rem 1rem;
+    margin-bottom: -0.7rem;
+    border-radius: 2rem;
+  }
+  
+  .top-link2:hover {
+    color: #ffffff; /* Change color on hover */
+    border: #ffffff 2px solid;
+    background-color: #418fde;
+    text-decoration: none;
+  }
+  
+  /* Arrow Styles */
+  .arrow-container2 {
+    background-color: #ffffff8a;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners */
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem; /* Width */
+    height: 27rem; /* Height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .arrow2 {
+    font-size: 1.5rem;
+    color: #418fde;
+  }
+  
+  .arrow-container2:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  
+  /* Carousel Styles */
+  .carousel-container2 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .carousel-wrapper2 {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to slides */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    width: 100%; /* Full width */
+  }
+  
+  .carousel-content2 {
+    display: flex;
+    transition: transform 0.3s ease;
+    width: max-content; /* Width based on content */
+    scroll-snap-align: start; /* Align slides to the start */
+  }
+  
+  .slide2 {
+    background-color: #ffffff;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 0.2rem; /* Space between slides */
+    width: 17rem; /* Width of each slide */
+    height: 25rem; /* Height of each slide */
+    text-align: center;
+    line-height: 5rem; /* Center text vertically */
+    flex-shrink: 0; /* Prevent shrinking of slides */
+    border: #084999 0.1rem solid;
+  }
+  
+  .image-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    overflow: hidden; /* Ensure container doesn't grow */
+  }
+  
+  .image-container2 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Use cover or contain to keep aspect ratio */
+  }
+  
+  /* Ensure all text in the text-container is left-aligned */
+  .text-container2 {
+    margin-top: 1rem; /* Space between image and text */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 1.3rem;   
+  }
+  
+  /* Title style */
+  .item-name2 {
+    font-size: 1.5rem; /* Larger font size for the title */
+    font-weight: bold; /* Make name bold */
+    margin-bottom: -3rem; /* Adjust space below the name */
+  }
+  
+  /* Other text elements */
+  .item-quantity2, .item-price2, .item-rating2  {
+    font-size: 1rem; /* Adjust font size for quantity and price */
+    margin-bottom: -3.5rem; /* Space below each item */
+  }
+  
+  /* Add to Cart Link Style */
+  
+  .add-to-cart-link2 {
+    font-size: 1rem;
+    color: #fff;
+    background-color: #084999; /* Button color */
+    padding: 0.5rem 1rem; /* Button padding */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .add-to-cart-link2:hover {
+    text-decoration: none;
+    background-color: #418fde; /* Change button color on hover */
+    transform: scale(1.05); /* Scale up the button slightly on hover */
+  }
+  
+  /* Flex Container Styles */
+  .flex-container3 {
+    display: flex;
+    justify-content: space-between; /* Space between the box containers */
+    align-items: flex-start; /* Align items to the start */
+    width: 100%;
+    max-width: 110.5rem; /* Maximum width for large screens */
+    padding: 1rem;
+    gap: 0.5rem; /* Space between box containers */
+  }
+  
+  .box-container3 {
+    flex: 1.5; /* Allow each box container to grow equally */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    height: 30rem; /* Set fixed height for consistency */
+    border-radius: 50px;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .box-container3:hover {
+    transform: translateY(-10px); /* Lift the container on hover */
+  }
+  
+  .box-content3 {
+    height: 100%; /* Full height for proper alignment */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space between elements */
+  }
+  
+  .img3 {
+    width: 100%; /* Full width */
+    height: 70%; /* Half height of the box-container3 */
+    object-fit: cover; /* Maintain aspect ratio, cover container */
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+  }
+  
+  .text-section3 {
+    padding: 1rem; /* Padding for the text section */
+    text-align: center; /* Center text */
+    background-color: #bfe1f854; /* Light background color */
+  }
+  
+  .text-section3 h2 {
+    font-size: 1.5rem; /* Larger font size for the title */
+    margin-bottom: 0.5rem; /* Space below the title */
+  }
+  
+  .text-section3 p {
+    font-size: 1rem; /* Standard font size for the description */
+    color: #666; /* Light text color */
+  }
+  
+  .dealsheader {
+    font-size: 1.7rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    margin-left:1rem;
+    
+  }
+  
+  .box-title3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    
+  }
+  
+  .box-description3 {
+    font-size: 1rem;
+    color: #666;
+    margin-left: 2rem;
+    margin-top: -1rem;
+  }
+  
+  .shoplink {
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    color: #418fde;
+  }
+  
+  .shoplink:hover {
+    
+    text-decoration: underline;
+  }
+  
+  
+  @media (max-width: 1024px) {
+
+    .header-section2 {
+      display: flex;
+      justify-content: space-between; /* Space out the intro text and link */
+      align-items: center; /* Center items vertically */
+      margin-bottom: 1rem;
+    }
+  
+    .coupon{
+      padding-left: 50rem;
+      color: #418fde  ;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .intro-link2 {
+        margin-right: 0;
+    }
+    
+    .large-container3 {
+        flex-direction: column; /* Stack containers vertically */
+        gap: 0; /* Remove gap */
+        margin-left: 0;
+    }
+  
+    .link-section2 {
+        justify-content: center; /* Center links on smaller screens */
+        flex-wrap: wrap; /* Allow links to wrap */
+    }
+  
+    .flex-container3 {
+        flex-direction: column; /* Stack box containers vertically */
+        gap: 1rem; /* Space between box containers */
+        margin-left: 0;
+    }
+  
+    .box-container3 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+
+    .headerdisc {
+      margin-left: 1rem;
+      word-wrap: break-word; /* Allows long words to break onto the next line */
+      overflow-wrap: break-word; /* Ensures long words or URLs break properly */
+      white-space: normal; /* Allows text to wrap onto multiple lines */
+      
+    }
+    
+  
+    .coupon{
+      padding-left: 50rem;
+      color: #418fde  ;
+      font-size:1rem;
+      font-weight: bold;
+      margin-left: 1rem;
+    }
+    .box-title3 {
+        font-size: 1.2rem; /* Adjust title size for smaller screens */
+    }
+  
+    .box-description3 {
+        font-size: 0.9rem; /* Adjust description size for smaller screens */
+    }
+  
+    .flex-container3 {
+      display: flex;
+      justify-content: space-between; /* Space between the box containers */
+      align-items: flex-start; /* Align items to the start */
+      width: 100%;
+      max-width: 1800px; /* Maximum width for large screens */
+      padding: 1rem;
+      gap: 1rem; /* Space between box containers */
+    }
+  
+    .box-container3 {
+      flex: 1; /* Allow each box container to grow equally */
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      margin-left: 3.3rem;
+      
+      height: 30rem; /* Set fixed height for consistency */
+      border-radius: 8px;
+      overflow: hidden; /* Ensure content doesn't overflow */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: translateY(-10px); /* Lift the container on hover */
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .flex-container3 {
+        flex-direction: row; /* Allow horizontal scrolling for sliding effect on small screens */
+        align-items: stretch; /* Align items to stretch full height */
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Enables snap scrolling */
+        gap: 1rem; /* Remove gap for smooth sliding */
+    }
+  
+    .dealsheader {
+        font-size: 1.3rem;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        margin-left: 1.2rem;
+        
+      }
+  
+    .box-container3 {
+        flex: none; /* Prevent flexing, maintain fixed width */
+        width: 100%; /* Full width for each slide on small screens */
+        min-width: 100%; /* Ensure each box is treated as a full slide */
+        margin-left: 0;
+        margin-bottom: 0.5rem; /* Less space between containers */
+        height: 25rem;
+        scroll-snap-align: start; /* Align each container to the start on scroll */
+    }
+  
+    .img3 {
+        height: 50%; /* Maintain 50% height */
+    }
+  
+    .box-title3,
+    .box-description3,
+    .shoplink {
+        margin-left: 2rem; /* Maintain consistent left margin */
+    }
+  
+    .shoplink {
+        font-size: 1.3rem; /* Adjust link size for smaller screens */
+    }
+  
+    .box-title3 {
+        font-size: 1rem; /* Smaller title size */
+    }
+  
+    .box-description3 {
+        font-size: 0.8rem; /* Smaller description size */
+    }
+  }
+
+
+  
+  @media (max-width: 768px) {
+  .box-title3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    
+  }
+
+  .shoplink{
+    font-size: 1.2rem;
+    
+  }
+  
+  .box-description3 {
+    font-size: 1rem;
+    color: #666;
+    margin-left: 2rem;
+    margin-top: -1rem;
+  }
+
+  .img3 {
+    width: 100%; /* Full width */
+    height: 70%; /* Half height of the box-container3 */
+    object-fit: cover; /* Maintain aspect ratio, cover container */
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+  }
+}

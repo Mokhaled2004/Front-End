@@ -32,6 +32,8 @@ def home():
 def logged():
     return render_template('loggedhomepage.html')
 
+
+
 @app.route('/header')
 def header():
     return render_template('header.html')

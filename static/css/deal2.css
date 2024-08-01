@@ -1,0 +1,104 @@
+.large-container4 {
+    display: flex;
+    align-items: flex-start; /* Align items to the start vertically */
+    justify-content: flex-start; /* Align items to the start horizontally */
+    width: 100%;
+    max-width: 90%; /* Ensure container does not exceed the viewport width */
+    margin: 0 auto; /* Center the container */
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.image-section4 {
+    flex: 1 1 1000%; /* Image takes up 70% of the container and is flexible */
+    padding-right: 1rem;
+}
+
+.image-section4 img {
+    width: 100%; /* Make sure the image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-sizing: border-box; /* Include padding and border in the image's total width and height */
+    object-fit: cover; /* Scale the image to cover the container */
+}
+
+.text-section4 {
+    flex: 1 1 30%; /* Text takes up 30% of the container and is flexible */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Space between text elements */
+}
+
+.title4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    word-wrap: break-word; /* Handle long words or URLs */
+}
+
+.description4 {
+    font-size: 1rem;
+    margin: 0;
+    color: #555;
+    word-wrap: break-word; /* Handle long words or URLs */
+    margin-bottom: 2rem;
+}
+
+.link4 {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+
+.link4:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .large-container4 {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        padding: 1rem;
+    }
+
+    .image-section4,
+    .text-section4 {
+        flex: 1 1 100%; /* Each section takes full width */
+        padding: 0; /* Remove side padding */
+    }
+
+    .image-section4 {
+        margin-bottom: 1rem; /* Space between sections */
+    }
+
+    .title4 {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+
+    .description4,
+    .link4 {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .large-container4 {
+        padding: 0.5rem; /* Reduce padding for smaller screens */
+    }
+
+    .title4 {
+        font-size: 1rem; /* Further adjust font size for very small screens */
+    }
+
+    .description4,
+    .link4 {
+        font-size: 0.8rem; /* Adjust font size for smaller screens */
+    }
+
+    .link4 {
+        margin-top: 0.3rem; /* Adjust margin for small screens */
+    }
+}

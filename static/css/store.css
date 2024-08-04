@@ -1,296 +1,317 @@
-@media screen and (min-width: 1200px) {
-
-    html, body {
-        height: 100%; /* Ensure HTML and BODY take full height */
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100vh;
-        overflow-y: auto; /* Prevent horizontal scroll caused by fixed image */
-    }
-    
-    /* Background Image Container */
-    .background-container {
-        position: fixed;
-        top: 0;
-        right: 0; /* Position to the right side */
-        width: 100%; /* Adjust width as needed, e.g., 50% of the viewport */
-        height: 100%;
-        overflow: hidden;
-        z-index: -1; /* Ensure the image is behind other content */
-    }
-    
-    .background-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Cover the container */
-        position: absolute;
-        top: 0;
-        right: 0; /* Align image to the right side */
-    }
-
-    .container {
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px; /* Space between small containers */
-    }
-    
-    .small-container {
-        flex: 0 0 300px; /* Fixed width of 300px */
-        box-sizing: border-box;
-        border: 2px solid #ccc; /* Optional border */
-        border-radius: 50px; /* Optional rounded corners */
-        overflow: hidden;
-        display: flex;
-        margin-left: 100px;
-        margin-right: -100px;
-        background-color: #ffffff;
-        flex-direction: column;
-        border: #cc0000 2px solid;
-        height: 450px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
-        transition: transform 0.3s ease; /* Smooth transition for scaling */
-        
-        justify-content: space-between; /* Space content evenly */
-        padding: 20px 0;
-    }
-
-    .small-container:hover {
-        transform: scale(1.05); /* Scale up the container slightly on hover */
-    }
-
-    /* New styles for circular image container */
-    .image-container {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f4f4f9; /* Background color for the container */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Box shadow for the image container */
-        margin-bottom: 10px;
-        margin-left: 70px;
-    }
-
-    .store-logo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Maintain aspect ratio and cover container */
-    }
-    
-    .small-container .text {
-        padding: 3px;
-        margin-top: 1px;
-        margin-left: 10px;
-        
-    }
-
-    .small-container .text .title {
-        text-align: center;
-    }
-
-    .link-container {
-        display: flex;
-        justify-content: center; /* Center align the button */
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    .visit-link {
-        display: inline-block;
-        padding: 10px 15px;
-        background-color: #ff0000; /* Background color */
-        color: #ffffff; /* Text color */
-        text-align: center;
-        text-decoration: none; /* Remove underline */
-        border-radius: 50px; /* Rounded corners */
-        font-weight: 500;
-        margin: 10px 0;
-        width: 100px;
-        margin-left: 15px;
-        margin-bottom: -4px;
-        text-align: center;
-        align-content: center;
-        font-size: 12px;
-        transition: background-color 0.3s ease; /* Smooth transition on hover */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
-
-    }
-
-    .visit-link:hover {
-        background-color: #cc0000; /* Darker shade on hover */
-    }
-
-    .pagetitle {
-        font-size: 25px;
-        font-weight: 700;
-        font-family: 'Ga Maamli', sans-serif;
-        text-align: center;
-    }
-
+/* Main container styles */
+.main-container {
+    width: 90%;
+    max-width: 1200px; /* Adjust to your preference */
+    margin: 2rem auto;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
 }
-        
+
+/* Flex container to hold the filter and store containers */
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Space out the containers evenly */
+    align-items: flex-start; /* Align items to the top */
+    margin: 2rem 0;
+    gap: 1rem; /* Optional: Space between filter and store containers */
+}
+
+/* Search container styles */
+.search-container2 {
+    position: relative; /* Use relative positioning for the container */
+    width: 90%;
+    max-width: 950px;
+    margin-top: 2rem;
+    margin-left: 2rem; /* Smaller left margin on larger screens */
+    margin-right: auto; /* Center container on larger screens */
+    padding: 1rem 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.search-bar2 {
+    width: 70%;
+    max-width: 700px;
+    padding: 0.6rem;
+    border: rgb(0, 0, 0) solid 1px;
+    border-radius: 50px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    z-index: 1; /* Ensure the input is above the image */
+    margin-left: 0.2rem;
+}
+
+.search-bar2:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Link and image styling */
+.location-link {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem; /* Add some space between the search bar and link */
+    text-decoration: none; /* Remove underline from link */
+    color: #ffffff; /* Adjust text color as needed */
+    font-size: 1rem; /* Match the font size of the search bar */
+    border: #007BFF solid 1px; /* Optional: Add border to the link */
+    padding: 0.5rem 1rem; /* Add padding to the link */
+    border-radius: 50px;
+    background-color: #084999;
+}
+
+.location-link:hover {
+    background-color: #418fde; /* Change background color on hover */
+}
+
+.location-img {
+    width: 24px; /* Adjust size of the image */
+    height: 24px;
+    margin-right: 0.5rem; /* Space between image and text */
+    object-fit: cover; /* Ensure image is not distorted */
+}
+
+.location-text {
+    display: inline; /* Ensure text is inline with the icon */
+}
+
+/* Filter container styles */
+.filter-container {
+    width: 30%; /* Take up 30% of the flex container's width */
+    max-width: 400px; /* Adjust to fit within the main container on larger screens */
+    padding: 1rem;
+    background-color: #bfe1f854; /* Light background color to differentiate from main container */
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Store container styles */
+.store-container {
+    width: 70%; /* Take up 70% of the flex container's width */
+    padding: 1rem;
+    background-color: #bfe1f854; /* Light background color to differentiate from main container */
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left for better readability */
+    height: auto; /* Let the height adjust based on content */
+}
+
+/* Store item styles */
+.store-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Ensure the text color stays the same */
+    display: block; /* Make the link take the full width of the container */
+}
+
+.store-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem; /* Space between store items */
+    padding: 1rem;
+    background-color: #fff; /* Background color for store item */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s; /* Add a transition for hover effects */
+}
+
+.store-item:hover {
+    transform: translateY(-5px); /* Lift the item slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.store-logo {
+    width: 70px; /* Adjust the size of the logo */
+    height: 70px;
+    border-radius: 50%; /* Make the logo circular */
+    object-fit: cover; /* Ensure the image is not distorted */
+    margin-right: 1rem; /* Space between logo and store info */
+}
+
+.store-info {
+    flex-grow: 1; /* Allow the store info to grow and fill space */
+}
+
+.store-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Space between name and address */
+    margin-right: 1rem;
+}
+
+.store-address {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem; /* Space between address and details */
+    margin-right: 1rem;
+}
+
+.store-delivery-fee,
+.store-category,
+.store-rating {
+    font-size: 0.9rem;
+    color: #333;
+    margin-right: 1rem;
+}
+
+/* Styles for the new search bar */
+.name-search-container {
+    margin-top: 1rem; /* Space above the search bar */
+}
+
+.name-search-bar {
+    width: 100%;
+    padding: 0.6rem;
+    border: rgb(0, 0, 0) solid 1px;
+    border-radius: 50px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.name-search-bar:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Category filter container styles */
+.category-filter-container {
+    margin-top: 1rem; /* Space above the category filter container */
+    padding: 1rem; /* Add padding for spacing */
+    background-color: #f5f5f5; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Category title styles */
+.category-title {
+    font-size: 1.4rem; /* Larger font size for the title */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 1rem; /* Space below the title */
+    color: #333; /* Dark color for the title */
+}
+
+/* Category filter styles */
+.category-filter {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 0.5rem; /* Space between checkboxes */
+    padding: 0.5rem; /* Add padding to the container */
+    border-radius: 4px; /* Slightly rounded corners */
+    background-color: #fff; /* White background for each filter item */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for filter items */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.category-filter:hover {
+    background-color: #e0e0e0; /* Change background on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Category checkbox styles */
+.category-checkbox {
+    margin-right: 0.5rem; /* Space between checkbox and label */
+}
+
+/* Category label styles */
+.category-filter label {
+    font-size: 1rem; /* Font size for labels */
+    color: #555; /* Slightly lighter color for labels */
+}
+
+/* Toggle filters button styles */
 
 
 
 
+/* Toggle filters button styles */
+.toggle-filters-btn {
+    display: none; /* Hide the button by default */
+    padding: 0.5rem 1rem;
+    background-color: #084999;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute; /* Position the button absolutely */
+    top: 1rem; /* Distance from the top of the viewport */
+    left: 1rem; /* Distance from the left of the viewport */
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
 
 
 
-@media screen and (min-width: 1600px) {
-    .main {
-        flex: 1;
+/* Responsive styles for 768px and below */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Stack items vertically on small screens */
     }
-    
-    html, body {
-        height: 100%; /* Ensure HTML and BODY take full height */
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100vh;
-        overflow-y: auto; /* Prevent horizontal scroll caused by fixed image */
-    }
-    
-    /* Background Image Container */
-    .background-container {
-        position: fixed;
+
+    .filter-container {
+        width: 100%; /* Take full width on small screens */
+        position: absolute; /* Position the filter container absolutely */
+        left: -100%; /* Hide off-screen by default */
         top: 0;
-        right: 0; /* Position to the right side */
-        width: 100%; /* Adjust width as needed, e.g., 50% of the viewport */
         height: 100%;
-        overflow: hidden;
-        z-index: -1; /* Ensure the image is behind other content */
-    }
-    
-    .background-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Cover the container */
-        position: absolute;
-        top: 0;
-        right: 0; /* Align image to the right side */
+        overflow-y: auto; /* Enable vertical scrolling if needed */
+        transition: left 0.3s ease; /* Smooth transition for showing/hiding */
+        z-index: 10; /* Ensure it appears above other content */
+        background-color: #fff; /* Background color for filter container */
+        padding: 1rem; /* Add padding inside filter container */
+        border-radius: 0%;
     }
 
-    .container {
-        width: 100%;
-        padding: 30px;
-        box-sizing: border-box;
-    }
-    
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px; /* Space between small containers */
-    }
-    
-    .small-container {
-        flex: 0 0 300px; /* Fixed width of 300px */
-        box-sizing: border-box;
-        border: 2px solid #ccc; /* Optional border */
-        border-radius: 50px; /* Optional rounded corners */
-        overflow: hidden;
-        display: flex;
-        margin-left: 170px;
-        margin-right: -100px;
-        background-color: #ffffff;
-        flex-direction: column;
-        border: #cc0000 2px solid;
-        height: 450px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
-        transition: transform 0.3s ease; /* Smooth transition for scaling */
-        
-        justify-content: space-between; /* Space content evenly */
-        padding: 20px 0;
+    .filter-container.show {
+        left: 0; /* Slide in the filter container */
     }
 
-    .small-container:hover {
-        transform: scale(1.05); /* Scale up the container slightly on hover */
-    }
-
-    /* New styles for circular image container */
-    .image-container {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f4f4f9; /* Background color for the container */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Box shadow for the image container */
-        margin-bottom: 10px;
-        margin-left: 70px;
-    }
-
-    .store-logo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Maintain aspect ratio and cover container */
-    }
-    
-    .small-container .text {
-        padding: 3px;
-        margin-top: 1px;
-        margin-left: 10px;
+    .toggle-filters-btn {
+        display: block; /* Show the button on small screens */
+        margin-top: 10rem;
+        margin-left: 18rem;
         
     }
 
-    .small-container .text .title {
-        text-align: center;
+    .toggle-filters-btn:hover {
+        background-color: #418fde;
     }
 
-    .link-container {
-        display: flex;
-        justify-content: center; /* Center align the button */
-        align-items: center;
-        margin-top: 10px;
+    .store-container {
+        width: 100%; /* Take full width on small screens */
     }
 
-    .visit-link {
-        display: inline-block;
-        padding: 10px 15px;
-        background-color: #ff0000; /* Background color */
-        color: #ffffff; /* Text color */
-        text-align: center;
-        text-decoration: none; /* Remove underline */
-        border-radius: 50px; /* Rounded corners */
-        font-weight: 500;
-        margin: 10px 0;
-        width: 130px;
-        height: 50px;
-        margin-left: 15px;
-        margin-bottom: -4px;
-        text-align: center;
-        align-content: center;
-        font-size: 18px;
-        transition: background-color 0.3s ease; /* Smooth transition on hover */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Added box shadow */
-
+    .location-text {
+        display: none; /* Hide the location text on small screens */
     }
 
-    .visit-link:hover {
-        background-color: #cc0000; /* Darker shade on hover */
+    .location-link {
+        margin-left: 0.2rem; /* Remove margin on small screens */
+        padding: 0.5rem 0.5rem; /* Adjust padding for smaller screens */
     }
 
-    .pagetitle {
-        font-size: 30px;
-        font-weight: 700;
-        font-family: 'Ga Maamli', sans-serif;
-        text-align: center;
-    }
+    .search-bar2 {
+        width: 40%; /* Take full width on small screens */
+        font-size: 0.75rem;
 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .toggle-filters-btn {
+        display: block; /* Show the button on small screens */
+        margin-top: 10rem;
+        margin-left: 16rem;
+        
+    }
 }

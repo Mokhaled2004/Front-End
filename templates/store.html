@@ -1,58 +1,68 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Store List</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src="{{ url_for('static', filename='js/store.js') }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/store.css') }}">
+    <script src="{{ url_for('static', filename='js/store.js') }}" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry&callback=initMap" async defer></script>
 </head>
 
 <body>
-    <div class="background-container">
-        <img src="{{ url_for('static', filename='images/homeplate1.png') }}" alt="" class="background-image">
-    </div>
-
     <header>
-        {% include 'loggedheader.html' %}
+        {% include 'header.html' %}
     </header>
 
-    <div>
-        <h2 class="pagetitle">Stores</h2>
-    </div>
+    <div class="main-container">
+        <div class="search-container2">
+            <input type="text" class="search-bar2" placeholder="Search By Address">
+            <a class="location-link" href="#">
+                <img src="{{ url_for('static', filename='images/location.png') }}" class="location-img" alt="Location Icon">
+                <span class="location-text">Search using My Location</span>
+            </a>
+        </div>
 
-    <div class="container">
-        <div class="row">
-            {% for store in stores %}
-            <div class="small-container">
-                <div class="image-container">
-                    <!-- Assuming logo is a URL or path to the image -->
-                    <img src="{{ url_for('static', filename='logos/' + store['logo']) }}" alt="{{ store['name'] }}" class="store-logo">
+        <div class="flex-container">
+            <!-- Button to toggle filters on small screens -->
+            <button class="toggle-filters-btn">Filters</button>
+
+            <div class="filter-container">
+                <!-- New Search Bar for Store Names -->
+                <div class="name-search-container">
+                    <input type="text" class="name-search-bar" placeholder="Search By Store Name">
                 </div>
-                <div class="text">
-                    <p class="title"> <b>{{ store['name'] }}</b></p>
-                </div>
-                <div class="text">
-                    <p><b>Address:</b> {{ store['address'] }}</p>
-                </div>
-                <div class="text">
-                    <p><b>Delivery Fees:</b> ${{ store['deliveryfees'] }}</p>
-                </div>
-                <div class="text">
-                    <p><b>Rating:</b> {{ store['rating'] }}</p>
-                </div>
-                <div class="text">
-                    <p><b>Category:</b> {{ store['category'] }}</p>
-                </div>
-                <div class="link-container">
-                    <a href="#" class="visit-link">Visit</a>
+
+                <!-- Category Filters -->
+                <div class="category-filter-container">
+                    <h3 class="category-title">Categories</h3>
+                    {% for category in categories %}
+                    <div class="category-filter">
+                        <input type="checkbox" id="{{ category | replace(' ', '_') }}" class="category-checkbox">
+                        <label for="{{ category | replace(' ', '_') }}">{{ category }}</label>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
+
+            <div class="store-container">
+                {% for store in stores %}
+                <a href="{{ url_for('home') }}" class="store-link">
+                    <div class="store-item" data-address="{{ store['address'] | lower }}" data-lat="{{ store['latitude'] }}" data-lng="{{ store['longitude'] }}">
+                        <img src="{{ url_for('static', filename='logos/' + store['logo']) }}" alt="{{ store['name'] }}" class="store-logo">
+                        <div class="store-info">
+                            <span class="store-name">{{ store['name'] }}</span>
+                            <span class="store-address">{{ store['address'] }}</span>
+                            <span class="store-delivery-fee">${{ store['deliveryfees'] }}</span>
+                            <span class="store-category">{{ store['category'] }}</span>
+                            <span class="store-rating">{{ store['rating'] }} ★</span>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </body>
-
 </html>

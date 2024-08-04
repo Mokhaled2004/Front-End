@@ -174,7 +174,7 @@ body {
     padding: 1rem;
     margin-left: 1rem;
     margin-right: 0.2rem; /* Space between slides */
-    width: 17rem; /* Width of each slide */
+    width: 14rem; /* Width of each slide */
     height: 25rem; /* Height of each slide */
     text-align: center;
     line-height: 5rem; /* Center text vertically */
@@ -353,7 +353,7 @@ body {
     }
 
     .slide {
-        width: 10rem; /* Further decrease slide width on small screens */
+        width: 8rem; /* Further decrease slide width on small screens */
         height: 14rem; /* Further decrease slide height on small screens */
         margin-right: -0.5rem;
     }

@@ -14,7 +14,8 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'marketmate2'
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'logos')
-
+app.config['PP_UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'pps')  # Add new folder for profile pictures
+app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}  # Specify allowed file types
 
 mysql = MySQL(app)
 
@@ -24,6 +25,9 @@ def hash_password(password):
 def check_password(hashed_password, password):
     return hashed_password == hashlib.md5(password.encode()).hexdigest()
 
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -32,20 +36,112 @@ def home():
 def logged():
     return render_template('loggedhomepage.html')
 
-
-
 @app.route('/header')
 def header():
     return render_template('header.html')
 
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    # Ensure the user is logged in
+    if 'loggedin' in session:
+        user_id = session['id']  # Get the logged-in user's ID
+
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        
+        # Fetch user data based on the session user ID
+        cursor.execute('SELECT * FROM users WHERE id = %s', (user_id,))
+        user = cursor.fetchone()
+
+        # Fetch user's stores
+        cursor.execute('SELECT * FROM stores WHERE user_id = %s', (user_id,))
+        stores = cursor.fetchall()
+
+        # Handle profile update
+        if request.method == 'POST':
+            # Get updated profile data from the form
+            firstname = request.form.get('fname')
+            lastname = request.form.get('lname')
+            email = request.form.get('email')
+            password = request.form.get('password')
+            address = request.form.get('address')
+            role = request.form.get('role')
+            pp = request.files.get('pp')  # Get uploaded profile picture
+
+            # Update profile picture if a new one is uploaded
+            if pp and allowed_file(pp.filename):
+                pp_filename = secure_filename(pp.filename)
+                pp_path = os.path.join(app.config['PP_UPLOAD_FOLDER'], pp_filename)
+                
+                try:
+                    # Save the new profile picture
+                    pp.save(pp_path)
+                    pp_filename_only = pp_filename
+                except Exception as e:
+                    flash('Failed to save the profile picture. Please try again.')
+                    return redirect(url_for('profile'))
+
+            else:
+                pp_filename_only = user['pp']  # Use existing profile picture if none is uploaded
+
+            # Validate input
+            if not all([firstname, lastname, email, role, address, password]):
+                flash('Please fill out all fields!')
+            elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+                flash('Invalid email address!')
+            elif not re.match(r'[A-Za-z0-9]+', firstname):
+                flash('First name must contain only characters and numbers!')
+            elif not re.match(r'[A-Za-z0-9]+', lastname):
+                flash('Last name must contain only characters and numbers!')
+            elif not re.match(r'[0-9]+', address):
+                flash('Phone number must contain only numbers!')
+            else:
+                # Hash the password before storing it
+                hashed_password = hash_password(password)
+                try:
+                    # Update user information in the database
+                    cursor.execute('''
+                        UPDATE users
+                        SET firstname = %s, lastname = %s, email = %s, role = %s, address = %s, password = %s, pp = %s
+                        WHERE id = %s
+                    ''', (firstname, lastname, email, role, address, hashed_password, pp_filename_only, user_id))
+                    mysql.connection.commit()
+                    flash('Profile updated successfully!')
+
+                    # Refresh the page to display updated data
+                    return redirect(url_for('profile'))
+
+                except MySQLdb.Error as e:
+                    flash('Failed to update profile. Please try again.')
+                    print(f"Database error: {e}")
+
+        cursor.close()
+        return render_template('account.html', user=user, stores=stores)
+
+    else:
+        flash('Please log in to view your profile!')
+        return redirect(url_for('login'))
+
+
+
+
 @app.route('/store')
 def store():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    
+    # Fetch all store records
     cursor.execute('SELECT * FROM stores')
-    stores = cursor.fetchall()  # Fetch all store records
-
-    return render_template('store.html', stores=stores)  # Pass stores data to the template
-
+    stores = cursor.fetchall()
+    
+    # Fetch unique categories
+    cursor.execute('SELECT DISTINCT category FROM stores')
+    categories = cursor.fetchall()
+    
+    cursor.close()
+    
+    # Extract category names from the list of dictionaries
+    category_list = [cat['category'] for cat in categories]
+    
+    return render_template('store.html', stores=stores, categories=category_list)
 
 
 @app.route('/addstore', methods=['GET', 'POST'])
@@ -60,10 +156,8 @@ def addstore():
             logo = request.files.get('logo')  # Get uploaded image file
             user_id = session.get('id')  # Get logged-in user ID
 
-            
-
             # Check if a file is uploaded
-            if logo and logo.filename:
+            if logo and allowed_file(logo.filename):
                 # Sanitize the filename
                 logo_filename = secure_filename(logo.filename)
                 # Create the full path where the file will be saved
@@ -87,8 +181,8 @@ def addstore():
                 flash('Please fill out all fields!')
             elif not re.match(r'^[A-Za-z0-9\s]+$', storename):
                 flash('Store name must contain only letters, numbers, and spaces!')
-            
-            
+            elif not re.match(r'^[0-9]+$', fees):
+                flash('Delivery fees must be a valid number!')
             elif float(fees) < 0:
                 flash('Delivery fees must be a non-negative number!')
             else:
@@ -97,12 +191,13 @@ def addstore():
                     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
                     cursor.execute(
                         '''
-                        INSERT INTO stores (name, address, deliveryfees,  category, logo, user_id)
+                        INSERT INTO stores (name, address, deliveryfees, category, logo, user_id)
                         VALUES (%s, %s, %s, %s, %s, %s)
                         ''',
                         (storename, address, fees, category, logo_filename_only, user_id)
                     )
                     mysql.connection.commit()
+                    cursor.close()
                     flash('Store created successfully!')
                     return redirect(url_for('store'))  # Redirect to the store list page
                 except MySQLdb.Error as e:
@@ -112,7 +207,6 @@ def addstore():
     else:
         flash('Please log in to create a store!')
         return redirect(url_for('login'))
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -131,29 +225,26 @@ def login():
             session['lastname'] = account['lastname']
             session['email'] = account['email']
             flash('Logged in successfully!')
-            return redirect(url_for('logged'))
+            return redirect(url_for('home'))
         else:
             flash('Incorrect email or password!')
+        cursor.close()
 
     return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    if request.method == 'POST' and 'firstname' in request.form and 'lastname' in request.form and 'email' in request.form and 'role' in request.form and 'address' in request.form and 'phone' in request.form and 'password' in request.form:
-        firstname = request.form['firstname']
-        lastname = request.form['lastname']
-        email = request.form['email']
-        role = request.form['role']
-        address = request.form['address']
-        phone = request.form['phone']
-        password = request.form['password']
+    if request.method == 'POST':
+        firstname = request.form.get('firstname')
+        lastname = request.form.get('lastname')
+        email = request.form.get('email')
+        role = request.form.get('role')
+        address = request.form.get('address')
+        phone = request.form.get('phone')
+        password = request.form.get('password')
 
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM users WHERE email = %s', (email,))
-        account = cursor.fetchone()
-
-        if account:
-            flash('Account already exists with this email!')
+        if not all([firstname, lastname, email, role, address, phone, password]):
+            flash('Please fill out the form!')
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             flash('Invalid email address!')
         elif not re.match(r'[A-Za-z0-9]+', firstname):
@@ -163,15 +254,39 @@ def register():
         elif not re.match(r'[0-9]+', phone):
             flash('Phone number must contain only numbers!')
         else:
-            hashed_password = hash_password(password)
-            cursor.execute('INSERT INTO users (firstname, lastname, email, role, address, phone, password) VALUES (%s, %s, %s, %s, %s, %s, %s)', (firstname, lastname, email, role, address, phone, hashed_password))
-            mysql.connection.commit()
-            flash('You have successfully registered!')
-            return redirect(url_for('login'))
-    elif request.method == 'POST':
-        flash('Please fill out the form!')
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT * FROM users WHERE email = %s', (email,))
+            account = cursor.fetchone()
+
+            if account:
+                flash('Account already exists with this email!')
+            else:
+                hashed_password = hash_password(password)
+                try:
+                    cursor.execute(
+                        'INSERT INTO users (firstname, lastname, email, role, address, phone, password) VALUES (%s, %s, %s, %s, %s, %s, %s)',
+                        (firstname, lastname, email, role, address, phone, hashed_password)
+                    )
+                    mysql.connection.commit()
+                    flash('You have successfully registered!')
+                    return redirect(url_for('login'))
+                except MySQLdb.Error as e:
+                    flash('Registration failed. Please try again.')
+                    print(f"Database error: {e}")
+            cursor.close()
 
     return render_template('register.html')
+
+@app.route('/logout')
+def logout():
+    # Clear session data to log out
+    session.pop('loggedin', None)
+    session.pop('id', None)
+    session.pop('firstname', None)
+    session.pop('lastname', None)
+    session.pop('email', None)
+    flash('You have been logged out.')
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)

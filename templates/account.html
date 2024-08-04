@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Profile - MarketMate</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/account.css') }}">
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        {% include 'header.html' %}
+    </header>
+
+     <div class="main-container">
+        <div class="profile-pic">
+            {% if user.pp %}
+                <img class="img3" src="{{ url_for('static', filename='pps/' + user.pp) }}" alt="Profile Picture">
+            {% else %}
+                <img class="img3" src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Default Profile Picture">
+            {% endif %}
+        </div>
+
+        <div class="user-info">
+            <form method="POST" enctype="multipart/form-data" action="{{ url_for('profile') }}">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" value="{{ user.firstname }}" required>
+            
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" value="{{ user.lastname }}" required>
+            
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="{{ user.email }}" required>
+            
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter new password">
+            
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" value="{{ user.address }}" required>
+            
+                <label for="role">Role</label>
+                <input type="text" id="role" name="role" value="{{ user.role }}" required>
+            
+                <label for="pp">Profile Picture</label>
+                <input type="file" id="pp" name="pp">
+            
+                <button type="submit">Update</button>
+            </form>
+        </div>
+
+        <div class="points">
+            <div class="points-header">
+                <div class="points-img-container">
+                    <img src="{{ url_for('static', filename='images/coins.png') }}" alt="Points Image" class="points-img">
+                </div>
+                <h3>Points Summary</h3>
+            </div>
+            <div class="points-text">
+                <div class="points-header">
+                    <p>You currently have <strong>{{user.points}}</strong></p>
+                    <div class="points-img-container1">
+                        <img src="{{ url_for('static', filename='images/coin.png') }}" alt="Points2 Image" class="points-img">
+                    </div>
+                </div>
+                <p>Earn more points by completing tasks and participating in promotions!</p>
+            </div>
+        </div>
+
+        <div class="user-stores">
+            {% for store in stores %}
+            <div class="user-store-container">
+                <div class="store-header">
+                    <div class="store-img-container">
+                        <img src="{{ url_for('static', filename='logos/' + store.logo) }}" alt="Store Image" class="store-img">
+                    </div>
+                    <h3>{{ store.name }}</h3>
+                    <a class="modify-link" >Modify</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

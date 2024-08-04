@@ -1,7 +1,10 @@
-// JavaScript to hide flash messages after 3 seconds
-setTimeout(function() {
-    const flashMessages = document.querySelectorAll('.flash-message');
-    flashMessages.forEach(function(message) {
-        message.style.display = 'none';
+document.addEventListener('DOMContentLoaded', function () {
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function () {
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+        this.querySelector('i').classList.toggle('fa-eye-slash');
     });
-}, 3000);
+});

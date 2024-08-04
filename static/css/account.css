@@ -1,0 +1,301 @@
+/* Main container styles */
+.main-container {
+    width: 90%;
+    max-width: 1200px; /* Adjust to your preference */
+    margin: 2rem auto;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    border: #333 1px solid;
+}
+
+/* Profile picture styles */
+.profile-pic {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.profile-pic img {
+    width: 250px; /* Adjust size as needed */
+    height: 250px;
+    border-radius: 10%;
+    object-fit: cover;
+    border: 2px solid #ddd; /* Optional border */
+}
+
+/* User info styles */
+.user-info {
+    max-width: 600px; /* Adjust as needed */
+    margin-left: 35rem;
+    margin-top: -17.5rem;
+    text-align: left; /* Align text to the left for better readability */
+}
+
+.user-info h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Adjust font size as needed */
+}
+
+.user-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-info label {
+    font-weight: bold;
+    display: block; /* Ensure labels take up full width */
+}
+
+.user-info input[type="text"],
+.user-info input[type="email"],
+.user-info input[type="password"],
+.user-info textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.user-info textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px; /* Adjust based on preference */
+}
+
+.user-info input[type="file"] {
+    padding: 0.5rem 0; /* Add some padding for file input */
+}
+
+.user-info button {
+    padding: 0.5rem 1rem;
+    background-color: #084999;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.user-info button:hover {
+    background-color: #418fde; /* Darker shade on hover */
+}
+
+
+.points {
+    margin-top: -22rem;
+    padding: 1rem;
+    background-color: #ffffff; /* Light background for contrast */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    width: 45%;
+    margin-bottom: 16rem;
+}
+/* Points section styles */
+
+
+
+
+.points-header {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    gap: 1rem; /* Space between the image and heading */
+    
+}
+
+
+.points-img-container {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 50px;
+    height: 50px;
+    overflow: hidden; /* Hide overflow to maintain aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Round the container */
+}
+
+
+.points-img-container1 {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 50px;
+    height: 50px;
+    overflow: hidden; /* Hide overflow to maintain aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -1.2rem;
+    border-radius: 50%; /* Round the container */
+}
+
+.points-img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Fit image within container */
+}
+
+.points h3 {
+    margin: 0; /* Remove default margin for alignment */
+    font-size: 1.5rem;
+    color: #333; /* Dark text for readability */
+}
+
+.points-text {
+    margin-top: 1rem;
+    text-align: left; /* Align text to the left */
+}
+
+.points p {
+    font-size: 1rem;
+    color: #333; /* Darker text for readability */
+}
+
+.points strong {
+    color: #084999; /* Highlight the points value with a different color */
+}
+
+
+/* User stores section styles */
+.user-stores {
+    margin-top: -14rem;
+    padding: 1rem;
+    background-color: #bfe1f854; /* Light background for contrast */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    width: 45%;
+    margin-bottom: 1rem;
+}
+
+.user-store-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between store items */
+    border: #063d7d 1px solid;
+    padding-top: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+
+}
+
+.store-header {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+    justify-content: space-between; /* Space out the elements */
+    gap: 1rem; /* Space between image and heading */
+}
+
+.store-img-container {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 50px;
+    height: 50px;
+    overflow: hidden; /* Hide overflow to maintain aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Round the container */
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+.store-img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Fit image within container */
+}
+
+.store-header h3 {
+    margin: 0; /* Remove default margin for alignment */
+    font-size: 1.25rem;
+    color: #333; /* Dark text for readability */
+    flex-grow: 1; /* Allow heading to take remaining space */
+    padding-bottom: 1rem;
+}
+
+.modify-link {
+    color: #084999; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Pointer cursor for links */
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border: #063d7d 1px solid;
+    border-radius: 20rem;
+}
+
+.modify-link:hover {
+    scale: 1.1;
+}
+
+/* Store text section */
+.store-text {
+    margin-top: 1rem;
+    text-align: left; /* Align text to the left */
+}
+
+.store-text p {
+    font-size: 1rem;
+    color: #333; /* Darker text for readability */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .main-container {
+        width: 95%;
+    }
+
+    .user-info{
+        margin: 0 auto;
+    }
+
+    .user-info h2 {
+        font-size: 1.25rem;
+    }
+
+    .user-info form {
+        gap: 0.75rem;
+    }
+
+    .user-info button {
+        font-size: 0.9rem;
+    }
+
+    .points {
+        margin-top: 2rem;
+        
+        width: 100%;
+    }
+
+    .user-stores {
+        
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .user-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .user-info form {
+        gap: 0.5rem;
+    }
+
+    .user-info button {
+        font-size: 0.85rem;
+    }
+}

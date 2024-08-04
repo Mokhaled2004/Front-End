@@ -14,7 +14,7 @@
     <div class="navigation-container">
         <div class="logo-container">Marketo</div>
         <div class="nav-links-container">
-            <a href="#" class="nav-link">Home</a>
+            <a href="{{ url_for('home') }}" class="nav-link">Home</a>
             <a href="#" class="nav-link">About Us</a>
             <a href="#" class="nav-link">Contact Us</a>
             <a href="#" class="nav-link">Services</a>
@@ -22,11 +22,32 @@
         <div class="search-container">
             <input type="text" placeholder="Search Products" class="search-input">
         </div>
+
         <div class="login-container">
             <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Icon" class="icon-image">
-            <span class="login-text">Sign In</span>
+            {% if session.get('loggedin') %}
+                <span class="login-text">{{ session['firstname'] }}</span>
+            {% else %}
+                <span class="login-text">Sign In</span>
+            {% endif %}
             <span class="arrow">&#9662;</span>
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu">
+                {% if session.get('loggedin') %}
+                    <a href="{{ url_for('profile') }}" class="dropdown-item">My Account</a>
+                    <a href="#" class="dropdown-item">My Purchases</a>
+                    <a href="#" class="dropdown-item">My Marketo Points</a>
+                    <a href="#" class="dropdown-item">My Coupons</a>
+                    <a href="#" class="dropdown-item">My Recipes</a>
+                    <a href="{{ url_for('login') }}" class="logout">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="sign">Sign In</a>
+                    <a href="{{ url_for('register') }}" class="create">Create Account</a>
+                {% endif %}
+            </div>
         </div>
+        
+
         <div class="cart-container">
             <img src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart Icon" class="icon-image">
         </div>
@@ -43,7 +64,7 @@
             <span class="arrow">&#9662;</span>
         </div>
         <div class="secondary-links-container">
-            <a href="#" class="secondary-nav-link">Find a Store</a>
+            <a href="{{ url_for('store') }}" class="secondary-nav-link">Find a Store</a>
             <a href="#" class="secondary-nav-link">Offers</a>
             <a href="#" class="secondary-nav-link">Gift Cards</a>
             <a href="#" class="secondary-nav-link">Meal Planning</a>

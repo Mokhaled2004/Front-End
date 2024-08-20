@@ -170,9 +170,15 @@
     border-radius: 4px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
     width: 45%;
-    margin-bottom: 1rem;
+    margin-bottom: -1rem;
+    max-height: calc(3* 50px + 4rem); /* Fixed height for 3 containers + padding */
+    overflow-y: auto; /* Enable vertical scrolling */
+    
 }
 
+
+
+/* Adjusted store container styles */
 .user-store-container {
     display: flex;
     flex-direction: column;
@@ -181,8 +187,8 @@
     padding-top: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-
 }
+
 
 .store-header {
     display: flex;
@@ -201,7 +207,8 @@
     align-items: center;
     border-radius: 50%; /* Round the container */
     margin-left: 1rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    
 }
 
 .store-img {

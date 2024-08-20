@@ -2,7 +2,7 @@
 .main-container {
     display: flex;
     flex-wrap: wrap; /* Allows wrapping on small screens */
-    width: 90%;
+    width: 25%;
     max-width: 1600px;
     margin: 2rem auto;
     padding: 1rem;
@@ -12,11 +12,12 @@
     border: #333 1px solid;
     box-sizing: border-box;
     overflow: hidden;
+    margin-left: 10rem;
 }
 
 /* Sidebar styles */
 .sidebar {
-    flex: 0 0 25%;
+    flex: 0 0 100%;
     padding: 1rem;
 }
 
@@ -38,12 +39,16 @@
 .content {
     flex: 1;
     padding: 1rem;
+    max-width: 1000px;
+    width: 70%;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center the content */
+    margin-left : 42rem;
+    margin-top : -9rem;
 }
 
 /* Make content height equal to sidebar */
@@ -89,66 +94,11 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) { 
-    .sidebar {
-        flex: 0 0 30%;
-    }
-
-    .content-nav ul {
-        flex-direction: column;
-    }
-
-    .content-nav a {
-        text-align: center;
-    }
+   
 }
 
 /* Responsive adjustments for screens smaller than 480px */
 @media (max-width: 480px) { 
-    .main-container {
-        flex-direction: column; /* Stack sidebar and content vertically */
-    }
-
-    .sidebar {
-        flex: 0 0 100%;
-        margin-bottom: 1rem;
-        border-right: none;
-        border-bottom: 1px solid #ccc;
-    }
-
-    .content {
-        padding: 0.5rem;
-    }
-
-    /* Navigation bar styles inside the content */
-    .content-nav {
-        overflow-x: auto; /* Enable horizontal scrolling */
-        white-space: nowrap; /* Prevent line breaks for navigation items */
-    }
-
-    .content-nav ul {
-        flex-direction: row; /* Keep items in a row */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        display: inline-flex; /* Align items horizontally */
-        justify-content: flex-start; /* Align items to the start */
-        align-items: center;
-        height: 100%;
-    }
-
-    .content-nav li {
-        flex: 0 0 auto; /* Prevent items from shrinking */
-        display: inline-block; /* Keep items side by side */
-    }
-
-    .content-nav a {
-        padding: 0.5rem 1rem;
-        text-align: center;
-        display: inline-block; /* Ensure anchor tag doesn't wrap */
-    }
-
-    .content-nav img {
-        width: 24px; /* Adjust size as needed */
-        height: 24px; /* Keep the image square */
-        margin-right: 8px; /* Space between the image and the text */
-    }
+    
 }
 

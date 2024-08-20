@@ -36,9 +36,68 @@ def home():
 def logged():
     return render_template('loggedhomepage.html')
 
+
+@app.route('/modifycategory')
+def modifycategory():
+    return render_template('modifycategory.html')
+
 @app.route('/header')
 def header():
     return render_template('header.html')
+@app.route('/editstore/<int:store_id>', methods=['GET', 'POST'])
+def editstore(store_id):
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    
+    # Fetch store data based on the store ID
+    cursor.execute('SELECT * FROM stores WHERE id = %s', (store_id,))
+    store = cursor.fetchone()
+
+    # Check if the store exists
+    if not store:
+        flash('Store not found!')
+        return redirect(url_for('profile'))
+
+    if request.method == 'POST':
+        # Handle form data for updating the store
+        name = request.form.get('sname')
+        address = request.form.get('address')
+        delivery_fees = request.form.get('dfees')
+        category = request.form.get('category')
+        logo = request.files.get('pp')
+
+        if logo and allowed_file(logo.filename):
+            logo_filename = secure_filename(logo.filename)
+            logo_path = os.path.join(app.config['LOGO_UPLOAD_FOLDER'], logo_filename)
+            try:
+                logo.save(logo_path)
+                logo_filename_only = logo_filename
+            except Exception as e:
+                flash('Failed to save the logo. Please try again.')
+                return redirect(url_for('editstore', store_id=store_id))
+
+        else:
+            logo_filename_only = store['logo']  # Use existing logo if none is uploaded
+
+        try:
+            cursor.execute('''
+                UPDATE stores
+                SET name = %s, address = %s, deliveryfees = %s, category = %s, logo = %s
+                WHERE id = %s
+            ''', (name, address, delivery_fees, category, logo_filename_only, store_id))
+            mysql.connection.commit()
+            flash('Store updated successfully!')
+            return redirect(url_for('profile'))
+        except MySQLdb.Error as e:
+            flash('Failed to update store. Please try again.')
+            print(f"Database error: {e}")
+
+    cursor.close()
+
+    # Pass the entire store object to the template
+    return render_template('editstore.html', store=store)
+
+
+
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
@@ -203,7 +262,7 @@ def addstore():
                 except MySQLdb.Error as e:
                     flash('Failed to create store. Please try again.')
                     print(f"Database error: {e}")
-        return render_template('addstore.html')
+        return render_template('createstore.html')
     else:
         flash('Please log in to create a store!')
         return redirect(url_for('login'))

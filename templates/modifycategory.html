@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Edit Store</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modifycategory.css') }}">
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <header>
+        {% include 'header.html' %}
+    </header>
+    
+    <div class="main-container">
+        <div class="sidebar">
+            <label for="category-dropdown">Categories</label>
+            <select id="category-dropdown">
+                <option value="category1">Category 1</option>
+                <option value="category2">Category 2</option>
+                <option value="category3">Category 3</option>
+                <!-- Add more categories as needed -->
+            </select>
+        </div>
+        
+        <div class="content">
+            <nav class="content-nav">
+                <ul>
+                    <li><img src="path_to_image1.png" alt="Icon 1"><a href="#">Link 1</a></li>
+                    <li><img src="path_to_image2.png" alt="Icon 2"><a href="#">Link 2</a></li>
+                    <li><img src="path_to_image3.png" alt="Icon 3"><a href="#">Link 3</a></li>
+                    <li><img src="path_to_image3.png" alt="Icon 3"><a href="#">Link 3</a></li>
+                    <li><img src="path_to_image3.png" alt="Icon 3"><a href="#">Link 3</a></li>
+                    <!-- Add more links with images as needed -->
+                </ul>
+            </nav>
+        </div>
+        
+        
+    </div>
+    
+</body>
+</html>

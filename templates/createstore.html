@@ -3,35 +3,33 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Create Store</title>
+    <title>Register - MarketMate</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/addstore.css') }}"> 
-    <script src="{{ url_for('static', filename='js/addstore.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/register.css') }}">
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
-    <div class="background-container">
-        <img src="{{ url_for('static', filename='images/homeplate1.png') }}" alt="" class="background-image">
-    </div>
-
     <header>
-        {% include 'header.html' %}
+        {% include 'header.html' %} 
     </header>
 
     <div class="center-container">
-        <form method="post" action="{{ url_for('addstore') }}" enctype="multipart/form-data">
-            <h2 class="form-title">Create your own store</h2>
-        
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='images/loginbanner.png') }}" alt="Register Image" class="register-image">
+        </div>
+        <form class="login-form" method="post" action="{{ url_for('addstore') }}" enctype="multipart/form-data">
+            <h2 class="form-title">Sell With Us!</h2>
             <input type="text" id="storename" name="storename" placeholder="Store Name" class="input-field" required>
             <input type="text" id="address" name="address" placeholder="Store Address" class="input-field" required>
             <input type="text" id="category" name="category" placeholder="Store Category" class="input-field" required>
             <input type="number" id="fees" name="fees" placeholder="Delivery Fees" class="input-field" min="0" required>
             <input type="file" id="logo" name="logo" placeholder="150 X 150 LOGO"class="input-field" required>
-        
-            <button type="submit" class="login-button">Create Store</button>
+
+            <button type="submit" class="login-button">Create</button>
         </form>
-        
     </div>
 
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +77,7 @@
                         <img src="{{ url_for('static', filename='logos/' + store.logo) }}" alt="Store Image" class="store-img">
                     </div>
                     <h3>{{ store.name }}</h3>
-                    <a class="modify-link" >Modify</a>
+                    <a href="{{ url_for('editstore', store_id=store.id) }}" class="modify-link">Modify</a>
                 </div>
             </div>
             {% endfor %}

@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/header.js') }}"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
 </head>
 <body>
     <div class="navigation-container">
@@ -24,7 +26,12 @@
         </div>
 
         <div class="login-container">
-            <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Icon" class="icon-image">
+            <lord-icon
+                src="https://cdn.lordicon.com/hrjifpbq.json"
+                trigger="hover"
+                colors="primary:#fff"
+                style="width:30px;height:250px">
+            </lord-icon>
             {% if session.get('loggedin') %}
                 <span class="login-text">{{ session['firstname'] }}</span>
             {% else %}
@@ -49,7 +56,12 @@
         
 
         <div class="cart-container">
-            <img src="{{ url_for('static', filename='images/cart.png') }}" alt="Cart Icon" class="icon-image">
+            <lord-icon
+                src="https://cdn.lordicon.com/pbrgppbb.json"
+                trigger="hover"
+                colors="primary:#fff"
+                style="width:30px;height:30px">
+            </lord-icon>
         </div>
     </div>
 
@@ -59,7 +71,13 @@
             <img src="{{ url_for('static', filename='images/list.png') }}" alt="Menu Icon" class="menu-image">
         </div>
         <div class="delivery-container">
-            <img src="{{ url_for('static', filename='images/stats.jpg') }}" alt="Delivery Icon" class="delivery-icon">
+            <lord-icon class = "delivery-icon"
+                src="https://cdn.lordicon.com/zzjjvkam.json"
+                trigger="loop"
+                state="loop-ride"
+                colors="primary:#000000,secondary:#242424"
+                style="width:30px;height:30px">
+            </lord-icon>
             <span class="delivery-text">Delivery</span>
             <span class="arrow">&#9662;</span>
         </div>

@@ -47,7 +47,7 @@ body {
 .small-container {
     flex: 0 0 auto;
     width: min-content;
-    height: 35px;
+    height: 40px;
     background-color: #f1f1f1;
     border-radius: 5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -69,7 +69,8 @@ body {
 }
 
 .image-placeholder img {
-    max-width: 28px;
+    max-width: 30px;
+    max-height: 30px;
     border-radius: 5rem;
 }
 
@@ -295,11 +296,12 @@ body {
     .small-container {
         min-width: 120px;
         max-width: 160px;
-        height: 25px;
+        height: 30px;
     }
 
     .image-placeholder img {
-        max-width: 20px;
+        max-width: 30px;
+        max-height: 30px;
         margin-top: 0.2rem;
     }
 

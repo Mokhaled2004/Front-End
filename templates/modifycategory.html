@@ -9,14 +9,21 @@
     <script src='main.js'></script>
 </head>
 <body>
-    
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="{{ url_for('static', filename='js/modifycategory.js') }}"></script>
+
     <header>
         {% include 'header.html' %}
     </header>
     
     <div class="main-container">
         <div class="sidebar">
-            <label for="category-dropdown">Categories</label>
+            <label for="category-dropdown">Categories
+                <img class="img3 dropdown-icon" src="{{ url_for('static', filename='images/3dots.png') }}">
+
+
+            </label>
+    
             <select id="category-dropdown">
                 <option value="category1">Category 1</option>
                 <option value="category2">Category 2</option>
@@ -26,11 +33,30 @@
         </div>
         
         
-        
-        
     </div>
-    
-    
+    <div class="edit-section">
+        <a href="#" class = "edit"><lord-icon class = "img-icon"
+            src="https://cdn.lordicon.com/zrkkrrpl.json"
+            trigger="hover"
+            state="hover-swirl"
+            colors="primary:#000000,secondary:#242424"
+            style="width:30px;height:30px">
+        </lord-icon> Add Product</a>
 
+        <a href="#"><lord-icon class = "img-icon"
+            src="https://cdn.lordicon.com/dykoqszm.json"
+            trigger="hover"
+            state="hover-swirl"
+            colors="primary:#000000,secondary:#242424"
+            style="width:30px;height:30px">
+        </lord-icon> Remove Product</a>
+
+        <a href="#"><lord-icon class = "img-icon"
+            src="https://cdn.lordicon.com/wuvorxbv.json"
+            trigger="hover"
+            colors="primary:#000000,secondary:#242424"
+            style="width:30px;height:30px">
+        </lord-icon> Modify Category</a>
+    </div>
 </body>
 </html>

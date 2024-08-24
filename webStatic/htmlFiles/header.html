@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="cssFiles/header.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap" rel="stylesheet">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+</head>
+<body>
+    <div class="navigation-container">
+        <div class="logo-container">Marketo</div>
+        <div class="nav-links-container">
+            <a href="" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About Us</a>
+            <a href="#" class="nav-link">Contact Us</a>
+            <a href="#" class="nav-link">Services</a>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search Products" class="search-input">
+        </div>
+
+        <div class="login-container">
+            <lord-icon
+                src="https://cdn.lordicon.com/hrjifpbq.json"
+                trigger="hover"
+                colors="primary:#fff"
+                style="width:30px;height:250px">
+            </lord-icon>
+            
+                <span class="login-text">Sign In</span>
+            
+            <span class="arrow">&#9662;</span>
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu">
+                
+                    <a href="" class="dropdown-item">My Account</a>
+                    <a href="#" class="dropdown-item">My Purchases</a>
+                    <a href="#" class="dropdown-item">My Marketo Points</a>
+                    <a href="#" class="dropdown-item">My Coupons</a>
+                    <a href="#" class="dropdown-item">My Recipes</a>
+                    <a href="" class="logout">Logout</a>
+                
+            </div>
+        </div>
+        
+
+        <div class="cart-container">
+            <lord-icon
+                src="https://cdn.lordicon.com/pbrgppbb.json"
+                trigger="hover"
+                colors="primary:#fff"
+                style="width:30px;height:30px">
+            </lord-icon>
+        </div>
+    </div>
+
+    <!-- Secondary Navigation -->
+    <div class="secondary-navigation">
+        <div class="menu-container secondary-menu-container">
+            <img src="../images/list.png" alt="Menu Icon" class="menu-image">
+        </div>
+        <div class="delivery-container">
+            <lord-icon class = "delivery-icon"
+                src="https://cdn.lordicon.com/zzjjvkam.json"
+                trigger="loop"
+                state="loop-ride"
+                colors="primary:#000000,secondary:#242424"
+                style="width:30px;height:30px">
+            </lord-icon>
+            <span class="delivery-text">Delivery</span>
+            <span class="arrow">&#9662;</span>
+        </div>
+        <div class="secondary-links-container">
+            <a href="" class="secondary-nav-link">Find a Store</a>
+            <a href="#" class="secondary-nav-link">Offers</a>
+            <a href="#" class="secondary-nav-link">Gift Cards</a>
+            <a href="#" class="secondary-nav-link">Meal Planning</a>
+            <a href="#" class="secondary-nav-link">Recipes</a>
+        </div>
+    </div>
+</body>
+</html>

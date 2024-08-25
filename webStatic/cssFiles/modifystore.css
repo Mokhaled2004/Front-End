@@ -1,29 +1,34 @@
+/* #div1 styles */
 #div1 {
-   float: left;
-   text-align: center;
-   padding-bottom: 100%;
-   width:18%;
-   margin-top: 0.2%;
-   border: solid black 0.125rem;
+    float: left;
+    text-align: center;
+    padding-bottom: 100%;
+    width: 18%;
+    margin-top: 0.4%;
+    border: solid black 0.125rem;
 }
 
+/* #div2 styles */
 #div2 {
     float: right;
-    width:81.8%;
-    padding-bottom:3%;
-    margin-top: 0.2%;
+    width: 81.8%;
+    
+    margin-top: 0.4%;
     border: solid black 0.125rem;
-   text-align: center; 
+    overflow: hidden; /* Clear floats inside */
+    text-align: center;
 }
 
 
+
+/* #div3 styles */
 #div3 {
-   
     float: right;
-    width:81.8% ;
-    padding-bottom:40.8% ;
+    width: 81.8%;
+    padding-bottom: 40.8%;
     margin-top: 0.2%;
     border: solid black 0.125rem;
+    overflow: hidden;
 }
 
 #div3 div {
@@ -35,20 +40,17 @@
 #div3 div input {
     border-radius: 50%;
     padding: 5px;
-    margin:5px;
+    margin: 5px;
     float: left;
-    
-   
 }
 
-
- #div3 div a {
-   border: solid black 2px;
-   padding:5px;
-   margin:2px;
-   display: inline-block;
-   width:100px;
-   text-align: center;
+#div3 div a {
+    border: solid black 2px;
+    padding: 5px;
+    margin: 2px;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
 }
 
 #id1 {
@@ -59,23 +61,80 @@
     float: right;
 }
 
-#div2 a {
-    border: solid black 0.125rem;
-    padding:5px;
-    margin:2px;
-    display: inline-block;
-    width:100px;
-    
-    
- }
-
- .class0 {
+.title {
     float: left;
-   
- }
+    margin-left:1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(83, 80, 80);
+}
 
- .class1 {
+.div2 a {
+    position: relative;
+    padding: 5px 10px; /* Padding adjusted to add space around the text */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Text color */
+    
+    line-height: 1.5; /* Ensure good vertical spacing */
+    
+}
+
+.class1 {
     float: right;
- }
+    margin-top: 0.9rem;
+    border: 1px solid black;
+    
+    text-align: center;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
 
+.no {
+    text-decoration: none   ;
+}
 
+.no::after{
+    text-decoration: none;
+}
+
+.icon-img {
+    width:20px;
+    height: 20px;
+    padding-right: 0.2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0rem;
+    
+}
+
+.div2 a::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Start from the center */
+    bottom: 2px;
+    width: 80%;
+    height: 1px; /* Height of the underline */
+    background-color: black; /* Color of the underline */
+    transform: translateX(-50%) scaleX(0); /* Start with the underline hidden */
+    transform-origin: center; /* Animate from the center outwards */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the underline */
+}
+
+.div2 a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #div1, #div2, #div3 {
+        float: none;
+        width: 100%;
+    }
+
+    .class0, .class1 {
+        margin: 0.5rem; /* Adjust margin for smaller screens */
+        display: block; /* Stack links vertically on smaller screens */
+    }
+}

@@ -1,0 +1,81 @@
+#div1 {
+   float: left;
+   text-align: center;
+   padding-bottom: 100%;
+   width:18%;
+   margin-top: 0.2%;
+   border: solid black 0.125rem;
+}
+
+#div2 {
+    float: right;
+    width:81.8%;
+    padding-bottom:3%;
+    margin-top: 0.2%;
+    border: solid black 0.125rem;
+   text-align: center; 
+}
+
+
+#div3 {
+   
+    float: right;
+    width:81.8% ;
+    padding-bottom:40.8% ;
+    margin-top: 0.2%;
+    border: solid black 0.125rem;
+}
+
+#div3 div {
+    margin: 0.5%;
+    padding: 2%;
+    border: solid black 0.125rem;
+}
+
+#div3 div input {
+    border-radius: 50%;
+    padding: 5px;
+    margin:5px;
+    float: left;
+    
+   
+}
+
+
+ #div3 div a {
+   border: solid black 2px;
+   padding:5px;
+   margin:2px;
+   display: inline-block;
+   width:100px;
+   text-align: center;
+}
+
+#id1 {
+    text-align: center;
+}
+
+.class2 {
+    float: right;
+}
+
+#div2 a {
+    border: solid black 0.125rem;
+    padding:5px;
+    margin:2px;
+    display: inline-block;
+    width:100px;
+    
+    
+ }
+
+ .class0 {
+    float: left;
+   
+ }
+
+ .class1 {
+    float: right;
+ }
+
+

@@ -23,42 +23,82 @@
         <a href="" class="class1"><img class = "icon-img" src="{{ url_for('static', filename='images/add2.png') }}" >Add Products</a>
     </div>
 
-    <div id="div3">
-        <div>
-            <a href="">text4</a>
-            <a href="">text5</a>
-            <a href="">text6</a>
-            <a href="" class="class2">text7</a>
-            <a href="" class="class2">text8</a>
+    <div class="div3">
+        <div class = "d1">
+            <a href="" class = "d1aleft">All</a>
+            <a href="" class = "d1aleft">Active</a>
+            <a href="" class = "d1aleft">Draft</a>
+            <a href="" class = "d1aleft">Archived</a>
+            <a href="" class = "d1aright"><lord-icon
+                src="https://cdn.lordicon.com/cnzqklvz.json"
+                trigger="hover"
+                colors="primary:#000000,secondary:#242424"
+                style="width:25px;height:25px">
+            </lord-icon></a>
+            <a href="" class = "d1aright"><lord-icon
+                src="https://cdn.lordicon.com/pagmnkiz.json"
+                trigger="hover"
+                colors="primary:#000000,secondary:#242424"
+                style="width:25px;height:25px">
+            </lord-icon></a>
+            
         </div>
-        <div id="id1">
-            <a href="">text</a>
-            <a href="">text</a>
-            <a href="">text</a>
-            <a href="">text</a>
-            <a href="">text</a>
-            <a href="">text</a>
+        <div class="d2">
+            <a href="" class = "d2ap">Product</a>
+            <a href="" class = "d2as">Status</a>
+            <a href=""class = "d2ai">Inventory</a>
+            <a href="" class = "d2at">Type</a>
+            <a href="" class = "d2av">Vendor </a>
         </div>
-        <div>
-            <input type="button" value=""/>
-            <img src="{{ url_for('static', filename='images/.png') }}" alt="Menu Icon" class="menu-image">
+
+        <div class="element">
+            <input type="checkbox" class="menu-checkbox">
+        
+            <img src="{{ url_for('static', filename='images/apple.png') }}" alt="Menu Icon" class="element-image">
+            <span class="pname">Red Apples</span>
+            <span class="astatus">Active</span>
+            <span class="inventory">400</span>
+            <span class="type">Food</span>
+            <span class="vendor">Walmart</span>
         </div>
-        <div>
-            <input type="button" value=""/>
-            <img src="{{ url_for('static', filename='images/.png') }}" alt="Menu Icon" class="menu-image">
+
+        <div class="element">
+            <input type="checkbox" class="menu-checkbox">
+        
+            <img src="{{ url_for('static', filename='images/carrot.jpg') }}" alt="Menu Icon" class="element-image">
+            <span class="pname">Carrots</span>
+            <span class="nstatus">Not-Active</span>
+            <span class="inventory">0</span>
+            <span class="type">Food</span>
+            <span class="vendor">AlRaya</span>
         </div>
-        <div>
-            <input type="button" value=""/>
-            <img src="{{ url_for('static', filename='images/.png') }}" alt="Menu Icon" class="menu-image">
+
+        <div class="element">
+            <input type="checkbox" class="menu-checkbox">
+        
+            <img src="{{ url_for('static', filename='images/beef.jpg') }}" alt="Menu Icon" class="element-image">
+            <span class="pname">Beef</span>
+            <span class="astatus">Active</span>
+            <span class="inventory">35</span>
+            <span class="type">Food</span>
+            <span class="vendor">Walmart</span>
         </div>
-        <div>
-            <input type="button" value=""/>
-            <img src="{{ url_for('static', filename='images/.png') }}" alt="Menu Icon" class="menu-image">
+
+        <div class="element">
+            <input type="checkbox" class="menu-checkbox">
+        
+            <img src="{{ url_for('static', filename='images/broccoli.jpg') }}" alt="Menu Icon" class="element-image">
+            <span class="pname">Broccoli</span>
+            <span class="nstatus">Not-Active</span>
+            <span class="inventory">0</span>
+            <span class="type">Food</span>
+            <span class="vendor">Walmart</span>
         </div>
-        <div>
-            <input type="button" value=""/>
-            <img src="{{ url_for('static', filename='images/.png') }}" alt="Menu Icon" class="menu-image">
-        </div>
+
+        
+        
+        
+        
     </div>
 </body>
 </html>

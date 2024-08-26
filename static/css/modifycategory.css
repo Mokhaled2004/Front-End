@@ -3,7 +3,7 @@
     float: left;
     text-align: center;
     padding-bottom: 100%;
-    width: 18%;
+    width: 17%;
     margin-top: 0.4%;
     border: solid black 0.125rem;
 }
@@ -12,7 +12,6 @@
 #div2 {
     float: right;
     width: 81.8%;
-    
     margin-top: 0.4%;
     border: solid black 0.125rem;
     overflow: hidden; /* Clear floats inside */
@@ -22,38 +21,126 @@
 
 
 /* #div3 styles */
-#div3 {
+
+.div3 {
     float: right;
     width: 81.8%;
-    padding-bottom: 40.8%;
     margin-top: 0.2%;
     border: solid black 0.125rem;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: stretch; /* Ensure children stretch to fill width */
     overflow: hidden;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    
 }
 
-#div3 div {
+.div3 div {
     margin: 0.5%;
     padding: 2%;
     border: solid black 0.125rem;
+    
 }
 
-#div3 div input {
+.div3 .d1 {
+    padding:1%;
+    border:none;
+}
+
+
+
+.div3 .d1aleft {
+    float: left;
+    margin-top : -0.7rem;
+    text-decoration: none;
+    border-radius: 5px;
+    color : rgb(102, 97, 97);
+    padding-right:1px;
+    border :none;
+    margin-right:2rem;
+    padding: 5px 6px;
+    font-size: 1.1rem;
+}
+
+.div3 .d1aright {
+    float: right;
+    margin-top : -1rem;
+    text-decoration: none;
+    
+    color : rgb(102, 97, 97);
+    padding-right:1px;
+    border :none;
+    margin-left:1rem;
+    padding: 5px 6px;
+    font-size: 1.1rem;
+    
+
+}
+
+.div3 .d1aleft:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.div3 .d2 {
+    margin-top:-1rem;
+    background-color: rgba(191, 225, 248, 0.33);
+    padding: 0.5rem;
+    margin-left:0 ;
+    margin-right:0 ;
+    border: none;
+    
+}
+
+.div3 .d2ap {
+    margin-left : 11rem;
+    text-decoration: none;
+    color: rgb(102, 97, 97);
+    font-size: 1.1rem;
+    
+}
+
+.div3 .d2as {
+    margin-left : 11rem;
+    text-decoration: none;
+    color: rgb(102, 97, 97);
+    font-size: 1.1rem;
+}
+
+.div3 .d2ai {
+    margin-left : 4rem;
+    text-decoration: none;
+    color: rgb(102, 97, 97);
+    font-size: 1.1rem;
+}
+
+.div3 .d2at {
+    margin-left : 9.5rem;
+    text-decoration: none;
+    color: rgb(102, 97, 97);
+    font-size: 1.1rem;
+}
+
+.div3 .d2av {
+    margin-left : 9.5rem;
+    text-decoration: none;
+    color: rgb(102, 97, 97);
+    font-size: 1.1rem;
+}
+
+
+
+
+.div3 div input {
     border-radius: 50%;
     padding: 5px;
     margin: 5px;
     float: left;
 }
 
-#div3 div a {
-    border: solid black 2px;
-    padding: 5px;
-    margin: 2px;
-    display: inline-block;
-    width: 100px;
-    text-align: center;
-}
 
-#id1 {
+
+.d1 {
     text-align: center;
 }
 
@@ -126,6 +213,95 @@
 .div2 a:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
+
+/* Flexbox container for aligning items */
+.div3 .element {
+    display: flex;
+    align-items: center; /* Vertically centers the checkbox and image */
+    justify-content: flex-start; /* Align items horizontally at the start */
+    margin-left: 0;
+    margin-right: 0;
+    border-left: none;
+    border-right: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-color: rgb(148, 139, 139);
+    margin-bottom: 0rem;
+    
+}
+
+/* Style the checkbox to be circular */
+.menu-checkbox {
+    width: 20px;  /* Set the width of the checkbox */
+    height: 20px;  /* Set the height of the checkbox */
+    border-radius: 50%;  /* Make it circular */
+    border: 2px solid black;  /* Border color and thickness */
+    background-color: white;  /* Background color when unchecked */
+    cursor: pointer;
+}
+
+/* Style the image to be 40px by 40px */
+.element-image {
+    width: 45px;
+    height: 45px;
+    margin-left :1rem;
+    
+    
+}
+
+/* General styles for all span elements */
+.element span {
+    display: inline-block;
+    overflow: hidden; /* Prevents overflow if the text is too long */
+    white-space: wrap; /* Prevents text from wrapping */
+    padding: 0.5rem; /* Adds padding for spacing */
+}
+
+/* Specific width for each class */
+.pname {
+    max-width:240px; /* Adjust the max-width as needed */
+    flex: 1;
+    margin-left: 4rem;
+}
+
+.astatus {
+    max-width: 133px;
+    margin-right:5rem;
+    flex: 0 1 auto;
+    background-color: rgba(161, 225, 161, 0.834);
+    border-radius: 5px;
+    padding: 2px 2px;
+}
+
+.nstatus {
+    max-width: 133px;
+    margin-right:3.5rem;
+    flex: 0 1 auto;
+    background-color: rgba(225, 161, 161, 0.834);
+    border-radius: 5px;
+    padding: 2px 2px;
+}
+
+
+
+
+
+.inventory {
+    max-width:210px;
+    flex: 1;
+}
+
+.type {
+    max-width: 200px;
+    flex: 1;
+}
+
+.vendor {
+    max-width: 110px;
+    flex: 1;
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #div1, #div2, #div3 {

@@ -1,4 +1,4 @@
-/* #div1 styles */
+
 #div1 {
     float: left;
     text-align: center;
@@ -8,19 +8,19 @@
     border: solid black 0.125rem;
 }
 
-/* #div2 styles */
+
 #div2 {
     float: right;
     width: 81.8%;
     margin-top: 0.4%;
     border: solid black 0.125rem;
-    overflow: hidden; /* Clear floats inside */
+    overflow: hidden; 
     text-align: center;
 }
 
 
 
-/* #div3 styles */
+
 
 .div3 {
     float: right;
@@ -28,8 +28,8 @@
     margin-top: 0.2%;
     border: solid black 0.125rem;
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: stretch; /* Ensure children stretch to fill width */
+    flex-direction: column; 
+    align-items: stretch; 
     overflow: hidden;
     border-radius: 20px;
     margin-right: 0.5rem;
@@ -160,13 +160,13 @@
 
 .div2 a {
     position: relative;
-    padding: 5px 10px; /* Padding adjusted to add space around the text */
+    padding: 5px 10px; 
     display: inline-block;
     text-align: center;
-    text-decoration: none; /* Remove underline from links */
-    color: black; /* Text color */
+    text-decoration: none; 
+    color: black; 
     
-    line-height: 1.5; /* Ensure good vertical spacing */
+    line-height: 1.5;
     
 }
 
@@ -200,25 +200,25 @@
 .div2 a::after {
     content: '';
     position: absolute;
-    left: 50%; /* Start from the center */
+    left: 50%; 
     bottom: 2px;
     width: 80%;
-    height: 1px; /* Height of the underline */
-    background-color: black; /* Color of the underline */
-    transform: translateX(-50%) scaleX(0); /* Start with the underline hidden */
-    transform-origin: center; /* Animate from the center outwards */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for the underline */
+    height: 1px; 
+    background-color: black;
+    transform: translateX(-50%) scaleX(0); 
+    transform-origin: center; 
+    transition: transform 0.3s ease-in-out; 
 }
 
 .div2 a:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
 
-/* Flexbox container for aligning items */
+
 .div3 .element {
     display: flex;
-    align-items: center; /* Vertically centers the checkbox and image */
-    justify-content: flex-start; /* Align items horizontally at the start */
+    align-items: center; 
+    justify-content: flex-start;
     margin-left: 0;
     margin-right: 0;
     border-left: none;
@@ -230,17 +230,17 @@
     
 }
 
-/* Style the checkbox to be circular */
+
 .menu-checkbox {
-    width: 20px;  /* Set the width of the checkbox */
-    height: 20px;  /* Set the height of the checkbox */
-    border-radius: 50%;  /* Make it circular */
-    border: 2px solid black;  /* Border color and thickness */
-    background-color: white;  /* Background color when unchecked */
+    width: 20px;  
+    height: 20px;  
+    border-radius: 50%; 
+    border: 2px solid black;  
+    background-color: white;  
     cursor: pointer;
 }
 
-/* Style the image to be 40px by 40px */
+
 .element-image {
     width: 45px;
     height: 45px;
@@ -249,17 +249,17 @@
     
 }
 
-/* General styles for all span elements */
+
 .element span {
     display: inline-block;
-    overflow: hidden; /* Prevents overflow if the text is too long */
-    white-space: wrap; /* Prevents text from wrapping */
-    padding: 0.5rem; /* Adds padding for spacing */
+    overflow: hidden; 
+    white-space: wrap; 
+    padding: 0.5rem; 
 }
 
-/* Specific width for each class */
+
 .pname {
-    max-width:240px; /* Adjust the max-width as needed */
+    max-width:240px;
     flex: 1;
     margin-left: 4rem;
 }
@@ -310,7 +310,7 @@
     }
 
     .class0, .class1 {
-        margin: 0.5rem; /* Adjust margin for smaller screens */
-        display: block; /* Stack links vertically on smaller screens */
+        margin: 0.5rem; 
+        display: block; 
     }
 }

@@ -6,6 +6,11 @@
     width: 17%;
     margin-top: 0.4%;
     border: solid black 0.125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    
 }
 
 
@@ -314,3 +319,19 @@
         display: block; 
     }
 }
+
+#div1 a {
+    border:solid black 0.125rem;
+    padding : 1rem;
+    margin:2rem;
+    width:12rem;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+ #div1 a img {
+
+    width:1rem;
+    height: 1rem;
+} 

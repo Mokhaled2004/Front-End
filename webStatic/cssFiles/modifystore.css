@@ -1,31 +1,86 @@
-
-#div1 {
+/* #div1 styles */
+.div1 {
     float: left;
     text-align: center;
-    padding-bottom: 100%;
     width: 17%;
-    margin-top: 0.4%;
-    border: solid black 0.125rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; 
+    /* background-color: #efeee8; */
+    background-color: rgba(191, 225, 248, 0.33);
+    border-right: #efeee8 solid 0.125rem;
+    padding-bottom: 50%;
+    
     
 }
 
+.div1 .menu {
+    display: flex;
+    align-items: center;  /* Vertically center the icon and text */
+    margin-top: 0.6rem;
+    margin-left: 0.2rem;
+    position: relative;
+    
+}
 
-#div2 {
-    float: right;
-    width: 81.8%;
-    margin-top: 0.4%;
-    border: solid black 0.125rem;
-    overflow: hidden; 
-    text-align: center;
+.menu:hover {
+    background-color: #efeee8;;  /* Change background color on hover */
+}
+
+.div1 .nav-text {
+    margin-left: 0.5rem;  /* Add space between the icon and text */
+    font-size: 1rem;
+    text-decoration: none;  /* Remove underline from the link */
+    color: inherit;  /* Inherit the color from parent */
+    margin-top:0.2rem;
+}
+
+.div1 .menu lord-icon {
+    flex-shrink: 0;  /* Prevent the icon from shrinking */
+    margin-right:0.5rem;
+}
+
+.lord-icon{
+    width:25px;
+    height:25px;
+    margin-right:0.3rem;
+    margin-left:0.2rem;
+}
+
+.nested-menu {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+    position: absolute; /* Positioned relative to .menu */
+    top: 100%; /* Position directly below .nav-text */
+    left: 0; /* Align with the left edge of .menu */
+    margin-left:4rem;
+    z-index: 1000; /* Ensure it appears above other content */
+    margin-bottom: 0.1rem;
+    
+    
+   
+}
+
+.nested-menu a {
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 0.3rem;
+    display: block; /* Ensures links are block-level for better clicking */
+}
+
+.nested-menu a:hover {
+    background-color: #efeee8; /* Change background color on hover */
 }
 
 
 
+.menu.open .nested-menu {
+    display: flex; /* Show the nested menu when the parent menu has class 'open' */
+}
 
+
+/* #div3 styles */
 
 .div3 {
     float: right;
@@ -33,8 +88,8 @@
     margin-top: 0.2%;
     border: solid black 0.125rem;
     display: flex;
-    flex-direction: column; 
-    align-items: stretch; 
+    flex-direction: column; /* Stack children vertically */
+    align-items: stretch; /* Ensure children stretch to fill width */
     overflow: hidden;
     border-radius: 20px;
     margin-right: 0.5rem;
@@ -165,13 +220,13 @@
 
 .div2 a {
     position: relative;
-    padding: 5px 10px; 
+    padding: 5px 10px; /* Padding adjusted to add space around the text */
     display: inline-block;
     text-align: center;
-    text-decoration: none; 
-    color: black; 
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Text color */
     
-    line-height: 1.5;
+    line-height: 1.5; /* Ensure good vertical spacing */
     
 }
 
@@ -205,25 +260,25 @@
 .div2 a::after {
     content: '';
     position: absolute;
-    left: 50%; 
+    left: 50%; /* Start from the center */
     bottom: 2px;
     width: 80%;
-    height: 1px; 
-    background-color: black;
-    transform: translateX(-50%) scaleX(0); 
-    transform-origin: center; 
-    transition: transform 0.3s ease-in-out; 
+    height: 1px; /* Height of the underline */
+    background-color: black; /* Color of the underline */
+    transform: translateX(-50%) scaleX(0); /* Start with the underline hidden */
+    transform-origin: center; /* Animate from the center outwards */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the underline */
 }
 
 .div2 a:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
 
-
+/* Flexbox container for aligning items */
 .div3 .element {
     display: flex;
-    align-items: center; 
-    justify-content: flex-start;
+    align-items: center; /* Vertically centers the checkbox and image */
+    justify-content: flex-start; /* Align items horizontally at the start */
     margin-left: 0;
     margin-right: 0;
     border-left: none;
@@ -235,17 +290,17 @@
     
 }
 
-
+/* Style the checkbox to be circular */
 .menu-checkbox {
-    width: 20px;  
-    height: 20px;  
-    border-radius: 50%; 
-    border: 2px solid black;  
-    background-color: white;  
+    width: 20px;  /* Set the width of the checkbox */
+    height: 20px;  /* Set the height of the checkbox */
+    border-radius: 50%;  /* Make it circular */
+    border: 2px solid black;  /* Border color and thickness */
+    background-color: white;  /* Background color when unchecked */
     cursor: pointer;
 }
 
-
+/* Style the image to be 40px by 40px */
 .element-image {
     width: 45px;
     height: 45px;
@@ -254,17 +309,17 @@
     
 }
 
-
+/* General styles for all span elements */
 .element span {
     display: inline-block;
-    overflow: hidden; 
-    white-space: wrap; 
-    padding: 0.5rem; 
+    overflow: hidden; /* Prevents overflow if the text is too long */
+    white-space: wrap; /* Prevents text from wrapping */
+    padding: 0.5rem; /* Adds padding for spacing */
 }
 
-
+/* Specific width for each class */
 .pname {
-    max-width:240px;
+    max-width:240px; /* Adjust the max-width as needed */
     flex: 1;
     margin-left: 4rem;
 }
@@ -315,23 +370,7 @@
     }
 
     .class0, .class1 {
-        margin: 0.5rem; 
-        display: block; 
+        margin: 0.5rem; /* Adjust margin for smaller screens */
+        display: block; /* Stack links vertically on smaller screens */
     }
 }
-
-#div1 a {
-    border:solid black 0.125rem;
-    padding : 1rem;
-    margin:2rem;
-    width:12rem;
-    display: flex;
-    flex-direction: column;
-   
-}
-
- #div1 a img {
-
-    width:1rem;
-    height: 1rem;
-} 

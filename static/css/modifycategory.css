@@ -1,23 +1,83 @@
 /* #div1 styles */
-#div1 {
+.div1 {
     float: left;
     text-align: center;
-    padding-bottom: 100%;
     width: 17%;
-    margin-top: 0.4%;
-    border: solid black 0.125rem;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #efeee8; */
+    background-color: rgba(191, 225, 248, 0.33);
+    border-right: #efeee8 solid 0.125rem;
+    padding-bottom: 50%;
+    
+    
 }
 
-/* #div2 styles */
-#div2 {
-    float: right;
-    width: 81.8%;
-    margin-top: 0.4%;
-    border: solid black 0.125rem;
-    overflow: hidden; /* Clear floats inside */
-    text-align: center;
+.div1 .menu {
+    display: flex;
+    align-items: center;  /* Vertically center the icon and text */
+    margin-top: 0.6rem;
+    margin-left: 0.2rem;
+    position: relative;
+    
 }
 
+.menu:hover {
+    background-color: #efeee8;;  /* Change background color on hover */
+}
+
+.div1 .nav-text {
+    margin-left: 0.5rem;  /* Add space between the icon and text */
+    font-size: 1rem;
+    text-decoration: none;  /* Remove underline from the link */
+    color: inherit;  /* Inherit the color from parent */
+    margin-top:0.2rem;
+}
+
+.div1 .menu lord-icon {
+    flex-shrink: 0;  /* Prevent the icon from shrinking */
+    margin-right:0.5rem;
+}
+
+.lord-icon{
+    width:25px;
+    height:25px;
+    margin-right:0.3rem;
+    margin-left:0.2rem;
+}
+
+.nested-menu {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+    position: absolute; /* Positioned relative to .menu */
+    top: 100%; /* Position directly below .nav-text */
+    left: 0; /* Align with the left edge of .menu */
+    margin-left:4rem;
+    z-index: 1000; /* Ensure it appears above other content */
+    margin-bottom: 0.1rem;
+    
+    
+   
+}
+
+.nested-menu a {
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 0.3rem;
+    display: block; /* Ensures links are block-level for better clicking */
+}
+
+.nested-menu a:hover {
+    background-color: #efeee8; /* Change background color on hover */
+}
+
+
+
+.menu.open .nested-menu {
+    display: flex; /* Show the nested menu when the parent menu has class 'open' */
+}
 
 
 /* #div3 styles */

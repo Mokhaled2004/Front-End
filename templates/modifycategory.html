@@ -6,15 +6,114 @@
     <title>Edit Store</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/modifycategory.css') }}">
-    <script src='main.js'></script>
+    
 </head>
 <body>
+    
+
     <header>
         {% include 'header.html' %} 
     </header>
 
-    <div id="div1">
-        <p>nav side</p>
+    <div class="div1">
+        <div class="menu">
+            <lord-icon
+                src="https://cdn.lordicon.com/laqlvddb.json"
+                trigger="hover"
+                colors="primary:#000000,secondary:#242424"
+                style="width:25px;height:25px">
+            </lord-icon>
+            <a href="#" class="nav-text">Home</a> 
+            
+        </div>
+
+        <div class = "menu">
+            <img class = "lord-icon" src="{{ url_for('static', filename='images/orders.png') }}" >
+            <a href="" class = "nav-text">Orders</a> 
+            <div class="nested-menu">
+                <a href="#">All Orders</a>
+                <a href="#">Pending Orders</a>
+                <a href="#" >Completed Orders</a>
+                <a href="#" >Canceled Orders</a>
+                <a href="#" >Returns & Refunds</a>
+                <a href="#" >Order History</a>
+            </div>
+        </div>
+        
+        <div class = "menu">
+            <lord-icon
+                src="https://cdn.lordicon.com/hjuojzyi.json"
+                trigger="hover"
+                colors="primary:#000000,secondary:#242424"
+                style="width:25px;height:25px">
+            </lord-icon>
+            <a href="" class = "nav-text">Products</a> 
+            <div class="nested-menu">
+                <a href="#">All Products</a>
+                <a href="#">Add New Product</a>
+                <a href="#" >Product Categories</a>
+                <a href="#" >Inventory Management</a>
+                <a href="#" >Product Reviews</a>
+                <a href="#" >Discount Management</a>
+            </div>
+        </div>
+
+        <div class = menu>
+            <img class = "lord-icon" src="{{ url_for('static', filename='images/category1.png') }}" >
+            <a href="" class = "nav-text">Categories</a> 
+            <div class="nested-menu">
+                <a href="#">All Categories</a>
+                <a href="#">Add New Category</a>
+                <a href="#" >Featured Categories</a>
+                <a href="#" >Category Hierarchy</a>
+                <a href="#" >Category Images</a>
+            </div>
+        </div>
+
+        <div class = menu>
+        <img class = "lord-icon" src="{{ url_for('static', filename='images/offer.png') }}" >
+        <a href="" class = "nav-text">Offers</a> 
+        <div class="nested-menu">
+            <a href="#">All Offers</a>
+            <a href="#">Create New Offer</a>
+            <a href="#" >Active Promotions</a>
+            <a href="#" >Expired Promotions</a>
+            <a href="#" >Coupon Codes</a>
+            <a href="#" >Loyalty Programs</a>
+        </div>
+        </div>
+
+        <div class = menu>
+            <lord-icon
+                src="https://cdn.lordicon.com/xzalkbkz.json"
+                trigger="hover"
+                state="hover-wave"
+                colors="primary:#000000,secondary:#242424"
+                style="width:25px;height:25px">
+            </lord-icon>
+        <a href="" class = "nav-text">Customers</a> 
+        <div class="nested-menu">
+            <a href="#">All Customers</a>
+            <a href="#">Add New Customer</a>
+            <a href="#" >Customer Groups</a>
+            <a href="#" >Customer Feedback</a>
+            <a href="#" >VIP Customers</a>
+            <a href="#" >Account Status</a>
+        </div>
+        </div>
+
+        <div class = menu>
+            <img class = "lord-icon" src="{{ url_for('static', filename='images/analytics.png') }}" >
+            <a href="" class = "nav-text">Analytics</a>
+            <div class="nested-menu">
+                <a href="#">Sales Reports</a>
+                <a href="#">Customer Analytics</a>
+                <a href="#" >Product Performance</a>
+                <a href="#" >Revenue Trends</a>
+                <a href="#" >Traffic Sources</a>
+                <a href="#" >Conversion Rates</a>
+            </div>
+        </div>
     </div>
 
     <div class="div2">
@@ -100,5 +199,6 @@
         
         
     </div>
+    <script src="{{ url_for('static', filename='js/modifycategory.js') }}"></script>
 </body>
 </html>
